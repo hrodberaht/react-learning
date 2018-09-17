@@ -19,7 +19,13 @@ export default class AddCard extends Component {
         <input id={"name"} type={"text"} onChange={this.handleChange} />
         <label htmlFor={"email"}>Email: </label>
         <input id={"email"} type={"email"} onChange={this.handleChange} />
-        <button type={"button"} onClick={() => handleAdd(this.state)}>Add</button>
+        <button
+          type={"button"}
+          disabled={this.state.name.length < 3 }
+          onClick={() => handleAdd(this.state)}
+        >
+          Add
+        </button>
       </div>
     );
 
