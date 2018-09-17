@@ -7,21 +7,27 @@ class App extends Component {
   state = {
     cards: [
       {
+        id: 1,
         name: 'John',
         email: 'john@gmail.com'
       },
       {
+        id: 2,
         name: 'Rob',
         email: 'rob@gmail.com'
       }
     ]
   }
-  
+
   render() {
+    const { cards } = this.state;
+    const list = cards.map((card) => {
+      return <Card key={card.id} name={card.name} />
+    })
+
     return (
       <div className="App">
-        <Card name={'John'}>Card 1</Card>
-        <Card name={'Rob'}>Card 2</Card>
+        {list}
       </div>
     );
   }
