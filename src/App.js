@@ -18,7 +18,8 @@ class App extends Component {
         email: "rob@gmail.com"
       }
     ],
-    showAddCard: false
+    showAddCard: false,
+    lastId: 2
   };
 
   onShowAddCard = () => {
@@ -27,11 +28,11 @@ class App extends Component {
   };
 
   onAddCard = (card) => {
-    const { cards } = this.state;
-    cards.push({...card,id: cards.length+1}); //TODO find another way to generate id
+    const { cards, lastId } = this.state;
+    cards.push({...card,id: lastId+1}); //TODO find another way to generate id
     console.log(card);
 
-    this.setState({cards: cards});
+    this.setState({cards: cards, lastId: lastId+1});
   }
 
   onDeleteCard = (id) => {
