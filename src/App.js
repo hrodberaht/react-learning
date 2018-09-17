@@ -17,11 +17,17 @@ class App extends Component {
         name: "Rob",
         email: "rob@gmail.com"
       }
-    ]
+    ],
+    showAddCard: false
+  };
+
+  onShowAddCard = () => {
+    const { showAddCard } = this.state;
+    this.setState({ showAddCard: !showAddCard });
   };
 
   render() {
-    const { cards } = this.state;
+    const { cards, showAddCard } = this.state;
 
     const list = cards.map(card => {
       return <Card key={card.id} card={card} />;
@@ -29,7 +35,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <AddCard />
+        <AddCard showAddCard={showAddCard} handleClick={this.onShowAddCard} />
         {list}
       </div>
     );
