@@ -26,6 +26,14 @@ class App extends Component {
     this.setState({ showAddCard: !showAddCard });
   };
 
+  onAddCard = (card) => {
+    const { cards } = this.state;
+    cards.push({...card,id: cards.length+1}); //TODO find another way to generate id
+    console.log(card);
+
+    this.setState({cards: cards});
+  }
+
   render() {
     const { cards, showAddCard } = this.state;
 
@@ -35,7 +43,11 @@ class App extends Component {
 
     return (
       <div className="App">
-        <AddCard showAddCard={showAddCard} handleClick={this.onShowAddCard} />
+        <AddCard 
+        showAddCard={showAddCard} 
+        handleClick={this.onShowAddCard} 
+        handleAdd={this.onAddCard}
+        />
         {list}
       </div>
     );
