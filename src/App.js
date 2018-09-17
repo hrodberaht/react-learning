@@ -34,11 +34,20 @@ class App extends Component {
     this.setState({cards: cards});
   }
 
+  onDeleteCard = (id) => {
+    const { cards } = this.state;
+    const index = cards.findIndex((card) => {
+      return card.id === id;
+    })
+    cards.splice(index,1);
+    this.setState({cards: cards})
+  }
+
   render() {
     const { cards, showAddCard } = this.state;
 
     const list = cards.map(card => {
-      return <Card key={card.id} card={card} />;
+      return <Card key={card.id} card={card} handleClick={this.onDeleteCard}/>;
     });
 
     return (
