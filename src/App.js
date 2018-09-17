@@ -21,8 +21,9 @@ class App extends Component {
 
   render() {
     const { cards } = this.state;
+
     const list = cards.map((card) => {
-      return <Card key={card.id} name={card.name} />
+      return <Card key={card.id} card={card} />
     })
 
     return (
