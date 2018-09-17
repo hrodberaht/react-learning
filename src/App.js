@@ -4,6 +4,19 @@ import './App.css';
 import Card from './components/Card/Card';
 
 class App extends Component {
+  state = {
+    cards: [
+      {
+        name: 'John',
+        email: 'john@gmail.com'
+      },
+      {
+        name: 'Rob',
+        email: 'rob@gmail.com'
+      }
+    ]
+  }
+  
   render() {
     return (
       <div className="App">
