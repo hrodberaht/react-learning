@@ -56,7 +56,7 @@ class App extends Component {
         <AddCard 
         showAddCard={showAddCard} 
         handleClick={this.onShowAddCard} 
-        handleAdd={this.onAddCard}
+        handleAddCard={this.onAddCard}
         />
         {list}
       </div>

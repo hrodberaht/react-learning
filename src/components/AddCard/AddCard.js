@@ -11,18 +11,27 @@ export default class AddCard extends Component {
     this.setState({ [e.target.id]: e.target.value });
   };
 
+  handleAdd = card => {
+    const { handleAddCard } = this.props;
+    handleAddCard(card);
+    this.setState({
+      name: "",
+      email: ""
+    });
+  };
+
   render() {
-    const { handleClick, showAddCard, handleAdd } = this.props;
+    const { handleClick, showAddCard } = this.props;
     const form = (
       <div className={"AddCard"}>
         <label htmlFor={"name"}>Name: </label>
-        <input id={"name"} type={"text"} onChange={this.handleChange} />
+        <input id={"name"} type={"text"} value={this.state.name} onChange={this.handleChange} />
         <label htmlFor={"email"}>Email: </label>
-        <input id={"email"} type={"email"} onChange={this.handleChange} />
+        <input id={"email"} type={"email"} value={this.state.email} onChange={this.handleChange} />
         <button
           type={"button"}
-          disabled={this.state.name.length < 3 }
-          onClick={() => handleAdd(this.state)}
+          disabled={this.state.name.length < 3}
+          onClick={() => this.handleAdd(this.state)}
         >
           Add
         </button>
