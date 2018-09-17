@@ -7,8 +7,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Card>Card 1</Card>
-        <Card>Card 2</Card>
+        <Card name={'John'}>Card 1</Card>
+        <Card name={'Rob'}>Card 2</Card>
       </div>
     );
   }
