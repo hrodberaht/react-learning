@@ -4,4 +4,9 @@ input {
 }
 button {
     margin-bottom: 20px;
+    background-color: blue;
+    color: white;
+    border: 1px solid blue;
+    font-size: 16px;
+    padding: 5px;
 }
