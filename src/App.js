@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
 
-import Card from "./components/Card/Card";
 import AddCard from "./components/AddCard/AddCard";
+import AllCards from "./components/AllCards/AllCards";
 
 class App extends Component {
   state = {
@@ -46,11 +46,6 @@ class App extends Component {
 
   render() {
     const { cards, showAddCard } = this.state;
-
-    const list = cards.map(card => {
-      return <Card key={card.id} card={card} handleClick={this.onDeleteCard} />;
-    });
-
     return (
       <div className="App">
         <AddCard
@@ -58,7 +53,7 @@ class App extends Component {
           handleClick={this.onShowAddCard}
           handleAddCard={this.onAddCard}
         />
-        {list}
+        <AllCards cards={cards} handleClick={this.onDeleteCard}/>
       </div>
     );
   }
