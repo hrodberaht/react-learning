@@ -43,7 +43,7 @@ export default class AddCard extends Component {
         <button type={"button"} onClick={handleClick}>
           {showAddCard ? "Hide" : "Add Card"}
         </button>
-        {showAddCard ? form : null}
+        {showAddCard && form}
       </div>
     );
   }
