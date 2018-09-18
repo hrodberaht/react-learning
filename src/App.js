@@ -29,7 +29,7 @@ class App extends Component {
 
   onAddCard = card => {
     const { cards, lastId } = this.state;
-    cards.push({ ...card, id: lastId + 1 });
+    cards.unshift({ ...card, id: lastId + 1 });
     console.log(card);
 
     this.setState({ cards: cards, lastId: lastId + 1 });
