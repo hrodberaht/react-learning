@@ -6,23 +6,32 @@ import AllCards from "./components/AllCards/AllCards";
 import Search from "./components/Search/Search";
 
 class App extends Component {
-  state = {
-    cards: [
-      {
-        id: 1,
-        name: "John",
-        email: "john@gmail.com"
-      },
-      {
-        id: 2,
-        name: "Rob",
-        email: "rob@gmail.com"
-      }
-    ],
-    showAddCard: false,
-    lastId: 2,
-    filterText: ""
+  constructor() {
+    super() 
+    this.state = {
+      cards: [],
+      showAddCard: false,
+      lastId: 2,
+      filterText: ""
+    }
   };
+
+  componentWillMount() {
+    this.setState({
+      cards: [
+        {
+          id: 1,
+          name: "John",
+          email: "john@gmail.com"
+        },
+        {
+          id: 2,
+          name: "Rob",
+          email: "rob@gmail.com"
+        }
+      ]
+    });
+  }
 
   onShowAddCard = () => {
     const { showAddCard } = this.state;
@@ -32,7 +41,6 @@ class App extends Component {
   onAddCard = card => {
     const { cards, lastId } = this.state;
     cards.unshift({ ...card, id: lastId + 1 });
-    console.log(card);
 
     this.setState({ cards: cards, lastId: lastId + 1 });
   };
