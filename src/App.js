@@ -3,6 +3,7 @@ import "./App.css";
 
 import AddCard from "./components/AddCard/AddCard";
 import AllCards from "./components/AllCards/AllCards";
+import Search from "./components/Search/Search";
 
 class App extends Component {
   state = {
@@ -19,7 +20,8 @@ class App extends Component {
       }
     ],
     showAddCard: false,
-    lastId: 2
+    lastId: 2,
+    filterText: ""
   };
 
   onShowAddCard = () => {
@@ -44,8 +46,12 @@ class App extends Component {
     this.setState({ cards: cards });
   };
 
+  onFilter = e => {
+    this.setState({ filterText: e.target.value });
+  };
+
   render() {
-    const { cards, showAddCard } = this.state;
+    const { cards, showAddCard, filterText } = this.state;
     return (
       <div className="App">
         <AddCard
@@ -53,7 +59,12 @@ class App extends Component {
           handleClick={this.onShowAddCard}
           handleAddCard={this.onAddCard}
         />
-        <AllCards cards={cards} handleClick={this.onDeleteCard}/>
+        <Search filter={this.onFilter} />
+        <AllCards
+          cards={cards}
+          handleClick={this.onDeleteCard}
+          filterText={filterText}
+        />
       </div>
     );
   }
