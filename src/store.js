@@ -17,18 +17,23 @@ const initialState = {
 
 const reducer = (state = initialState, actions) => {
   switch (actions.type) {
-    case "Show":
-      return state;
+    case "ADD_CARD":
+      return {...state,cards: [...state.cards,{
+        id: 3,
+        name: actions.name,
+        email: actions.email
+      }]}
     default:
       return state;
   }
 };
 
-const show = {
-    type: 'Show'
-}
+const show = (name,email) => ({
+  type: "ADD_CARD",
+  name: name,
+  email: email
+});
 
 const store = createStore(reducer);
 
-
-export default store;
+export { store, show };
