@@ -17,19 +17,9 @@ class App extends Component {
   }
 
   componentWillMount() {
+    const cards = this.props.store.getState();
     this.setState({
-      cards: [
-        {
-          id: 1,
-          name: "John",
-          email: "john@gmail.com"
-        },
-        {
-          id: 2,
-          name: "Rob",
-          email: "rob@gmail.com"
-        }
-      ]
+      cards: cards.cards
     });
   }
 
