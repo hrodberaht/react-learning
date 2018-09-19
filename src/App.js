@@ -4,6 +4,7 @@ import "./App.css";
 import AddCard from "./components/AddCard/AddCard";
 import AllCards from "./components/AllCards/AllCards";
 import Search from "./components/Search/Search";
+import { addCard } from "./store";
 
 class App extends Component {
   constructor() {
@@ -15,23 +16,34 @@ class App extends Component {
       filterText: ""
     };
   }
+  subscribe = () => this.props.store.subscribe(() => {
+    const newState = this.props.store.getState();
+    this.setState({cards: newState.cards});
+  })
 
   componentWillMount() {
-    const cards = this.props.store.getState();
+    const { getState } = this.props.store;
+    const state = getState();
     this.setState({
-      cards: cards.cards
+      cards: state.cards
     });
+    this.subscribe();  
+  }
+
+  componentWillUnmount() {
+    this.subscribe.unsubscribe();
   }
 
   onShowAddCard = () => {
     const { showAddCard } = this.state;
     this.setState({ showAddCard: !showAddCard });
   };
+  
 
   onAddCard = card => {
-    const { cards, lastId } = this.state;
-    cards.unshift({ ...card, id: lastId + 1 });
-    this.setState({ cards: cards, lastId: lastId + 1 });
+    const { name, email} = card;
+    const { dispatch } = this.props.store;
+    dispatch(addCard(name, email))
   };
 
   onDeleteCard = id => {

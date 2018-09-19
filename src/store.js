@@ -15,11 +15,13 @@ const initialState = {
   ]
 };
 
+let newId = 2; //only for add id to card
+
 const reducer = (state = initialState, actions) => {
   switch (actions.type) {
     case "ADD_CARD":
       return {...state,cards: [...state.cards,{
-        id: 3,
+        id: ++newId,
         name: actions.name,
         email: actions.email
       }]}
@@ -28,7 +30,7 @@ const reducer = (state = initialState, actions) => {
   }
 };
 
-const show = (name,email) => ({
+const addCard = (name,email) => ({
   type: "ADD_CARD",
   name: name,
   email: email
@@ -36,4 +38,4 @@ const show = (name,email) => ({
 
 const store = createStore(reducer);
 
-export { store, show };
+export { store, addCard };
