@@ -7,14 +7,14 @@ import Search from "./components/Search/Search";
 
 class App extends Component {
   constructor() {
-    super() 
+    super();
     this.state = {
       cards: [],
       showAddCard: false,
       lastId: 2,
       filterText: ""
-    }
-  };
+    };
+  }
 
   componentWillMount() {
     this.setState({
@@ -41,7 +41,6 @@ class App extends Component {
   onAddCard = card => {
     const { cards, lastId } = this.state;
     cards.unshift({ ...card, id: lastId + 1 });
-
     this.setState({ cards: cards, lastId: lastId + 1 });
   };
 
