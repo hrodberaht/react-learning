@@ -33,6 +33,13 @@ const reducer = (state = initialState, actions) => {
           }
         ]
       };
+    case "DELETE_CARD":
+      const index = state.cards.findIndex((card) => card.id === actions.id )
+      return { ...state,
+        cards: [
+          ...state.cards.slice(0,index),
+          ...state.cards.slice(index +1)]
+      };
     case "TOGGLE_ADD_CARD":
       return { ...state, showAddCard: !state.showAddCard };
     case "FILTER":
@@ -48,6 +55,11 @@ const addCard = (name, email) => ({
   email: email
 });
 
+const deleteCard = id => ({
+  type: "DELETE_CARD",
+  id
+});
+
 const toggleAddCard = {
   type: "TOGGLE_ADD_CARD"
 };
@@ -59,4 +71,4 @@ const filter = filterText => ({
 
 const store = createStore(reducer);
 
-export { store, addCard, toggleAddCard, filter};
+export { store, addCard, deleteCard, toggleAddCard, filter };

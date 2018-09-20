@@ -4,14 +4,13 @@ import "./App.css";
 import AddCard from "./components/AddCard/AddCard";
 import AllCards from "./components/AllCards/AllCards";
 import Search from "./components/Search/Search";
-import { addCard, toggleAddCard, filter } from "./store";
+import { addCard, toggleAddCard, filter, deleteCard } from "./store";
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
   return { state };
 };
 class App extends Component {
-
   onShowAddCard = () => {
     this.props.dispatch(toggleAddCard);
   };
@@ -22,12 +21,7 @@ class App extends Component {
   };
 
   onDeleteCard = id => {
-    const { cards } = this.state;
-    const index = cards.findIndex(card => {
-      return card.id === id;
-    });
-    cards.splice(index, 1);
-    this.setState({ cards: cards });
+    this.props.dispatch(deleteCard(id));
   };
 
   onFilter = e => {
@@ -36,7 +30,6 @@ class App extends Component {
 
   render() {
     const { cards, showAddCard, filterText } = this.props.state;
-    console.log(this.props.state);
     return (
       <div className="App">
         <AddCard
@@ -54,5 +47,5 @@ class App extends Component {
     );
   }
 }
-
+export { App };
 export default connect(mapStateToProps)(App);
