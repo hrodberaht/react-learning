@@ -4,11 +4,11 @@ import "./App.css";
 import AddCard from "./components/AddCard/AddCard";
 import AllCards from "./components/AllCards/AllCards";
 import Search from "./components/Search/Search";
-import { addCard } from "./store";
+import { addCard, toggleAddCard } from "./store";
 import { connect } from "react-redux";
 
 const mapStateToProps = (state) => {
-  return {cards: state.cards}
+  return {state}
 }
 class App extends Component {
   constructor() {
@@ -22,8 +22,7 @@ class App extends Component {
   }
 
   onShowAddCard = () => {
-    const { showAddCard } = this.state;
-    this.setState({ showAddCard: !showAddCard });
+    this.props.dispatch(toggleAddCard());
   };
 
   onAddCard = card => {
@@ -46,7 +45,8 @@ class App extends Component {
   };
 
   render() {
-    const { cards, showAddCard, filterText } = this.props;
+    const { cards, showAddCard, filterText } = this.props.state;
+    console.log(this.props.state)
     return (
       <div className="App">
         <AddCard

@@ -12,7 +12,9 @@ const initialState = {
       name: "Rob",
       email: "rob@gmail.com"
     }
-  ]
+  ],
+  showAddCard: false,
+
 };
 
 let newId = 2; //only for add id to card
@@ -25,6 +27,8 @@ const reducer = (state = initialState, actions) => {
         name: actions.name,
         email: actions.email
       }]}
+      case "TOGGLE_ADD_CARD":
+      return {...state, showAddCard: !state.showAddCard}
     default:
       return state;
   }
@@ -35,7 +39,10 @@ const addCard = (name,email) => ({
   name: name,
   email: email
 });
+const toggleAddCard = () => ({
+  type: "TOGGLE_ADD_CARD",
+});
 
 const store = createStore(reducer);
 
-export { store, addCard };
+export { store, addCard, toggleAddCard };
