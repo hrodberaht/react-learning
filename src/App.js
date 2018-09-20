@@ -16,10 +16,6 @@ class App extends Component {
       filterText: ""
     };
   }
-  subscribe = () => this.props.store.subscribe(() => {
-    const newState = this.props.store.getState();
-    this.setState({cards: newState.cards});
-  })
 
   componentWillMount() {
     const { getState } = this.props.store;
@@ -27,23 +23,25 @@ class App extends Component {
     this.setState({
       cards: state.cards
     });
-    this.subscribe();  
+    this.unsubscribe = this.props.store.subscribe(() => {
+      const newState = this.props.store.getState();
+      this.setState({ cards: newState.cards });
+    });
   }
 
   componentWillUnmount() {
-    this.subscribe.unsubscribe();
+    this.unsubscribe();
   }
 
   onShowAddCard = () => {
     const { showAddCard } = this.state;
     this.setState({ showAddCard: !showAddCard });
   };
-  
 
   onAddCard = card => {
-    const { name, email} = card;
+    const { name, email } = card;
     const { dispatch } = this.props.store;
-    dispatch(addCard(name, email))
+    dispatch(addCard(name, email));
   };
 
   onDeleteCard = id => {
