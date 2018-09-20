@@ -5,7 +5,11 @@ import AddCard from "./components/AddCard/AddCard";
 import AllCards from "./components/AllCards/AllCards";
 import Search from "./components/Search/Search";
 import { addCard } from "./store";
+import { connect } from "react-redux";
 
+const mapStateToProps = (state) => {
+  return {cards: state.cards}
+}
 class App extends Component {
   constructor() {
     super();
@@ -15,22 +19,6 @@ class App extends Component {
       lastId: 2,
       filterText: ""
     };
-  }
-
-  componentWillMount() {
-    const { getState } = this.props.store;
-    const state = getState();
-    this.setState({
-      cards: state.cards
-    });
-    this.unsubscribe = this.props.store.subscribe(() => {
-      const newState = this.props.store.getState();
-      this.setState({ cards: newState.cards });
-    });
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe();
   }
 
   onShowAddCard = () => {
@@ -58,7 +46,7 @@ class App extends Component {
   };
 
   render() {
-    const { cards, showAddCard, filterText } = this.state;
+    const { cards, showAddCard, filterText } = this.props;
     return (
       <div className="App">
         <AddCard
@@ -77,4 +65,5 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(mapStateToProps)(App);
+
