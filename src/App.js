@@ -3,16 +3,13 @@ import "./App.css";
 
 import VisibleCards from "./containers/VisibleCards";
 import Filter from "./containers/Filter";
-import AddCard from "./containers/AddCard";
-
-
+import ShowAddCard from "./containers/ShowAddCard";
 
 class App extends Component {
-
   render() {
     return (
       <div className="App">
-        <AddCard />
+        <ShowAddCard />
         <Filter />
         <VisibleCards />
       </div>
