@@ -17,8 +17,6 @@ const initialState = {
   filterText: ""
 };
 
-let newId = 2; //only for add id to card
-
 const reducer = (state = initialState, actions) => {
   switch (actions.type) {
     case "ADD_CARD":
@@ -27,7 +25,7 @@ const reducer = (state = initialState, actions) => {
         cards: [
           ...state.cards,
           {
-            id: ++newId,
+            id: actions.id,
             name: actions.name,
             email: actions.email
           }
@@ -49,26 +47,7 @@ const reducer = (state = initialState, actions) => {
   }
 };
 
-const addCard = (name, email) => ({
-  type: "ADD_CARD",
-  name: name,
-  email: email
-});
-
-const deleteCard = id => ({
-  type: "DELETE_CARD",
-  id
-});
-
-const toggleAddCard = {
-  type: "TOGGLE_ADD_CARD"
-};
-
-const filter = filterText => ({
-  type: "FILTER",
-  filterText
-});
 
 const store = createStore(reducer);
 
-export { store, addCard, deleteCard, toggleAddCard, filter };
+export { store };

@@ -4,7 +4,7 @@ import "./App.css";
 import AddCard from "./components/AddCard/AddCard";
 import AllCards from "./components/AllCards/AllCards";
 import Search from "./components/Search/Search";
-import { addCard, toggleAddCard, filter, deleteCard } from "./store";
+import { addCard, toggleAddCard, filter, deleteCard } from "./actions";
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
