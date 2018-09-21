@@ -29,11 +29,11 @@ class App extends Component {
   };
 
   render() {
-    const { cards, showAddCard, filterText } = this.props.state;
+    const { cards, toggleAddCard, filterText } = this.props.state;
     return (
       <div className="App">
         <AddCard
-          showAddCard={showAddCard}
+          showAddCard={toggleAddCard}
           handleClick={this.onShowAddCard}
           handleAddCard={this.onAddCard}
         />

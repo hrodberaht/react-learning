@@ -5,8 +5,10 @@ import registerServiceWorker from "./registerServiceWorker";
 import "./index.css";
 import App from "./App";
 import { Provider } from 'react-redux';
+import { createStore } from "redux";
+import rootReducer from "./reducers";
 
-import { store } from "./store";
+const store = createStore(rootReducer);
 
 const AppWithProvider = () => (
     <Provider store={ store }>
