@@ -21,7 +21,7 @@ export default class AddCard extends Component {
   };
 
   render() {
-    const { handleClick, showAddCard } = this.props;
+    const { handleClick, toggleAddCard } = this.props;
     const form = (
       <div className={"AddCard"}>
         <label htmlFor={"name"}>Name: </label>
@@ -41,9 +41,9 @@ export default class AddCard extends Component {
     return (
       <div>
         <button type={"button"} onClick={handleClick}>
-          {showAddCard ? "Hide" : "Add Card"}
+          {toggleAddCard ? "Hide" : "Add Card"}
         </button>
-        {showAddCard && form}
+        {toggleAddCard && form}
       </div>
     );
   }
