@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'
+
 import "./AddCard.css";
 import AddCardForm from "../../containers/AddCardForm";
 
-export default class AddCard extends Component {
+export default class ShowAddCard extends Component {
   
   render() {
     const { handleClick, toggleAddCard } = this.props;
@@ -19,3 +21,9 @@ export default class AddCard extends Component {
     );
   }
 }
+
+ShowAddCard.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+  toggleAddCard: PropTypes.bool
+}
+

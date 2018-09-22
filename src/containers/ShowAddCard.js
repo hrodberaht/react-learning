@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import ShowAddCard from "../components/AddCard/ShowAddCard";
+import ShowAddCard from "../components/ShowAddCard/ShowAddCard";
 import { toggleAddCard } from "../actions";
 
 

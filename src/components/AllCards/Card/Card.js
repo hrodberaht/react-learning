@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'
+
 
 export default class Card extends Component {
   render() {
@@ -34,4 +36,9 @@ export default class Card extends Component {
     backgroundColor: "red",
     padding: "5px"
   };
+}
+
+Card.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+  card: PropTypes.object.isRequired,
 }

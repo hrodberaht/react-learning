@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { addCard } from "../actions";
-import AddCardForm from "../components/AddCard/AddCardForm/AddCardForm";
+import AddCardForm from "../components/ShowAddCard/AddCardForm/AddCardForm";
 
 
 const mapDispatchToProps = dispatch => ({

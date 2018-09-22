@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import Card from "./Card/Card";
+import PropTypes from 'prop-types'
 
-export default class AllCards2 extends Component {
+
+
+export default class AllCards extends Component {
   
   render() {
-    const { cards, handleClick, filterText } = this.props;
+    const {  cards, handleClick, filterText } = this.props;
     let list = cards;
     if (filterText) {
       list = cards.filter((card) => {
@@ -26,4 +29,10 @@ export default class AllCards2 extends Component {
       </div>
     );
   }
+}
+
+AllCards.propTypes = {
+  cards: PropTypes.array.isRequired,
+  handleClick: PropTypes.func.isRequired,
+  filterText: PropTypes.string,
 }
