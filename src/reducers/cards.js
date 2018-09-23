@@ -16,8 +16,7 @@ const cards = (state = initialState, actions) => {
     case "ADD_CARD":
       return [...state,{id: actions.id, name: actions.name,email: actions.email}];
     case "DELETE_CARD":
-      const index = state.findIndex(card => card.id === actions.id);
-      return [...state.slice(0, index), ...state.slice(index + 1)]
+      return state.filter((card) => card.id !== actions.id)
     default:
       return state;
   }
