@@ -16,7 +16,7 @@ export const toggleCardVisable = () => ({
   type: 'TOGGLE_CARD_VISABLE',
 });
 
-export const filter = filterText => ({
+export const filter = e => ({
   type: 'FILTER',
-  filterText,
+  filterText: e.target.value,
 });

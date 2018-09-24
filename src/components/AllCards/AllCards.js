@@ -9,9 +9,6 @@ const mapStateToProps = state => ({
   filterText: state.filterText,
 });
 
-const mapDispatchToProps = dispatch => ({
-  handleClick: id => dispatch(deleteCard(id)),
-});
 class AllCards extends Component {
   render() {
     const { cards, handleClick, filterText } = this.props;
@@ -40,4 +37,7 @@ AllCards.propTypes = {
   filterText: PropTypes.string.isRequired,
 };
 export { AllCards };
-export const ConnectedAllCards = connect(mapStateToProps, mapDispatchToProps)(AllCards);
+export const ConnectedAllCards = connect(
+  mapStateToProps,
+  { handleClick: deleteCard },
+)(AllCards);

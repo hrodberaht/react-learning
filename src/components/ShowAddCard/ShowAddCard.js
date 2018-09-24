@@ -10,9 +10,6 @@ const mapStateToProps = state => ({
   isAddCardVisible: state.isAddCardVisible,
 });
 
-const mapDispatchToProps = dispatch => ({
-  handleClick: () => dispatch(toggleCardVisable()),
-});
 class ShowAddCard extends Component {
   render() {
     const { handleClick, isAddCardVisible } = this.props;
@@ -34,4 +31,7 @@ ShowAddCard.propTypes = {
 };
 
 export { ShowAddCard };
-export const ConnectedShowAddCard = connect(mapStateToProps, mapDispatchToProps)(ShowAddCard);
+export const ConnectedShowAddCard = connect(
+  mapStateToProps,
+  { handleClick: toggleCardVisable },
+)(ShowAddCard);

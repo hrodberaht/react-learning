@@ -18,7 +18,12 @@ describe('cards actions', () => {
   });
 
   it('filter should create filter action', () => {
-    expect(actions.filter('foo')).toEqual({
+    const event = {
+      target: {
+        value: 'foo',
+      },
+    };
+    expect(actions.filter(event)).toEqual({
       type: 'FILTER',
       filterText: 'foo',
     });
