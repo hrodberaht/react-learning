@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 export default class Search extends Component {
@@ -6,13 +6,15 @@ export default class Search extends Component {
     const { filter } = this.props;
     return (
       <div>
-        <label htmlFor="search">Search by name:</label>
-        <input id="search" type={"text"} onChange={filter}/>
+        <label htmlFor="search">
+          Search by name:
+          <input id="search" type="text" onChange={filter} />
+        </label>
       </div>
     );
   }
 }
 
 Search.propTypes = {
-  filter: PropTypes.func.isRequired
+  filter: PropTypes.func.isRequired,
 };

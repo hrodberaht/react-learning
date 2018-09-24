@@ -1,10 +1,8 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 
-import cards from "./cards";
-import toggleAddCard from "./toggleAddCard";
-import filterText from "./filterText";
-
-
+import cards from './cards';
+import toggleAddCard from './toggleAddCard';
+import filterText from './filterText';
 
 
-export default combineReducers({cards,toggleAddCard, filterText});
+export default combineReducers({ cards, toggleAddCard, filterText });

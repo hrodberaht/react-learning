@@ -26,7 +26,7 @@ export default class AllCards extends Component {
 }
 
 AllCards.propTypes = {
-  cards: PropTypes.array.isRequired,
+  cards: PropTypes.arrayOf.isRequired,
   handleClick: PropTypes.func.isRequired,
   filterText: PropTypes.string.isRequired,
 };

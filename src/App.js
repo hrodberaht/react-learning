@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import "./App.css";
+import React, { Component } from 'react';
+import './App.css';
 
-import VisibleCards from "./containers/VisibleCards";
-import Filter from "./containers/Filter";
-import ShowAddCard from "./containers/ShowAddCard";
+import VisibleCards from './containers/VisibleCards';
+import Filter from './containers/Filter';
+import ShowAddCard from './containers/ShowAddCard';
 
 class App extends Component {
   render() {
