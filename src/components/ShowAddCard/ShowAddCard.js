@@ -1,22 +1,20 @@
-import React, { Component } from "react";
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-import "./AddCard.css";
-import AddCardForm from "../../containers/AddCardForm";
+import './AddCard.css';
+import AddCardForm from '../../containers/AddCardForm';
 
 export default class ShowAddCard extends Component {
-  
   render() {
     const { handleClick, toggleAddCard } = this.props;
 
     return (
       <div>
-        <button type={"button"} onClick={handleClick}>
-          {toggleAddCard ? "Hide" : "Add Card"}
+        <button type="button" onClick={handleClick}>
+          {toggleAddCard ? 'Hide' : 'Add Card'}
         </button>
-        {toggleAddCard 
-        && 
-        <AddCardForm />}
+        {toggleAddCard
+        && <AddCardForm />}
       </div>
     );
   }
@@ -24,6 +22,5 @@ export default class ShowAddCard extends Component {
 
 ShowAddCard.propTypes = {
   handleClick: PropTypes.func.isRequired,
-  toggleAddCard: PropTypes.bool
-}
-
+  toggleAddCard: PropTypes.bool.isRequired,
+};
