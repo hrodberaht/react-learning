@@ -1,11 +1,7 @@
-import { configure, shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import React from 'react';
-import Adapter from 'enzyme-adapter-react-16';
 import { ShowAddCard } from './ShowAddCard';
 import { ConnectedAddCardForm } from './AddCardForm/AddCardForm';
-
-
-configure({ adapter: new Adapter() });
 
 describe('<ShowAddCard />', () => {
   let wrapper;

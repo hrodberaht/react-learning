@@ -11,22 +11,25 @@ const mapStateToProps = state => ({
 
 class AllCards extends Component {
   render() {
-    const { cards, handleClick, filterText } = this.props;
-    let list = cards;
-    if (filterText) {
-      list = cards.filter(card => card.name.toLowerCase().includes(filterText));
-    }
-
+    const { handleClick } = this.props;
+    const list = () => {
+      const { cards, filterText } = this.props;
+      if (filterText) {
+        const regexp = new RegExp(filterText, 'i');
+        return cards.filter(card => regexp.test(card.name));
+      }
+      return cards;
+    };
     return (
-      <div>
-        {list.map(card => (
+      <React.Fragment>
+        {list().map(card => (
           <Card
             key={card.id}
             card={card}
             handleClick={handleClick}
           />
         ))}
-      </div>
+      </React.Fragment>
     );
   }
 }
