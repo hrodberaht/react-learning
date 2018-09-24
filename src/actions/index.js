@@ -1,26 +1,22 @@
 let newId = 2; // only for add id to card
 
-const addCard = (name, email) => ({
+export const addCard = (name, email) => ({
   type: 'ADD_CARD',
   name,
   email,
   id: ++newId,
 });
 
-const deleteCard = id => ({
+export const deleteCard = id => ({
   type: 'DELETE_CARD',
   id,
 });
 
-const toggleAddCard = {
-  type: 'TOGGLE_ADD_CARD',
-};
+export const isAddCardVisible = () => ({
+  type: 'IS_ADD_CARD_VISABLE',
+});
 
-const filter = filterText => ({
+export const filter = filterText => ({
   type: 'FILTER',
   filterText,
 });
-
-export {
-  addCard, deleteCard, toggleAddCard, filter,
-};

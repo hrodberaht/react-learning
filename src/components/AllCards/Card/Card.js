@@ -45,5 +45,11 @@ export default class Card extends Component {
 
 Card.propTypes = {
   handleClick: PropTypes.func.isRequired,
-  card: PropTypes.shape.isRequired,
+  card: PropTypes.shape(
+    {
+      name: PropTypes.string,
+      email: PropTypes.string,
+      id: PropTypes.number,
+    },
+  ).isRequired,
 };

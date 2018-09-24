@@ -6,15 +6,14 @@ import AddCardForm from '../../containers/AddCardForm';
 
 export default class ShowAddCard extends Component {
   render() {
-    const { handleClick, toggleAddCard } = this.props;
+    const { handleClick, isAddCardVisible } = this.props;
 
     return (
       <div>
         <button type="button" onClick={handleClick}>
-          {toggleAddCard ? 'Hide' : 'Add Card'}
+          {isAddCardVisible ? 'Hide' : 'Add Card'}
         </button>
-        {toggleAddCard
-        && <AddCardForm />}
+        {isAddCardVisible && <AddCardForm />}
       </div>
     );
   }
@@ -22,5 +21,5 @@ export default class ShowAddCard extends Component {
 
 ShowAddCard.propTypes = {
   handleClick: PropTypes.func.isRequired,
-  toggleAddCard: PropTypes.bool.isRequired,
+  isAddCardVisible: PropTypes.bool.isRequired,
 };
