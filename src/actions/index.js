@@ -12,8 +12,8 @@ export const deleteCard = id => ({
   id,
 });
 
-export const isAddCardVisible = () => ({
-  type: 'IS_ADD_CARD_VISABLE',
+export const toggleCardVisable = () => ({
+  type: 'TOGGLE_CARD_VISABLE',
 });
 
 export const filter = filterText => ({

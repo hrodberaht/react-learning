@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { filter } from '../../actions';
 
-export default class Search extends Component {
+const mapDispatchToProps = dispatch => ({
+  handleChange: e => dispatch(filter(e.target.value)),
+});
+class Search extends Component {
   render() {
-    const { filter } = this.props;
+    const { handleChange } = this.props;
     return (
       <div>
         <label htmlFor="search">
           Search by name:
-          <input id="search" type="text" onChange={filter} />
+          <input id="search" type="text" onChange={handleChange} />
         </label>
       </div>
     );
@@ -16,5 +21,8 @@ export default class Search extends Component {
 }
 
 Search.propTypes = {
-  filter: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
 };
+
+export { Search };
+export const ConnectedSearch = connect(null, mapDispatchToProps)(Search);

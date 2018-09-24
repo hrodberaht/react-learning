@@ -7,7 +7,7 @@ describe('toggleAddCard reducer', () => {
 
   it('should toggle state to true', () => {
     expect(isAddCardVisible(false, {
-      type: 'IS_ADD_CARD_VISABLE',
+      type: 'TOGGLE_CARD_VISABLE',
     })).toEqual(true);
   });
 });
