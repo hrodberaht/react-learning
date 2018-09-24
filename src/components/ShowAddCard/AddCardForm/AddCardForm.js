@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { addCard } from '../../../actions';
 
 
-export default class AddCardForm extends Component {
+const mapDispatchToProps = dispatch => ({
+  handleAddCard: card => dispatch(addCard(card.name, card.email)),
+});
+
+class AddCardForm extends Component {
   state = {
     name: '',
     email: '',
@@ -59,3 +65,6 @@ export default class AddCardForm extends Component {
 AddCardForm.propTypes = {
   handleAddCard: PropTypes.func.isRequired,
 };
+
+export { AddCardForm };
+export const ConnectedAddCardForm = connect(null, mapDispatchToProps)(AddCardForm);

@@ -1,8 +1,9 @@
 import { configure, shallow } from 'enzyme';
 import React from 'react';
 import Adapter from 'enzyme-adapter-react-16';
-import ShowAddCard from './ShowAddCard';
-import AddCardForm from '../../containers/AddCardForm';
+import { ShowAddCard } from './ShowAddCard';
+import { ConnectedAddCardForm } from './AddCardForm/AddCardForm';
+
 
 configure({ adapter: new Adapter() });
 
@@ -26,7 +27,7 @@ describe('<ShowAddCard />', () => {
 
   it('should render AddCardForm when prop toggleAddCard is true', () => {
     wrapper.setProps({ isAddCardVisible: true });
-    expect(wrapper.find(AddCardForm).length).toBe(1);
+    expect(wrapper.find(ConnectedAddCardForm).length).toBe(1);
   });
 
   it('should run function after click', () => {
