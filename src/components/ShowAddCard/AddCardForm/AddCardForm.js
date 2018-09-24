@@ -3,11 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addCard } from '../../../actions';
 
-
-const mapDispatchToProps = dispatch => ({
-  handleAddCard: card => dispatch(addCard(card.name, card.email)),
-});
-
 class AddCardForm extends Component {
   state = {
     name: '',
@@ -19,9 +14,9 @@ class AddCardForm extends Component {
     this.setState({ [e.target.id]: e.target.value });
   };
 
-  handleAdd = (card) => {
+  handleAdd = (name, email) => {
     const { handleAddCard } = this.props;
-    handleAddCard(card);
+    handleAddCard(name, email);
     this.setState({
       name: '',
       email: '',
@@ -53,7 +48,7 @@ class AddCardForm extends Component {
         <button
           type="button"
           disabled={name.length < 3}
-          onClick={() => this.handleAdd(this.state)}
+          onClick={() => this.handleAdd(name, email)}
         >
           Add
         </button>
@@ -67,4 +62,7 @@ AddCardForm.propTypes = {
 };
 
 export { AddCardForm };
-export const ConnectedAddCardForm = connect(null, mapDispatchToProps)(AddCardForm);
+export const ConnectedAddCardForm = connect(
+  null,
+  { handleAddCard: addCard },
+)(AddCardForm);

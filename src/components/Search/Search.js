@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { filter } from '../../actions';
 
-const mapDispatchToProps = dispatch => ({
-  handleChange: e => dispatch(filter(e.target.value)),
-});
 class Search extends Component {
   render() {
     const { handleChange } = this.props;
@@ -25,4 +22,4 @@ Search.propTypes = {
 };
 
 export { Search };
-export const ConnectedSearch = connect(null, mapDispatchToProps)(Search);
+export const ConnectedSearch = connect(null, { handleChange: filter })(Search);
