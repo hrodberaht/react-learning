@@ -25,8 +25,8 @@ describe('cards actions', () => {
   });
 
   it('toggleAddCard should create toggleAddcard action', () => {
-    expect(actions.toggleAddCard).toEqual({
-      type: 'TOGGLE_ADD_CARD',
+    expect(actions.isAddCardVisible()).toEqual({
+      type: 'IS_ADD_CARD_VISABLE',
     });
   });
 });

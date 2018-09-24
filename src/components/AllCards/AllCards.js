@@ -17,7 +17,7 @@ export default class AllCards extends Component {
           <Card
             key={card.id}
             card={card}
-            handleClick={id => handleClick(id)}
+            handleClick={handleClick}
           />
         ))}
       </div>
@@ -26,7 +26,7 @@ export default class AllCards extends Component {
 }
 
 AllCards.propTypes = {
-  cards: PropTypes.arrayOf.isRequired,
+  cards: PropTypes.arrayOf(PropTypes.object).isRequired,
   handleClick: PropTypes.func.isRequired,
   filterText: PropTypes.string.isRequired,
 };

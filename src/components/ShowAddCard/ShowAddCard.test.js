@@ -9,7 +9,7 @@ configure({ adapter: new Adapter() });
 describe('<ShowAddCard />', () => {
   let wrapper;
   const props = {
-    toggleAddCard: false,
+    isAddCardVisible: false,
     handleClick: jest.fn(),
   };
   beforeEach(() => {
@@ -25,7 +25,7 @@ describe('<ShowAddCard />', () => {
   });
 
   it('should render AddCardForm when prop toggleAddCard is true', () => {
-    wrapper.setProps({ toggleAddCard: true });
+    wrapper.setProps({ isAddCardVisible: true });
     expect(wrapper.find(AddCardForm).length).toBe(1);
   });
 
