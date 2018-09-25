@@ -14,14 +14,14 @@ describe('<ShowAddCard />', () => {
   });
 
   it('should render without crash', () => {
-    expect(wrapper.length).toBe(1);
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should have button', () => {
     expect(wrapper.find('button').length).toBe(1);
   });
 
-  it('should render AddCardForm when prop toggleAddCard is true', () => {
+  it('should render AddCardForm when prop isAddCardVisible is true', () => {
     wrapper.setProps({ isAddCardVisible: true });
     expect(wrapper.find(ConnectedAddCardForm).length).toBe(1);
   });
