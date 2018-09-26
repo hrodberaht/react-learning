@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'
+
 
 export default class AddCardForm extends Component {
   state = {
@@ -47,4 +49,8 @@ export default class AddCardForm extends Component {
       </div>
     );
   }
+}
+
+AddCardForm.propTypes = {
+  handleAddCard: PropTypes.func.isRequired,
 }
