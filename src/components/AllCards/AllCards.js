@@ -1,31 +1,25 @@
-import React, { Component } from "react";
-import Card from "./Card/Card";
-import PropTypes from 'prop-types'
-
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Card from './Card/Card';
 
 
 export default class AllCards extends Component {
-  
   render() {
-    const {  cards, handleClick, filterText } = this.props;
+    const { cards, handleClick, filterText } = this.props;
     let list = cards;
     if (filterText) {
-      list = cards.filter((card) => {
-          return card.name.toLowerCase().includes(filterText);
-      });
+      list = cards.filter(card => card.name.toLowerCase().includes(filterText));
     }
 
     return (
       <div>
-        {list.map(card => {
-          return (
-            <Card
-              key={card.id}
-              card={card}
-              handleClick={id => handleClick(id)}
-            />
-          );
-        })}
+        {list.map(card => (
+          <Card
+            key={card.id}
+            card={card}
+            handleClick={id => handleClick(id)}
+          />
+        ))}
       </div>
     );
   }
@@ -34,5 +28,5 @@ export default class AllCards extends Component {
 AllCards.propTypes = {
   cards: PropTypes.array.isRequired,
   handleClick: PropTypes.func.isRequired,
-  filterText: PropTypes.string,
-}
+  filterText: PropTypes.string.isRequired,
+};
