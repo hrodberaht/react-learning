@@ -4,63 +4,32 @@ import "./App.css";
 import AddCard from "./components/AddCard/AddCard";
 import AllCards from "./components/AllCards/AllCards";
 import Search from "./components/Search/Search";
-import { addCard } from "./store";
+import { addCard, toggleAddCard, filter, deleteCard } from "./store";
+import { connect } from "react-redux";
 
+const mapStateToProps = state => {
+  return { state };
+};
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      cards: [],
-      showAddCard: false,
-      lastId: 2,
-      filterText: ""
-    };
-  }
-  subscribe = () => this.props.store.subscribe(() => {
-    const newState = this.props.store.getState();
-    this.setState({cards: newState.cards});
-  })
-
-  componentWillMount() {
-    const { getState } = this.props.store;
-    const state = getState();
-    this.setState({
-      cards: state.cards
-    });
-    this.subscribe();  
-  }
-
-  componentWillUnmount() {
-    this.subscribe.unsubscribe();
-  }
-
   onShowAddCard = () => {
-    const { showAddCard } = this.state;
-    this.setState({ showAddCard: !showAddCard });
+    this.props.dispatch(toggleAddCard);
   };
-  
 
   onAddCard = card => {
-    const { name, email} = card;
-    const { dispatch } = this.props.store;
-    dispatch(addCard(name, email))
+    const { name, email } = card;
+    this.props.dispatch(addCard(name, email));
   };
 
   onDeleteCard = id => {
-    const { cards } = this.state;
-    const index = cards.findIndex(card => {
-      return card.id === id;
-    });
-    cards.splice(index, 1);
-    this.setState({ cards: cards });
+    this.props.dispatch(deleteCard(id));
   };
 
   onFilter = e => {
-    this.setState({ filterText: e.target.value });
+    this.props.dispatch(filter(e.target.value));
   };
 
   render() {
-    const { cards, showAddCard, filterText } = this.state;
+    const { cards, showAddCard, filterText } = this.props.state;
     return (
       <div className="App">
         <AddCard
@@ -78,5 +47,5 @@ class App extends Component {
     );
   }
 }
-
-export default App;
+export { App };
+export default connect(mapStateToProps)(App);
