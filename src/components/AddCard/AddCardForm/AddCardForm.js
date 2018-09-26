@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import "./AddCard.css";
 
-export default class AddCard extends Component {
+export default class AddCardForm extends Component {
   state = {
     name: "",
     email: ""
   };
+
   handleChange = e => {
     e.preventDefault();
     this.setState({ [e.target.id]: e.target.value });
@@ -21,13 +21,22 @@ export default class AddCard extends Component {
   };
 
   render() {
-    const { handleClick, showAddCard } = this.props;
-    const form = (
+    return (
       <div className={"AddCard"}>
         <label htmlFor={"name"}>Name: </label>
-        <input id={"name"} type={"text"} value={this.state.name} onChange={this.handleChange} />
+        <input
+          id={"name"}
+          type={"text"}
+          value={this.state.name}
+          onChange={this.handleChange}
+        />
         <label htmlFor={"email"}>Email: </label>
-        <input id={"email"} type={"email"} value={this.state.email} onChange={this.handleChange} />
+        <input
+          id={"email"}
+          type={"email"}
+          value={this.state.email}
+          onChange={this.handleChange}
+        />
         <button
           type={"button"}
           disabled={this.state.name.length < 3}
@@ -35,15 +44,6 @@ export default class AddCard extends Component {
         >
           Add
         </button>
-      </div>
-    );
-
-    return (
-      <div>
-        <button type={"button"} onClick={handleClick}>
-          {showAddCard ? "Hide" : "Add Card"}
-        </button>
-        {showAddCard && form}
       </div>
     );
   }

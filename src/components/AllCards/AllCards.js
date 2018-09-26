@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Card from "./Card/Card";
 
-export default class AllCards extends Component {
+export default class AllCards2 extends Component {
+  
   render() {
     const { cards, handleClick, filterText } = this.props;
     let list = cards;
