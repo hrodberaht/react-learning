@@ -16,11 +16,6 @@ describe('<ShowAddCard />', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should call handleAddCard function', () => {
-    wrapper.find('form').simulate('submit', { preventDefault() {} });
-    expect(props.handleAddCard.mock.calls.length).toBe(1);
-  });
-
   it('should state be empty strings', () => {
     expect(wrapper.state().name).toBe('');
     expect(wrapper.state().email).toBe('');
@@ -31,5 +26,21 @@ describe('<ShowAddCard />', () => {
     wrapper.find('#email').simulate('change', { target: { value: 'test@test.pl', id: 'email' } });
 
     expect(wrapper.state()).toEqual({ name: 'John', email: 'test@test.pl' });
+  });
+
+  it('should call handleAddCard function with name and email', () => {
+    wrapper.find('#name').simulate('change', { target: { value: 'John', id: 'name' } });
+    wrapper.find('#email').simulate('change', { target: { value: 'test@test.pl', id: 'email' } });
+    wrapper.find('form').simulate('submit', { preventDefault() {} });
+
+    expect(props.handleAddCard).toHaveBeenCalledWith('John', 'test@test.pl');
+  });
+
+  it('should clear state after submit', () => {
+    wrapper.find('#name').simulate('change', { target: { value: 'John', id: 'name' } });
+    wrapper.find('#email').simulate('change', { target: { value: 'test@test.pl', id: 'email' } });
+    wrapper.find('form').simulate('submit', { preventDefault() {} });
+
+    expect(wrapper.state()).toEqual({ name: '', email: '' });
   });
 });
