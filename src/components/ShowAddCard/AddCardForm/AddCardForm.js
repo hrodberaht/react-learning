@@ -10,11 +10,12 @@ class AddCardForm extends Component {
   };
 
   handleChange = (e) => {
-    e.preventDefault();
     this.setState({ [e.target.id]: e.target.value });
   };
 
-  handleAdd = (name, email) => {
+  handleAdd = (e) => {
+    e.preventDefault();
+    const { name, email } = this.state;
     const { handleAddCard } = this.props;
     handleAddCard(name, email);
     this.setState({
@@ -26,17 +27,15 @@ class AddCardForm extends Component {
   render() {
     const { name, email } = this.state;
     return (
+
       <div className="AddCard">
-        <label htmlFor="name">
-          Name:
+        <form onSubmit={this.handleAdd}>
           <input
             id="name"
             type="text"
             value={name}
             onChange={this.handleChange}
           />
-        </label>
-        <label htmlFor="email">
           Email:
           <input
             id="email"
@@ -44,14 +43,14 @@ class AddCardForm extends Component {
             value={email}
             onChange={this.handleChange}
           />
-        </label>
-        <button
-          type="button"
-          disabled={name.length < 3}
-          onClick={() => this.handleAdd(name, email)}
-        >
+          <button
+            id="submit"
+            type="submit"
+            disabled={name.length < 3}
+          >
           Add
-        </button>
+          </button>
+        </form>
       </div>
     );
   }

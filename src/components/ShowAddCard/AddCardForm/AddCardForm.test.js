@@ -16,8 +16,8 @@ describe('<ShowAddCard />', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should run function after click', () => {
-    wrapper.find('button').simulate('click');
+  it('should call handleAddCard function', () => {
+    wrapper.find('form').simulate('submit', { preventDefault() {} });
     expect(props.handleAddCard.mock.calls.length).toBe(1);
   });
 
@@ -25,5 +25,11 @@ describe('<ShowAddCard />', () => {
     expect(wrapper.state().name).toBe('');
     expect(wrapper.state().email).toBe('');
   });
-  
+
+  it('should change state after change input', () => {
+    wrapper.find('#name').simulate('change', { target: { value: 'John', id: 'name' } });
+    wrapper.find('#email').simulate('change', { target: { value: 'test@test.pl', id: 'email' } });
+
+    expect(wrapper.state()).toEqual({ name: 'John', email: 'test@test.pl' });
+  });
 });
