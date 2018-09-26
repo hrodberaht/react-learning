@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { filter } from '../../actions';
 
-class Search extends Component {
+export class Search extends Component {
   render() {
     const { handleChange } = this.props;
     return (
@@ -21,5 +21,4 @@ Search.propTypes = {
   handleChange: PropTypes.func.isRequired,
 };
 
-export { Search };
 export const ConnectedSearch = connect(null, { handleChange: filter })(Search);

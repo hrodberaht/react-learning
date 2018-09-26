@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addCard } from '../../../actions';
 
-class AddCardForm extends Component {
+export class AddCardForm extends Component {
   state = {
     name: '',
     email: '',
@@ -60,7 +60,6 @@ AddCardForm.propTypes = {
   handleAddCard: PropTypes.func.isRequired,
 };
 
-export { AddCardForm };
 export const ConnectedAddCardForm = connect(
   null,
   { handleAddCard: addCard },
