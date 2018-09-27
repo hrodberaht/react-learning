@@ -1,6 +1,20 @@
+
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+
 import * as actions from './index';
 
+const mockStore = configureMockStore([thunk]);
+
 describe('cards actions', () => {
+  it('should run fetchCards action', async () => {
+    const store = mockStore();
+    await store.dispatch(actions.fetchCards());
+    const act = store.getActions();
+
+    expect(act[0].type).toEqual('FETCH_CARDS');
+  });
+
   it('addCard should create addCard action', () => {
     const expected = {
       type: 'ADD_CARD',
