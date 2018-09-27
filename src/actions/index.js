@@ -5,7 +5,8 @@ export const fetchCards = () => dispatch => fetch('http://localhost:3004/cards')
       type: 'FETCH_CARDS',
       cards,
     });
-  });
+  })
+  .catch(() => alert('Sorry server not working!!!'));
 
 
 export const addCard = (name, email) => ({
