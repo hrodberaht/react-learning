@@ -9,13 +9,13 @@ import './index.css';
 import App from './App';
 
 import rootReducer from './reducers';
-import updateServer from './middleware/upadteServer';
+// import updateServer from './middleware/upadteServer';
 
 /* eslint-disable no-underscore-dangle */
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 /* eslint-enable */
 
-const middleware = [updateServer, thunk];
+const middleware = [thunk];
 
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(...middleware)));
 
