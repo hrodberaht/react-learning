@@ -1,18 +1,7 @@
-const initialState = [
-  {
-    id: 1,
-    name: 'John',
-    email: 'john@gmail.com',
-  },
-  {
-    id: 2,
-    name: 'Rob',
-    email: 'rob@gmail.com',
-  },
-];
-
-const cards = (state = initialState, actions) => {
+const cards = (state = [], actions) => {
   switch (actions.type) {
+    case 'FETCH_CARDS':
+      return [...state, ...actions.cards];
     case 'ADD_CARD':
       return [...state, { id: actions.id, name: actions.name, email: actions.email }];
     case 'DELETE_CARD':

@@ -15,7 +15,7 @@ describe('cards reducers', () => {
   ];
 
   it('should have initialstate', () => {
-    expect(cards(undefined, {})).toEqual(initialState);
+    expect(cards(undefined, {})).toEqual([]);
   });
 
   it('should add card to cards', () => {

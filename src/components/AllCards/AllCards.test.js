@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import { AllCards } from './AllCards';
 
 describe('<AllCards />', () => {
@@ -18,11 +18,12 @@ describe('<AllCards />', () => {
       },
     ],
     handleClick: jest.fn(),
+    handleFetch: jest.fn(),
     filterText: '',
   };
 
   beforeEach(() => {
-    wrapper = shallow(<AllCards {...props} />);
+    wrapper = mount(<AllCards {...props} />);
   });
 
   it('should render component witout crash', () => {

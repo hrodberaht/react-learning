@@ -1,3 +1,13 @@
+export const fetchCards = () => dispatch => fetch('http://localhost:3004/cards')
+  .then(res => res.json())
+  .then((cards) => {
+    dispatch({
+      type: 'FETCH_CARDS',
+      cards,
+    });
+  });
+
+
 export const addCard = (name, email) => ({
   type: 'ADD_CARD',
   name,
