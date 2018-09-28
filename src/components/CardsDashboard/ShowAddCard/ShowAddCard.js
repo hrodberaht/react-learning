@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import './AddCard.css';
 import { ConnectedAddCardForm } from './AddCardForm/AddCardForm';
-import { toggleCardVisable } from '../../actions';
+import { toggleCardVisable } from '../../../actions';
 
 
 export class ShowAddCard extends Component {

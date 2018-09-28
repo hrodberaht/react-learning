@@ -2,14 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Card from './Card/Card';
-import { deleteCard, fetchCards } from '../../actions';
+import { deleteCard } from '../../../actions';
 
 export class AllCards extends Component {
-  componentDidMount() {
-    const { handleFetch } = this.props;
-    handleFetch();
-  }
-
   render() {
     const { handleClick } = this.props;
     const list = () => {
@@ -37,7 +32,6 @@ export class AllCards extends Component {
 AllCards.propTypes = {
   cards: PropTypes.arrayOf(PropTypes.object).isRequired,
   handleClick: PropTypes.func.isRequired,
-  handleFetch: PropTypes.func.isRequired,
 
   filterText: PropTypes.string.isRequired,
 };
@@ -51,6 +45,5 @@ export const ConnectedAllCards = connect(
   mapStateToProps,
   {
     handleClick: deleteCard,
-    handleFetch: fetchCards,
   },
 )(AllCards);
