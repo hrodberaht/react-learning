@@ -20,7 +20,7 @@ const deleteCardSucces = id => ({
   id,
 });
 
-const url = 'http://localhost:3004/cards';
+const url = 'http://localhost:3004/cards/';
 
 export const fetchCards = () => dispatch => fetch(url)
   .then(res => res.json())
