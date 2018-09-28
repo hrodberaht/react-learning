@@ -5,7 +5,7 @@ import Card from './Card/Card';
 import { deleteCard, fetchCards } from '../../actions';
 
 export class AllCards extends Component {
-  componentWillMount() {
+  componentDidMount() {
     const { handleFetch } = this.props;
     handleFetch();
   }

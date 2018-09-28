@@ -48,7 +48,7 @@ describe('cards actions', () => {
       id: 1,
     };
     fetchMock
-      .delete(`${url}${card.id}`, {});
+      .delete(url + card.id, {});
 
     await store.dispatch(actions.deleteCard(card.id));
     const act = store.getActions();
