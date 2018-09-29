@@ -4,6 +4,7 @@ import { shallow } from 'enzyme';
 import { App } from './App';
 import Home from './components/Home/Home';
 import CardsDashboard from './components/CardsDashboard/CardsDashboard';
+import NotFound from './components/NotFound/NotFound';
 
 describe('<App />', () => {
   let wrapper;
@@ -29,5 +30,9 @@ describe('<App />', () => {
 
   it('should route /cards should link to Cards', () => {
     expect(wrapper.find('Route[path="/cards"]').props().component).toEqual(CardsDashboard);
+  });
+
+  it('should route /cards should link to Cards', () => {
+    expect(wrapper.find('Route').last().props().component).toEqual(NotFound);
   });
 });

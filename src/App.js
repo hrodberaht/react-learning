@@ -13,6 +13,7 @@ import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 
 import { fetchCards } from './actions';
+import NotFound from './components/NotFound/NotFound';
 
 
 export class App extends Component {
@@ -29,7 +30,7 @@ export class App extends Component {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/cards" component={CardsDashboard} />
-            <Route component={() => <h1>NO FOUND 404</h1>} />
+            <Route component={NotFound} />
           </Switch>
         </div>
       </Router>
