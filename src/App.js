@@ -14,6 +14,7 @@ import Home from './components/Home/Home';
 
 import { fetchCards } from './actions';
 import NotFound from './components/NotFound/NotFound';
+import ProductsDashboard from './components/ProductsDashboard/ProductsDashboard';
 
 
 export class App extends Component {
@@ -30,6 +31,8 @@ export class App extends Component {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/cards" component={CardsDashboard} />
+            <Route path="/products" component={ProductsDashboard} />
+
             <Route component={NotFound} />
           </Switch>
         </div>
