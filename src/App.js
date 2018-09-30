@@ -45,4 +45,4 @@ App.propTypes = {
   handleFetch: PropTypes.func.isRequired,
 };
 
-export default connect(null, { handleFetch: fetchCards })(App);
+export const ConnectedApp = connect(null, { handleFetch: fetchCards })(App);
