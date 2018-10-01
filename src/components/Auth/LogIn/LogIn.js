@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { logIn } from '../../../actions';
 
 export default class LogIn extends Component {
     state = {
@@ -12,8 +14,10 @@ export default class LogIn extends Component {
     }
 
     handleSubmit = (e) => {
+      const { login, email } = this.state;
+      const { handleLogIn } = this.props;
       e.preventDefault();
-
+      handleLogIn(login, email);
       this.setState({
         login: '',
         email: '',
@@ -32,6 +36,8 @@ export default class LogIn extends Component {
     }
 }
 
-LogIn.propTypes = {
+export const ConnectedLogIn = connect(null, { handleLogIn: logIn })(LogIn);
 
+LogIn.propTypes = {
+  handleLogIn: PropTypes.func.isRequired,
 };

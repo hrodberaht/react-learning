@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import LogIn from './LogIn/LogIn';
+import { ConnectedLogIn } from './LogIn/LogIn';
 
 export default class Auth extends Component {
   render() {
     return (
       <div>
-        <LogIn />
+        <ConnectedLogIn />
       </div>
     );
   }
