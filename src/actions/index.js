@@ -24,6 +24,8 @@ const logInSucces = () => ({
   type: 'LOGIN',
   isAuthenticated: true,
 });
+
+
 const url = 'http://localhost:3004/cards/';
 
 export const fetchCards = () => dispatch => fetch(url)
@@ -62,6 +64,11 @@ export const logIn = (login, email) => (dispatch) => {
 
   return errorAfterFetch;
 };
+
+export const logOut = () => ({
+  type: 'LOGOUT',
+  isAuthenticated: false,
+});
 
 export const toggleCardVisable = () => ({
   type: 'TOGGLE_CARD_VISABLE',
