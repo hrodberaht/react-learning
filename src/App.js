@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import './App.css';
-import CardsDashboard from './components/CardsDashboard/CardsDashboard';
+import { ConnectedCardsDashboard } from './components/CardsDashboard/CardsDashboard';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 
@@ -31,7 +31,7 @@ export class App extends Component {
           <Header />
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/cards" component={CardsDashboard} />
+            <Route path="/cards" component={ConnectedCardsDashboard} />
             <Route path="/products" component={ProductsDashboard} />
             <Route path="/login" component={Auth} />
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import { logIn } from '../../../actions';
 
 export default class LogIn extends Component {
@@ -15,13 +16,14 @@ export default class LogIn extends Component {
 
     handleSubmit = (e) => {
       const { login, email } = this.state;
-      const { handleLogIn } = this.props;
+      const { handleLogIn, history } = this.props;
       e.preventDefault();
       handleLogIn(login, email);
       this.setState({
         login: '',
         email: '',
       });
+      history.push('/cards');
     }
 
     render() {
@@ -36,7 +38,7 @@ export default class LogIn extends Component {
     }
 }
 
-export const ConnectedLogIn = connect(null, { handleLogIn: logIn })(LogIn);
+export const ConnectedLogIn = withRouter(connect(null, { handleLogIn: logIn })(LogIn));
 
 LogIn.propTypes = {
   handleLogIn: PropTypes.func.isRequired,

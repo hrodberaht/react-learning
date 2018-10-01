@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 import './NavBar.css';
 
-export default class NavBar extends Component {
+export class NavBar extends Component {
   render() {
+    const { auth } = this.props;
     return (
       <nav className="NavBar">
         <ul>
@@ -18,10 +21,23 @@ export default class NavBar extends Component {
             <NavLink to="/products">Products</NavLink>
           </li>
           <li>
-            <NavLink to="/login">Login</NavLink>
+            {
+              auth
+                ? <NavLink to="/login">Log out</NavLink>
+                : <NavLink to="/login">Login</NavLink>
+          }
           </li>
         </ul>
       </nav>
     );
   }
 }
+const mapStateToProps = state => ({
+  auth: state.auth,
+});
+
+export const ConnectedNavBar = connect(mapStateToProps)(NavBar);
+
+NavBar.propTypes = {
+  auth: PropTypes.bool.isRequired,
+};
