@@ -17,6 +17,9 @@ export default class NavBar extends Component {
           <li>
             <NavLink to="/products">Products</NavLink>
           </li>
+          <li>
+            <NavLink to="/login">Login</NavLink>
+          </li>
         </ul>
       </nav>
     );

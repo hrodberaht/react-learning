@@ -39,6 +39,10 @@ ShallowWrapper {
                 />
                 <Route
                         component={[Function]}
+                        path="/login"
+                />
+                <Route
+                        component={[Function]}
                 />
         </Switch>
 </div>,
@@ -64,6 +68,10 @@ ShallowWrapper {
             <Route
                         component={[Function]}
                         path="/products"
+            />
+            <Route
+                        component={[Function]}
+                        path="/login"
             />
             <Route
                         component={[Function]}
@@ -101,6 +109,10 @@ ShallowWrapper {
               <Route
                 component={[Function]}
                 path="/products"
+/>,
+              <Route
+                component={[Function]}
+                path="/login"
 />,
               <Route
                 component={[Function]}
@@ -152,6 +164,18 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "component": [Function],
+                "path": "/login",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
               },
               "ref": null,
               "rendered": null,
@@ -191,6 +215,10 @@ ShallowWrapper {
                     />
                     <Route
                               component={[Function]}
+                              path="/login"
+                    />
+                    <Route
+                              component={[Function]}
                     />
           </Switch>
 </div>,
@@ -216,6 +244,10 @@ ShallowWrapper {
               <Route
                             component={[Function]}
                             path="/products"
+              />
+              <Route
+                            component={[Function]}
+                            path="/login"
               />
               <Route
                             component={[Function]}
@@ -256,6 +288,10 @@ ShallowWrapper {
 />,
                 <Route
                   component={[Function]}
+                  path="/login"
+/>,
+                <Route
+                  component={[Function]}
 />,
               ],
             },
@@ -293,6 +329,18 @@ ShallowWrapper {
                 "props": Object {
                   "component": [Function],
                   "path": "/products",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "path": "/login",
                 },
                 "ref": null,
                 "rendered": null,
