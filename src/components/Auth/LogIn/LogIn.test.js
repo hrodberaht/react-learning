@@ -1,24 +1,23 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { AddCardForm } from './AddCardForm';
+import LogIn from './LogIn';
 
-describe('<ShowAddCard />', () => {
+describe('<LogIn />', () => {
   let wrapper;
   const props = {
-    isAddCardVisible: false,
-    handleAddCard: jest.fn(),
+    handleLogIn: jest.fn(),
+    history: [],
   };
 
   const setValuesToInputs = () => {
-    wrapper.find('#name').simulate('change', { target: { value: 'John', id: 'name' } });
+    wrapper.find('#login').simulate('change', { target: { value: 'John', id: 'login' } });
     wrapper.find('#email').simulate('change', { target: { value: 'test@test.pl', id: 'email' } });
   };
-
   beforeEach(() => {
-    wrapper = shallow(<AddCardForm {...props} />);
+    wrapper = shallow(<LogIn {...props} />);
   });
 
-  it('should render without crash', () => {
+  it('should component render', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -29,22 +28,22 @@ describe('<ShowAddCard />', () => {
     expect(wrapper.instance().handleChange).toHaveBeenCalled();
   });
 
-  it('should state be empty strings', () => {
-    const { name, email } = wrapper.state();
-    expect(name).toBe('');
+  it('should login and email in state be empty strings', () => {
+    const { login, email } = wrapper.state();
+    expect(login).toBe('');
     expect(email).toBe('');
   });
 
   it('should change state after change input', () => {
     setValuesToInputs();
-    expect(wrapper.state()).toEqual({ name: 'John', email: 'test@test.pl' });
+    expect(wrapper.state()).toEqual({ login: 'John', email: 'test@test.pl' });
   });
 
-  it('should call handleAddCard function with name and email', () => {
+  it('should call handleLogIn function with login and email', () => {
     setValuesToInputs();
     wrapper.find('form').simulate('submit', { preventDefault() {} });
+    expect(props.handleLogIn).toHaveBeenCalled();
 
-    expect(props.handleAddCard).toHaveBeenCalledWith('John', 'test@test.pl');
-    expect(wrapper.state()).toEqual({ name: '', email: '' });
+    expect(wrapper.state()).toEqual({ login: '', email: '' });
   });
 });
