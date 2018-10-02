@@ -8,19 +8,24 @@ import { ConnectedShowAddCard } from './ShowAddCard/ShowAddCard';
 import { ConnectedAllCards } from './AllCards/AllCards';
 
 export class CardsDashboard extends Component {
-  render() {
+  renderResult = () => {
     const { auth } = this.props;
+    if (auth) {
+      return (
+        <React.Fragment>
+          <ConnectedShowAddCard />
+          <ConnectedSearch />
+          <ConnectedAllCards />
+        </React.Fragment>
+      );
+    }
+    return <Redirect to="/login" />;
+  }
+
+  render() {
     return (
       <div>
-        {auth
-          ? (
-            <div>
-              <ConnectedShowAddCard />
-              <ConnectedSearch />
-              <ConnectedAllCards />
-            </div>
-          )
-          : <Redirect to="/login" />}
+        {this.renderResult()}
       </div>
     );
   }
