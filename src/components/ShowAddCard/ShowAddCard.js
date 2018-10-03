@@ -1,22 +1,25 @@
-import React, { Component } from "react";
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-import "./AddCard.css";
-import AddCardForm from "../../containers/AddCardForm";
+import './AddCard.css';
+import { ConnectedAddCardForm } from './AddCardForm/AddCardForm';
+import { toggleCardVisable } from '../../actions';
 
-export default class ShowAddCard extends Component {
-  
+const mapStateToProps = state => ({
+  isAddCardVisible: state.isAddCardVisible,
+});
+
+class ShowAddCard extends Component {
   render() {
-    const { handleClick, toggleAddCard } = this.props;
+    const { handleClick, isAddCardVisible } = this.props;
 
     return (
       <div>
-        <button type={"button"} onClick={handleClick}>
-          {toggleAddCard ? "Hide" : "Add Card"}
+        <button type="button" onClick={handleClick}>
+          {isAddCardVisible ? 'Hide' : 'Add Card'}
         </button>
-        {toggleAddCard 
-        && 
-        <AddCardForm />}
+        {isAddCardVisible && <ConnectedAddCardForm />}
       </div>
     );
   }
@@ -24,6 +27,11 @@ export default class ShowAddCard extends Component {
 
 ShowAddCard.propTypes = {
   handleClick: PropTypes.func.isRequired,
-  toggleAddCard: PropTypes.bool
-}
+  isAddCardVisible: PropTypes.bool.isRequired,
+};
 
+export { ShowAddCard };
+export const ConnectedShowAddCard = connect(
+  mapStateToProps,
+  { handleClick: toggleCardVisable },
+)(ShowAddCard);

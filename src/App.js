@@ -1,17 +1,17 @@
-import React, { Component } from "react";
-import "./App.css";
+import React, { Component } from 'react';
+import './App.css';
 
-import VisibleCards from "./containers/VisibleCards";
-import Filter from "./containers/Filter";
-import ShowAddCard from "./containers/ShowAddCard";
+import { ConnectedSearch } from './components/Search/Search';
+import { ConnectedShowAddCard } from './components/ShowAddCard/ShowAddCard';
+import { ConnectedAllCards } from './components/AllCards/AllCards';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <ShowAddCard />
-        <Filter />
-        <VisibleCards />
+        <ConnectedShowAddCard />
+        <ConnectedSearch />
+        <ConnectedAllCards />
       </div>
     );
   }
