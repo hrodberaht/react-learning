@@ -1,11 +1,11 @@
-const cards = (state = [], actions) => {
-  switch (actions.type) {
+const cards = (state = [], action) => {
+  switch (action.type) {
     case 'FETCH_CARDS':
-      return [...state, ...actions.cards];
+      return [...state, ...action.cards];
     case 'ADD_CARD':
-      return [...state, { id: actions.id, name: actions.name, email: actions.email }];
+      return [...state, { id: action.id, name: action.name, email: action.email }];
     case 'DELETE_CARD':
-      return state.filter(card => card.id !== actions.id);
+      return state.filter(card => card.id !== action.id);
     default:
       return state;
   }

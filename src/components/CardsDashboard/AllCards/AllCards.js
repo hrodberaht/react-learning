@@ -5,19 +5,20 @@ import Card from './Card/Card';
 import { deleteCard } from '../../../actions';
 
 export class AllCards extends Component {
+  list = () => {
+    const { cards, filterText } = this.props;
+    if (filterText) {
+      const regexp = new RegExp(filterText, 'i');
+      return cards.filter(card => regexp.test(card.name));
+    }
+    return cards;
+  };
+
   render() {
     const { handleClick } = this.props;
-    const list = () => {
-      const { cards, filterText } = this.props;
-      if (filterText) {
-        const regexp = new RegExp(filterText, 'i');
-        return cards.filter(card => regexp.test(card.name));
-      }
-      return cards;
-    };
     return (
       <React.Fragment>
-        {list().map(card => (
+        {this.list().map(card => (
           <Card
             key={card.id}
             card={card}
@@ -28,13 +29,6 @@ export class AllCards extends Component {
     );
   }
 }
-
-AllCards.propTypes = {
-  cards: PropTypes.arrayOf(PropTypes.object).isRequired,
-  handleClick: PropTypes.func.isRequired,
-
-  filterText: PropTypes.string.isRequired,
-};
 
 const mapStateToProps = state => ({
   cards: state.cards,
@@ -47,3 +41,10 @@ export const ConnectedAllCards = connect(
     handleClick: deleteCard,
   },
 )(AllCards);
+
+AllCards.propTypes = {
+  cards: PropTypes.arrayOf(PropTypes.object).isRequired,
+  handleClick: PropTypes.func.isRequired,
+
+  filterText: PropTypes.string.isRequired,
+};

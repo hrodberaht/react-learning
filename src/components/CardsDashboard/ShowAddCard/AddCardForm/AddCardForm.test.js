@@ -29,12 +29,6 @@ describe('<ShowAddCard />', () => {
     expect(wrapper.instance().handleChange).toHaveBeenCalled();
   });
 
-  it('should state be empty strings', () => {
-    const { name, email } = wrapper.state();
-    expect(name).toBe('');
-    expect(email).toBe('');
-  });
-
   it('should change state after change input', () => {
     setValuesToInputs();
     expect(wrapper.state()).toEqual({ name: 'John', email: 'test@test.pl' });

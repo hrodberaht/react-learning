@@ -28,12 +28,6 @@ describe('<LogIn />', () => {
     expect(wrapper.instance().handleChange).toHaveBeenCalled();
   });
 
-  it('should login and email in state be empty strings', () => {
-    const { login, email } = wrapper.state();
-    expect(login).toBe('');
-    expect(email).toBe('');
-  });
-
   it('should change state after change input', () => {
     setValuesToInputs();
     expect(wrapper.state()).toEqual({ login: 'John', email: 'test@test.pl' });

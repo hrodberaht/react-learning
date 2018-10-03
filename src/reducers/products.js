@@ -1,7 +1,7 @@
-const products = (state = [], actions) => {
-  switch (actions.type) {
+const products = (state = [], action) => {
+  switch (action.type) {
     case 'FETCH_PRODUCTS':
-      return [...state, ...actions.products];
+      return [...state, ...action.products];
     default:
       return state;
   }

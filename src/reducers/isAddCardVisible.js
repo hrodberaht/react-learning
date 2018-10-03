@@ -1,5 +1,5 @@
-const isAddCardVisible = (state = false, actions) => {
-  switch (actions.type) {
+const isAddCardVisible = (state = false, action) => {
+  switch (action.type) {
     case 'TOGGLE_CARD_VISABLE':
       return !state;
     default:

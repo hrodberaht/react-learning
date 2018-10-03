@@ -1,7 +1,7 @@
-const filterText = (state = '', actions) => {
-  switch (actions.type) {
+const filterText = (state = '', action) => {
+  switch (action.type) {
     case 'FILTER':
-      return actions.filterText;
+      return action.filterText;
     default:
       return state;
   }

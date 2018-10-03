@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import { AllCards } from './AllCards';
 
 describe('<AllCards />', () => {
@@ -23,7 +23,7 @@ describe('<AllCards />', () => {
   };
 
   beforeEach(() => {
-    wrapper = mount(<AllCards {...props} />);
+    wrapper = shallow(<AllCards {...props} />);
   });
 
   it('should render component witout crash', () => {

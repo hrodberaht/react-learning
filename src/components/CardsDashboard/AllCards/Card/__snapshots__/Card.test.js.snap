@@ -1,236 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Card /> should render component witout crash 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Card
-    card={
-        Object {
-            "email": "john@gmail.com",
-            "id": 1,
-            "name": "John",
-          }
-    }
-    handleClick={[Function]}
-/>,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "host",
-    "props": Object {
-      "children": Array [
-        <h2>
-          Name:
-          John
-</h2>,
-        <h4>
-          Email:
-          john@gmail.com
-</h4>,
-        <button
-          onClick={[Function]}
-          style={
-                    Object {
-                              "backgroundColor": "red",
-                              "border": "1px solid red",
-                              "color": "white",
-                              "fontSize": "16px",
-                              "padding": "5px",
-                            }
-          }
-          type="button"
->
-          Delete
-</button>,
-      ],
-      "style": Object {
-        "border": "1px solid black",
-        "margin": "5px auto",
-        "width": "300px",
-      },
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            "Name:",
-            "John",
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          "Name:",
-          "John",
-        ],
-        "type": "h2",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            "Email:",
-            "john@gmail.com",
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          "Email:",
-          "john@gmail.com",
-        ],
-        "type": "h4",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Delete",
-          "onClick": [Function],
-          "style": Object {
-            "backgroundColor": "red",
-            "border": "1px solid red",
-            "color": "white",
-            "fontSize": "16px",
-            "padding": "5px",
-          },
-          "type": "button",
-        },
-        "ref": null,
-        "rendered": "Delete",
-        "type": "button",
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
+<div
+  style={
     Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <h2>
-            Name:
-            John
-</h2>,
-          <h4>
-            Email:
-            john@gmail.com
-</h4>,
-          <button
-            onClick={[Function]}
-            style={
-                        Object {
-                                    "backgroundColor": "red",
-                                    "border": "1px solid red",
-                                    "color": "white",
-                                    "fontSize": "16px",
-                                    "padding": "5px",
-                                  }
-            }
-            type="button"
+      "border": "1px solid black",
+      "margin": "5px auto",
+      "width": "300px",
+    }
+  }
 >
-            Delete
-</button>,
-        ],
-        "style": Object {
-          "border": "1px solid black",
-          "margin": "5px auto",
-          "width": "300px",
-        },
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              "Name:",
-              "John",
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            "Name:",
-            "John",
-          ],
-          "type": "h2",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              "Email:",
-              "john@gmail.com",
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            "Email:",
-            "john@gmail.com",
-          ],
-          "type": "h4",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Delete",
-            "onClick": [Function],
-            "style": Object {
-              "backgroundColor": "red",
-              "border": "1px solid red",
-              "color": "white",
-              "fontSize": "16px",
-              "padding": "5px",
-            },
-            "type": "button",
-          },
-          "ref": null,
-          "rendered": "Delete",
-          "type": "button",
-        },
-      ],
-      "type": "div",
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getDerivedStateFromProps": true,
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-    "attachTo": undefined,
-    "hydrateIn": undefined,
-  },
-}
+  <h2>
+    Name:
+    John
+  </h2>
+  <h4>
+    Email:
+    john@gmail.com
+  </h4>
+  <button
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "red",
+        "border": "1px solid red",
+        "color": "white",
+        "fontSize": "16px",
+        "padding": "5px",
+      }
+    }
+    type="button"
+  >
+    Delete
+  </button>
+</div>
 `;
