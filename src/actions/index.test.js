@@ -6,7 +6,6 @@ describe('cards actions', () => {
       type: 'ADD_CARD',
       name: 'John',
       email: 'test@test.pl',
-      id: Date.now(),
     };
     expect(actions.addCard('John', 'test@test.pl'))
       .toEqual(expect.objectContaining(expected));
