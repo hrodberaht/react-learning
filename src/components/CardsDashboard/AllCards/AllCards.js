@@ -35,7 +35,7 @@ const mapStateToProps = state => ({
   filterText: state.filterText,
 });
 
-export const ConnectedAllCards = connect(
+export default connect(
   mapStateToProps,
   {
     handleClick: deleteCard,

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import './AddCard.css';
-import { ConnectedAddCardForm } from './AddCardForm/AddCardForm';
+import ConnectedAddCardForm from './AddCardForm/AddCardForm';
 import { toggleCardVisable } from '../../../actions';
 
 
@@ -22,16 +22,16 @@ export class ShowAddCard extends Component {
   }
 }
 
-ShowAddCard.propTypes = {
-  handleClick: PropTypes.func.isRequired,
-  isAddCardVisible: PropTypes.bool.isRequired,
-};
-
 const mapStateToProps = state => ({
   isAddCardVisible: state.isAddCardVisible,
 });
 
-export const ConnectedShowAddCard = connect(
+export default connect(
   mapStateToProps,
   { handleClick: toggleCardVisable },
 )(ShowAddCard);
+
+ShowAddCard.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+  isAddCardVisible: PropTypes.bool.isRequired,
+};

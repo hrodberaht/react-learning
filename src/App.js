@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import './App.css';
-import { ConnectedCardsDashboard } from './components/CardsDashboard/CardsDashboard';
+import ConnectedCardsDashboard from './components/CardsDashboard/CardsDashboard';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 

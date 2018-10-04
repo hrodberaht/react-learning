@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import { App } from './App';
 import Home from './components/Home/Home';
-import { ConnectedCardsDashboard } from './components/CardsDashboard/CardsDashboard';
+import ConnectedCardsDashboard from './components/CardsDashboard/CardsDashboard';
 import NotFound from './components/NotFound/NotFound';
 
 describe('<App />', () => {
