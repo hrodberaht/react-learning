@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 import registerServiceWorker from './registerServiceWorker';
 
 import './index.css';
-import { ConnectedApp } from './App';
+import ConnectedApp from './App';
 
 import rootReducer from './reducers';
 

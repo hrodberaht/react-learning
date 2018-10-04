@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { logIn } from '../../../actions';
 
-export default class LogIn extends Component {
+export class LogIn extends Component {
     state = {
       login: '',
       email: '',
@@ -53,7 +53,7 @@ export default class LogIn extends Component {
     }
 }
 
-export const ConnectedLogIn = withRouter(connect(null, { handleLogIn: logIn })(LogIn));
+export default withRouter(connect(null, { handleLogIn: logIn })(LogIn));
 
 LogIn.propTypes = {
   handleLogIn: PropTypes.func.isRequired,
