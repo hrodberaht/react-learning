@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Header /> should render component 1`] = `<withRouter(Connect(NavBar)) />`;
+exports[`<Header /> should render component 1`] = `<NavBar />`;

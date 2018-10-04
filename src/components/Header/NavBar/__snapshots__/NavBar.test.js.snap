@@ -34,13 +34,7 @@ exports[`<NavBar /> should render component 1`] = `
       </NavLink>
     </li>
     <li>
-      <NavLink
-        activeClassName="active"
-        aria-current="page"
-        to="/login"
-      >
-        Login
-      </NavLink>
+      <withRouter(Connect(Authorization)) />
     </li>
   </ul>
 </nav>
