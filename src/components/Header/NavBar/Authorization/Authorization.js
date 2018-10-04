@@ -6,7 +6,7 @@ import { NavLink, withRouter } from 'react-router-dom';
 import { logOut } from '../../../../actions';
 
 export class Authorization extends Component {
-    rendererLogin = () => {
+    rendererNav = () => {
       const { handleLogOut, auth } = this.props;
       if (auth) return <NavLink to="/login" onClick={handleLogOut}>Log out</NavLink>;
 
@@ -15,7 +15,7 @@ export class Authorization extends Component {
 
     render() {
       return (
-        this.rendererLogin()
+        this.rendererNav()
       );
     }
 }
