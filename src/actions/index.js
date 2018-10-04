@@ -1,10 +1,8 @@
-let newId = 2; // only for add id to card
-
 export const addCard = (name, email) => ({
   type: 'ADD_CARD',
   name,
   email,
-  id: ++newId,
+  id: Date.now(),
 });
 
 export const deleteCard = id => ({

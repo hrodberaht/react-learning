@@ -2,19 +2,22 @@ import * as actions from './index';
 
 describe('cards actions', () => {
   it('addCard should create addCard action', () => {
-    expect(actions.addCard('John', 'test@test.pl')).toEqual({
+    const expected = {
       type: 'ADD_CARD',
       name: 'John',
       email: 'test@test.pl',
-      id: 3,
-    });
+    };
+    expect(actions.addCard('John', 'test@test.pl'))
+      .toEqual(expect.objectContaining(expected));
   });
 
   it('deleteCard should create deleteCard action', () => {
-    expect(actions.deleteCard(1)).toEqual({
+    const expected = {
       type: 'DELETE_CARD',
       id: 1,
-    });
+    };
+    expect(actions.deleteCard(1))
+      .toEqual(expect.objectContaining(expected));
   });
 
   it('filter should create filter action', () => {
@@ -23,10 +26,12 @@ describe('cards actions', () => {
         value: 'foo',
       },
     };
-    expect(actions.filter(event)).toEqual({
+    const expected = {
       type: 'FILTER',
       filterText: 'foo',
-    });
+    };
+    expect(actions.filter(event))
+      .toEqual(expect.objectContaining(expected));
   });
 
   it('toggleAddCard should create toggleAddcard action', () => {
