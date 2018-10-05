@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
+import { logOut } from '../../../actions';
 import './NavBar.css';
 
-export default class NavBar extends Component {
+export class NavBar extends Component {
+  handleClick = () => {
+    const { handleLogOut } = this.props;
+    handleLogOut();
+  }
+
   render() {
+    const { auth } = this.props;
     return (
       <nav className="NavBar">
         <ul>
@@ -17,8 +26,26 @@ export default class NavBar extends Component {
           <li>
             <NavLink to="/products">Products</NavLink>
           </li>
+          <li>
+            {
+              auth
+                ? <NavLink to="/login" onClick={this.handleClick}>Log out</NavLink>
+                : <NavLink to="/login">Login</NavLink>
+          }
+          </li>
         </ul>
       </nav>
     );
   }
 }
+const mapStateToProps = state => ({
+  auth: state.auth,
+});
+
+export const ConnectedNavBar = connect(mapStateToProps,
+  { handleLogOut: logOut })(NavBar);
+
+NavBar.propTypes = {
+  auth: PropTypes.bool.isRequired,
+  handleLogOut: PropTypes.func.isRequired,
+};
