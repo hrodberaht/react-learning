@@ -37,6 +37,15 @@ ShallowWrapper {
                         Cards
                 </NavLink>
         </li>
+        <li>
+                <NavLink
+                        activeClassName="active"
+                        aria-current="page"
+                        to="/products"
+                >
+                        Products
+                </NavLink>
+        </li>
 </ul>,
       "className": "NavBar",
     },
@@ -64,6 +73,15 @@ ShallowWrapper {
                         to="/cards"
             >
                         Cards
+            </NavLink>
+</li>,
+          <li>
+            <NavLink
+                        activeClassName="active"
+                        aria-current="page"
+                        to="/products"
+            >
+                        Products
             </NavLink>
 </li>,
         ],
@@ -132,6 +150,36 @@ ShallowWrapper {
           },
           "type": "li",
         },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <NavLink
+              activeClassName="active"
+              aria-current="page"
+              to="/products"
+>
+              Products
+</NavLink>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "activeClassName": "active",
+              "aria-current": "page",
+              "children": "Products",
+              "to": "/products",
+            },
+            "ref": null,
+            "rendered": "Products",
+            "type": [Function],
+          },
+          "type": "li",
+        },
       ],
       "type": "ul",
     },
@@ -163,6 +211,15 @@ ShallowWrapper {
                               Cards
                     </NavLink>
           </li>
+          <li>
+                    <NavLink
+                              activeClassName="active"
+                              aria-current="page"
+                              to="/products"
+                    >
+                              Products
+                    </NavLink>
+          </li>
 </ul>,
         "className": "NavBar",
       },
@@ -190,6 +247,15 @@ ShallowWrapper {
                             to="/cards"
               >
                             Cards
+              </NavLink>
+</li>,
+            <li>
+              <NavLink
+                            activeClassName="active"
+                            aria-current="page"
+                            to="/products"
+              >
+                            Products
               </NavLink>
 </li>,
           ],
@@ -254,6 +320,36 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": "Cards",
+              "type": [Function],
+            },
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <NavLink
+                activeClassName="active"
+                aria-current="page"
+                to="/products"
+>
+                Products
+</NavLink>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeClassName": "active",
+                "aria-current": "page",
+                "children": "Products",
+                "to": "/products",
+              },
+              "ref": null,
+              "rendered": "Products",
               "type": [Function],
             },
             "type": "li",

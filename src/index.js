@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 import registerServiceWorker from './registerServiceWorker';
 
 import './index.css';
-import App from './App';
+import { ConnectedApp } from './App';
 
 import rootReducer from './reducers';
 // import updateServer from './middleware/upadteServer';
@@ -22,7 +22,7 @@ const store = createStore(rootReducer, composeEnhancers(applyMiddleware(...middl
 
 const AppWithProvider = () => (
   <Provider store={store}>
-    <App />
+    <ConnectedApp />
   </Provider>
 );
 
