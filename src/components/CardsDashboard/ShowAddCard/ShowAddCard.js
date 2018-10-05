@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import './AddCard.css';
 import ConnectedAddCardForm from './AddCardForm/AddCardForm';
 import { toggleCardVisable } from '../../../actions';
 
