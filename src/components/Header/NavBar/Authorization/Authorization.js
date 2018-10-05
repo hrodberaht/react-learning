@@ -6,18 +6,12 @@ import { NavLink, withRouter } from 'react-router-dom';
 import { logOut } from '../../../../actions';
 
 export class Authorization extends Component {
-    rendererNav = () => {
-      const { handleLogOut, auth } = this.props;
-      if (auth) return <NavLink to="/login" onClick={handleLogOut}>Log out</NavLink>;
+  render() {
+    const { handleLogOut, auth } = this.props;
+    if (auth) return <NavLink to="/login" onClick={handleLogOut}>Log out</NavLink>;
 
-      return <NavLink to="/login">Login</NavLink>;
-    }
-
-    render() {
-      return (
-        this.rendererNav()
-      );
-    }
+    return <NavLink to="/login">Login</NavLink>;
+  }
 }
 
 const mapStateToProps = state => ({
