@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addCard } from '../../../actions';
+import { addCard } from '../../../../actions';
 
 export class AddCardForm extends Component {
   state = {
