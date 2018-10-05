@@ -512,7 +512,7 @@ ReactWrapper {
             "_debugIsCurrentlyTiming": false,
             "_debugOwner": [Circular],
             "_debugSource": Object {
-              "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+              "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
               "lineNumber": 25,
             },
             "actualDuration": 0,
@@ -523,7 +523,7 @@ ReactWrapper {
               "_debugIsCurrentlyTiming": false,
               "_debugOwner": [Circular],
               "_debugSource": Object {
-                "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                 "lineNumber": 26,
               },
               "actualDuration": 0,
@@ -623,7 +623,7 @@ ReactWrapper {
                 "_debugIsCurrentlyTiming": false,
                 "_debugOwner": [Circular],
                 "_debugSource": Object {
-                  "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                  "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                   "lineNumber": 30,
                 },
                 "actualDuration": 0,
@@ -723,7 +723,7 @@ ReactWrapper {
                   "_debugIsCurrentlyTiming": false,
                   "_debugOwner": [Circular],
                   "_debugSource": Object {
-                    "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                    "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                     "lineNumber": 34,
                   },
                   "actualDuration": 0,
@@ -946,7 +946,7 @@ ReactWrapper {
               "_debugIsCurrentlyTiming": false,
               "_debugOwner": [Circular],
               "_debugSource": Object {
-                "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                 "lineNumber": 25,
               },
               "actualDuration": 0,
@@ -957,7 +957,7 @@ ReactWrapper {
                 "_debugIsCurrentlyTiming": false,
                 "_debugOwner": [Circular],
                 "_debugSource": Object {
-                  "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                  "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                   "lineNumber": 26,
                 },
                 "actualDuration": 0,
@@ -1057,7 +1057,7 @@ ReactWrapper {
                   "_debugIsCurrentlyTiming": false,
                   "_debugOwner": [Circular],
                   "_debugSource": Object {
-                    "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                    "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                     "lineNumber": 30,
                   },
                   "actualDuration": 0,
@@ -1157,7 +1157,7 @@ ReactWrapper {
                     "_debugIsCurrentlyTiming": false,
                     "_debugOwner": [Circular],
                     "_debugSource": Object {
-                      "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                      "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                       "lineNumber": 34,
                     },
                     "actualDuration": 0,
@@ -3023,7 +3023,7 @@ ReactWrapper {
               "_debugIsCurrentlyTiming": false,
               "_debugOwner": [Circular],
               "_debugSource": Object {
-                "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                 "lineNumber": 25,
               },
               "actualDuration": 0,
@@ -3034,7 +3034,7 @@ ReactWrapper {
                 "_debugIsCurrentlyTiming": false,
                 "_debugOwner": [Circular],
                 "_debugSource": Object {
-                  "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                  "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                   "lineNumber": 26,
                 },
                 "actualDuration": 0,
@@ -3134,7 +3134,7 @@ ReactWrapper {
                   "_debugIsCurrentlyTiming": false,
                   "_debugOwner": [Circular],
                   "_debugSource": Object {
-                    "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                    "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                     "lineNumber": 30,
                   },
                   "actualDuration": 0,
@@ -3234,7 +3234,7 @@ ReactWrapper {
                     "_debugIsCurrentlyTiming": false,
                     "_debugOwner": [Circular],
                     "_debugSource": Object {
-                      "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                      "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                       "lineNumber": 34,
                     },
                     "actualDuration": 0,
@@ -5465,7 +5465,7 @@ ReactWrapper {
                 "_debugIsCurrentlyTiming": false,
                 "_debugOwner": [Circular],
                 "_debugSource": Object {
-                  "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                  "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                   "lineNumber": 25,
                 },
                 "actualDuration": 0,
@@ -5476,7 +5476,7 @@ ReactWrapper {
                   "_debugIsCurrentlyTiming": false,
                   "_debugOwner": [Circular],
                   "_debugSource": Object {
-                    "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                    "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                     "lineNumber": 26,
                   },
                   "actualDuration": 0,
@@ -5576,7 +5576,7 @@ ReactWrapper {
                     "_debugIsCurrentlyTiming": false,
                     "_debugOwner": [Circular],
                     "_debugSource": Object {
-                      "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                      "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                       "lineNumber": 30,
                     },
                     "actualDuration": 0,
@@ -5676,7 +5676,7 @@ ReactWrapper {
                       "_debugIsCurrentlyTiming": false,
                       "_debugOwner": [Circular],
                       "_debugSource": Object {
-                        "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                        "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                         "lineNumber": 34,
                       },
                       "actualDuration": 0,
@@ -7586,7 +7586,7 @@ ReactWrapper {
                   "_debugIsCurrentlyTiming": false,
                   "_debugOwner": [Circular],
                   "_debugSource": Object {
-                    "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                    "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                     "lineNumber": 25,
                   },
                   "actualDuration": 0,
@@ -7597,7 +7597,7 @@ ReactWrapper {
                     "_debugIsCurrentlyTiming": false,
                     "_debugOwner": [Circular],
                     "_debugSource": Object {
-                      "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                      "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                       "lineNumber": 26,
                     },
                     "actualDuration": 0,
@@ -7697,7 +7697,7 @@ ReactWrapper {
                       "_debugIsCurrentlyTiming": false,
                       "_debugOwner": [Circular],
                       "_debugSource": Object {
-                        "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                        "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                         "lineNumber": 30,
                       },
                       "actualDuration": 0,
@@ -7797,7 +7797,7 @@ ReactWrapper {
                         "_debugIsCurrentlyTiming": false,
                         "_debugOwner": [Circular],
                         "_debugSource": Object {
-                          "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                          "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                           "lineNumber": 34,
                         },
                         "actualDuration": 0,
@@ -8595,7 +8595,7 @@ ReactWrapper {
               "_debugIsCurrentlyTiming": false,
               "_debugOwner": [Circular],
               "_debugSource": Object {
-                "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                 "lineNumber": 25,
               },
               "actualDuration": 0,
@@ -8606,7 +8606,7 @@ ReactWrapper {
                 "_debugIsCurrentlyTiming": false,
                 "_debugOwner": [Circular],
                 "_debugSource": Object {
-                  "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                  "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                   "lineNumber": 26,
                 },
                 "actualDuration": 0,
@@ -8706,7 +8706,7 @@ ReactWrapper {
                   "_debugIsCurrentlyTiming": false,
                   "_debugOwner": [Circular],
                   "_debugSource": Object {
-                    "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                    "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                     "lineNumber": 30,
                   },
                   "actualDuration": 0,
@@ -8806,7 +8806,7 @@ ReactWrapper {
                     "_debugIsCurrentlyTiming": false,
                     "_debugOwner": [Circular],
                     "_debugSource": Object {
-                      "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                      "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                       "lineNumber": 34,
                     },
                     "actualDuration": 0,
@@ -9491,7 +9491,7 @@ ReactWrapper {
                   "_debugIsCurrentlyTiming": false,
                   "_debugOwner": [Circular],
                   "_debugSource": Object {
-                    "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                    "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                     "lineNumber": 25,
                   },
                   "actualDuration": 0,
@@ -9502,7 +9502,7 @@ ReactWrapper {
                     "_debugIsCurrentlyTiming": false,
                     "_debugOwner": [Circular],
                     "_debugSource": Object {
-                      "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                      "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                       "lineNumber": 26,
                     },
                     "actualDuration": 0,
@@ -9602,7 +9602,7 @@ ReactWrapper {
                       "_debugIsCurrentlyTiming": false,
                       "_debugOwner": [Circular],
                       "_debugSource": Object {
-                        "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                        "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                         "lineNumber": 30,
                       },
                       "actualDuration": 0,
@@ -9702,7 +9702,7 @@ ReactWrapper {
                         "_debugIsCurrentlyTiming": false,
                         "_debugOwner": [Circular],
                         "_debugSource": Object {
-                          "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                          "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                           "lineNumber": 34,
                         },
                         "actualDuration": 0,
@@ -11151,7 +11151,7 @@ ReactWrapper {
               "_debugIsCurrentlyTiming": false,
               "_debugOwner": [Circular],
               "_debugSource": Object {
-                "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                 "lineNumber": 25,
               },
               "actualDuration": 0,
@@ -11162,7 +11162,7 @@ ReactWrapper {
                 "_debugIsCurrentlyTiming": false,
                 "_debugOwner": [Circular],
                 "_debugSource": Object {
-                  "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                  "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                   "lineNumber": 26,
                 },
                 "actualDuration": 0,
@@ -11262,7 +11262,7 @@ ReactWrapper {
                   "_debugIsCurrentlyTiming": false,
                   "_debugOwner": [Circular],
                   "_debugSource": Object {
-                    "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                    "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                     "lineNumber": 30,
                   },
                   "actualDuration": 0,
@@ -11362,7 +11362,7 @@ ReactWrapper {
                     "_debugIsCurrentlyTiming": false,
                     "_debugOwner": [Circular],
                     "_debugSource": Object {
-                      "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                      "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                       "lineNumber": 34,
                     },
                     "actualDuration": 0,
@@ -11585,7 +11585,7 @@ ReactWrapper {
                 "_debugIsCurrentlyTiming": false,
                 "_debugOwner": [Circular],
                 "_debugSource": Object {
-                  "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                  "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                   "lineNumber": 25,
                 },
                 "actualDuration": 0,
@@ -11596,7 +11596,7 @@ ReactWrapper {
                   "_debugIsCurrentlyTiming": false,
                   "_debugOwner": [Circular],
                   "_debugSource": Object {
-                    "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                    "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                     "lineNumber": 26,
                   },
                   "actualDuration": 0,
@@ -11696,7 +11696,7 @@ ReactWrapper {
                     "_debugIsCurrentlyTiming": false,
                     "_debugOwner": [Circular],
                     "_debugSource": Object {
-                      "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                      "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                       "lineNumber": 30,
                     },
                     "actualDuration": 0,
@@ -11796,7 +11796,7 @@ ReactWrapper {
                       "_debugIsCurrentlyTiming": false,
                       "_debugOwner": [Circular],
                       "_debugSource": Object {
-                        "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                        "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                         "lineNumber": 34,
                       },
                       "actualDuration": 0,
@@ -13662,7 +13662,7 @@ ReactWrapper {
                 "_debugIsCurrentlyTiming": false,
                 "_debugOwner": [Circular],
                 "_debugSource": Object {
-                  "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                  "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                   "lineNumber": 25,
                 },
                 "actualDuration": 0,
@@ -13673,7 +13673,7 @@ ReactWrapper {
                   "_debugIsCurrentlyTiming": false,
                   "_debugOwner": [Circular],
                   "_debugSource": Object {
-                    "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                    "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                     "lineNumber": 26,
                   },
                   "actualDuration": 0,
@@ -13773,7 +13773,7 @@ ReactWrapper {
                     "_debugIsCurrentlyTiming": false,
                     "_debugOwner": [Circular],
                     "_debugSource": Object {
-                      "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                      "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                       "lineNumber": 30,
                     },
                     "actualDuration": 0,
@@ -13873,7 +13873,7 @@ ReactWrapper {
                       "_debugIsCurrentlyTiming": false,
                       "_debugOwner": [Circular],
                       "_debugSource": Object {
-                        "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                        "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                         "lineNumber": 34,
                       },
                       "actualDuration": 0,
@@ -16104,7 +16104,7 @@ ReactWrapper {
                   "_debugIsCurrentlyTiming": false,
                   "_debugOwner": [Circular],
                   "_debugSource": Object {
-                    "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                    "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                     "lineNumber": 25,
                   },
                   "actualDuration": 0,
@@ -16115,7 +16115,7 @@ ReactWrapper {
                     "_debugIsCurrentlyTiming": false,
                     "_debugOwner": [Circular],
                     "_debugSource": Object {
-                      "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                      "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                       "lineNumber": 26,
                     },
                     "actualDuration": 0,
@@ -16215,7 +16215,7 @@ ReactWrapper {
                       "_debugIsCurrentlyTiming": false,
                       "_debugOwner": [Circular],
                       "_debugSource": Object {
-                        "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                        "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                         "lineNumber": 30,
                       },
                       "actualDuration": 0,
@@ -16315,7 +16315,7 @@ ReactWrapper {
                         "_debugIsCurrentlyTiming": false,
                         "_debugOwner": [Circular],
                         "_debugSource": Object {
-                          "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                          "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                           "lineNumber": 34,
                         },
                         "actualDuration": 0,
@@ -18225,7 +18225,7 @@ ReactWrapper {
                     "_debugIsCurrentlyTiming": false,
                     "_debugOwner": [Circular],
                     "_debugSource": Object {
-                      "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                      "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                       "lineNumber": 25,
                     },
                     "actualDuration": 0,
@@ -18236,7 +18236,7 @@ ReactWrapper {
                       "_debugIsCurrentlyTiming": false,
                       "_debugOwner": [Circular],
                       "_debugSource": Object {
-                        "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                        "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                         "lineNumber": 26,
                       },
                       "actualDuration": 0,
@@ -18336,7 +18336,7 @@ ReactWrapper {
                         "_debugIsCurrentlyTiming": false,
                         "_debugOwner": [Circular],
                         "_debugSource": Object {
-                          "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                          "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                           "lineNumber": 30,
                         },
                         "actualDuration": 0,
@@ -18436,7 +18436,7 @@ ReactWrapper {
                           "_debugIsCurrentlyTiming": false,
                           "_debugOwner": [Circular],
                           "_debugSource": Object {
-                            "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                            "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                             "lineNumber": 34,
                           },
                           "actualDuration": 0,
@@ -19234,7 +19234,7 @@ ReactWrapper {
                 "_debugIsCurrentlyTiming": false,
                 "_debugOwner": [Circular],
                 "_debugSource": Object {
-                  "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                  "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                   "lineNumber": 25,
                 },
                 "actualDuration": 0,
@@ -19245,7 +19245,7 @@ ReactWrapper {
                   "_debugIsCurrentlyTiming": false,
                   "_debugOwner": [Circular],
                   "_debugSource": Object {
-                    "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                    "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                     "lineNumber": 26,
                   },
                   "actualDuration": 0,
@@ -19345,7 +19345,7 @@ ReactWrapper {
                     "_debugIsCurrentlyTiming": false,
                     "_debugOwner": [Circular],
                     "_debugSource": Object {
-                      "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                      "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                       "lineNumber": 30,
                     },
                     "actualDuration": 0,
@@ -19445,7 +19445,7 @@ ReactWrapper {
                       "_debugIsCurrentlyTiming": false,
                       "_debugOwner": [Circular],
                       "_debugSource": Object {
-                        "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                        "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                         "lineNumber": 34,
                       },
                       "actualDuration": 0,
@@ -20130,7 +20130,7 @@ ReactWrapper {
                     "_debugIsCurrentlyTiming": false,
                     "_debugOwner": [Circular],
                     "_debugSource": Object {
-                      "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                      "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                       "lineNumber": 25,
                     },
                     "actualDuration": 0,
@@ -20141,7 +20141,7 @@ ReactWrapper {
                       "_debugIsCurrentlyTiming": false,
                       "_debugOwner": [Circular],
                       "_debugSource": Object {
-                        "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                        "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                         "lineNumber": 26,
                       },
                       "actualDuration": 0,
@@ -20241,7 +20241,7 @@ ReactWrapper {
                         "_debugIsCurrentlyTiming": false,
                         "_debugOwner": [Circular],
                         "_debugSource": Object {
-                          "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                          "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                           "lineNumber": 30,
                         },
                         "actualDuration": 0,
@@ -20341,7 +20341,7 @@ ReactWrapper {
                           "_debugIsCurrentlyTiming": false,
                           "_debugOwner": [Circular],
                           "_debugSource": Object {
-                            "fileName": "/home/hrod/react-learning/src/components/AllCards/Card/Card.js",
+                            "fileName": "/home/hrod/react-learning/src/components/CardsDashboard/AllCards/Card/Card.js",
                             "lineNumber": 34,
                           },
                           "actualDuration": 0,
