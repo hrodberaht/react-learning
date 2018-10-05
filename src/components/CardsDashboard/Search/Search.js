@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { filter } from '../../actions';
+import { filter } from '../../../actions';
 
 export class Search extends Component {
   render() {

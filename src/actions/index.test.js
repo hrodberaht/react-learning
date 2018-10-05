@@ -2,36 +2,57 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
+import fetchMock from 'fetch-mock/es5/client';
+
 import * as actions from './index';
 
 const mockStore = configureMockStore([thunk]);
 
 describe('cards actions', () => {
+  let store;
+  const url = 'http://localhost:3004/cards/';
+  beforeEach(() => {
+    store = mockStore();
+  });
+  afterEach(() => {
+    fetchMock.reset();
+  });
+
   it('should run fetchCards action', async () => {
-    const store = mockStore();
+    const cards = { name: 'test', email: 'test' };
+    fetchMock
+      .get(url, cards);
     await store.dispatch(actions.fetchCards());
     const act = store.getActions();
 
-    expect(act[0].type).toEqual('FETCH_CARDS');
+    expect(act[0]).toEqual({ type: 'FETCH_CARDS', cards });
   });
 
-  it('addCard should create addCard action', () => {
-    const expected = {
+  it('addCard should create addCard action', async () => {
+    const card = {
       type: 'ADD_CARD',
       name: 'John',
       email: 'test@test.pl',
     };
-    expect(actions.addCard('John', 'test@test.pl'))
-      .toEqual(expect.objectContaining(expected));
+    fetchMock
+      .post(url, card);
+
+    await store.dispatch(actions.addCard(card.name, card.email));
+    const act = store.getActions();
+    expect(act[0]).toEqual(card);
   });
 
-  it('deleteCard should create deleteCard action', () => {
-    const expected = {
+  it('deleteCard should create deleteCard action', async () => {
+    const card = {
       type: 'DELETE_CARD',
       id: 1,
     };
-    expect(actions.deleteCard(1))
-      .toEqual(expect.objectContaining(expected));
+    fetchMock
+      .delete(url + card.id, {});
+
+    await store.dispatch(actions.deleteCard(card.id));
+    const act = store.getActions();
+    expect(act[0]).toEqual(card);
   });
 
   it('filter should create filter action', () => {
