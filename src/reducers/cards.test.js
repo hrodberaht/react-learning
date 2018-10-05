@@ -19,6 +19,11 @@ describe('cards reducers', () => {
   });
 
   it('should add card to cards', () => {
+    const expected = {
+      id: 3,
+      name: 'Joh',
+      email: 'test@test.pl',
+    };
     expect(
       cards(initialState, {
         type: 'ADD_CARD',
@@ -26,14 +31,9 @@ describe('cards reducers', () => {
         name: 'Joh',
         email: 'test@test.pl',
       }),
-    ).toEqual([
-      ...initialState,
-      {
-        id: 3,
-        name: 'Joh',
-        email: 'test@test.pl',
-      },
-    ]);
+    ).toEqual(expect.arrayContaining([
+      expect.objectContaining(expected),
+    ]));
   });
 
   it('should remove card', () => {

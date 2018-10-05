@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
   filterText: state.filterText,
 });
 
-class AllCards extends Component {
+export class AllCards extends Component {
   render() {
     const { handleClick } = this.props;
     const list = () => {
@@ -39,7 +39,7 @@ AllCards.propTypes = {
   handleClick: PropTypes.func.isRequired,
   filterText: PropTypes.string.isRequired,
 };
-export { AllCards };
+
 export const ConnectedAllCards = connect(
   mapStateToProps,
   { handleClick: deleteCard },

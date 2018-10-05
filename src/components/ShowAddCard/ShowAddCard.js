@@ -6,11 +6,8 @@ import './AddCard.css';
 import { ConnectedAddCardForm } from './AddCardForm/AddCardForm';
 import { toggleCardVisable } from '../../actions';
 
-const mapStateToProps = state => ({
-  isAddCardVisible: state.isAddCardVisible,
-});
 
-class ShowAddCard extends Component {
+export class ShowAddCard extends Component {
   render() {
     const { handleClick, isAddCardVisible } = this.props;
 
@@ -30,7 +27,10 @@ ShowAddCard.propTypes = {
   isAddCardVisible: PropTypes.bool.isRequired,
 };
 
-export { ShowAddCard };
+const mapStateToProps = state => ({
+  isAddCardVisible: state.isAddCardVisible,
+});
+
 export const ConnectedShowAddCard = connect(
   mapStateToProps,
   { handleClick: toggleCardVisable },
