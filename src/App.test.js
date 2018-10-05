@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import { App } from './App';
 import Home from './components/Home/Home';
-import CardsDashboard from './components/CardsDashboard/CardsDashboard';
+import { ConnectedCardsDashboard } from './components/CardsDashboard/CardsDashboard';
 import NotFound from './components/NotFound/NotFound';
 
 describe('<App />', () => {
@@ -29,7 +29,7 @@ describe('<App />', () => {
   });
 
   it('should route /cards should link to Cards', () => {
-    expect(wrapper.find('Route[path="/cards"]').props().component).toEqual(CardsDashboard);
+    expect(wrapper.find('Route[path="/cards"]').props().component).toEqual(ConnectedCardsDashboard);
   });
 
   it('should route /cards should link to Cards', () => {

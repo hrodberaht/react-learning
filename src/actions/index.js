@@ -20,6 +20,12 @@ const deleteCardSucces = id => ({
   id,
 });
 
+const logInSucces = () => ({
+  type: 'LOGIN',
+  isAuthenticated: true,
+});
+
+
 const url = 'http://localhost:3004/cards/';
 
 export const fetchCards = () => dispatch => fetch(url)
@@ -50,6 +56,19 @@ export const deleteCard = id => dispatch => fetch(url + id,
   .then(res => res.json())
   .then(() => dispatch(deleteCardSucces(id)))
   .catch(err => dispatch(errorAfterFetch(err)));
+
+export const logIn = (login, email) => (dispatch) => {
+  if (login === 'rob' && email === 'rob@rob.pl') {
+    dispatch(logInSucces());
+  }
+
+  return errorAfterFetch;
+};
+
+export const logOut = () => ({
+  type: 'LOGOUT',
+  isAuthenticated: false,
+});
 
 export const toggleCardVisable = () => ({
   type: 'TOGGLE_CARD_VISABLE',

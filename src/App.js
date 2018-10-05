@@ -8,13 +8,14 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import './App.css';
-import CardsDashboard from './components/CardsDashboard/CardsDashboard';
+import { ConnectedCardsDashboard } from './components/CardsDashboard/CardsDashboard';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 
 import { fetchCards } from './actions';
 import NotFound from './components/NotFound/NotFound';
 import ProductsDashboard from './components/ProductsDashboard/ProductsDashboard';
+import Auth from './components/Auth/Auth';
 
 
 export class App extends Component {
@@ -30,8 +31,9 @@ export class App extends Component {
           <Header />
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/cards" component={CardsDashboard} />
+            <Route path="/cards" component={ConnectedCardsDashboard} />
             <Route path="/products" component={ProductsDashboard} />
+            <Route path="/login" component={Auth} />
 
             <Route component={NotFound} />
           </Switch>
