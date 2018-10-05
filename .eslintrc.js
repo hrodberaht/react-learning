@@ -8,10 +8,14 @@ module.exports = {
     "no-underscore-dangle": ["error", { "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }],
     "react/destructuring-assignment": [0],
     "import/no-extraneous-dependencies": ["error", 
-      {"devDependencies": ["./src/specs/*.js", "**/*.test.js"]}]
+      {"devDependencies": ["./src/specs/*.js", "**/*.test.js"]}],
+    
   },
   "env": {
     "jest": true,
     "browser": true,
+  },
+  "globals": {
+    buildSetup: false,
   }
 };
