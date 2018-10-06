@@ -9,6 +9,19 @@ module.exports = {
     "react/destructuring-assignment": [0],
     "import/no-extraneous-dependencies": ["error", 
       {"devDependencies": ["./src/specs/*.js", "**/*.test.js"]}],
+    "jsx-a11y/label-has-for": [
+      2, {
+        "components": [ "label" ],
+        "required": {
+          "every": [ "id" ]
+        }
+      }
+    ],
+    "jsx-a11y/label-has-associated-control": [ 2, {
+      "labelAttributes": ["label"],
+      "controlComponents": ["Field"],
+      "depth": 3,
+    }],
     
   },
   "env": {
