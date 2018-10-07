@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { FieldArray, Field, reduxForm } from 'redux-form';
 import { PropTypes } from 'prop-types';
 
 const validate = (values) => {
@@ -24,13 +24,44 @@ const renderField = ({
   type,
   meta: { touched, error },
 }) => (
-  <p>
+  <React.Fragment>
     <input {...input} type={type} />
     {touched
         && (error && <span>{error}</span>)}
-  </p>
+  </React.Fragment>
 );
 
+const renderAuctionsId = ({ fields }) => (
+  <React.Fragment>
+    {fields.map((member, index) => (
+      <p key={member}>
+
+        <span>
+           ID
+          {index + 1}
+        </span>
+        <Field
+          name={`${member}.auctionId`}
+          type="number"
+          component={renderField}
+        />
+        <button
+          type="button"
+          onClick={() => fields.remove(index)}
+        >
+          Remove
+        </button>
+      </p>
+    ))
+    }
+    <p>
+      <button type="button" onClick={() => fields.push({})}>
+        Ad Id
+      </button>
+    </p>
+
+  </React.Fragment>
+);
 class ProductForm extends Component {
   render() {
     const { handleSubmit } = this.props;
@@ -45,7 +76,11 @@ class ProductForm extends Component {
             Price:
             <Field id="price" name="price" component={renderField} type="number" />
           </label>
-          <button type="submit">Add</button>
+          <label htmlFor="auctionsId">
+            Auctions id:
+            <FieldArray id="auctionsId" name="auctionsId" component={renderAuctionsId} type="number" />
+          </label>
+          <button type="submit">Submit</button>
         </form>
       </div>
     );
