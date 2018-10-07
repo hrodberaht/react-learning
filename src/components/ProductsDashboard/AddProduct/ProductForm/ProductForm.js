@@ -65,6 +65,20 @@ const renderAuctionsId = ({ fields }) => (
 
   </React.Fragment>
 );
+
+const renderField = ({
+  input,
+  label,
+  type,
+  meta: { touched, error },
+}) => (
+  <p>
+    <input {...input} placeholder={label} type={type} />
+    {touched
+        && (error && <span>{error}</span>)}
+  </p>
+);
+
 class ProductForm extends Component {
   render() {
     const { handleSubmit } = this.props;
@@ -78,6 +92,7 @@ class ProductForm extends Component {
           <label htmlFor="price">
             Price:
             <Field id="price" name="price" component={renderField} type="number" />
+
           </label>
           <label htmlFor="auctionsId">
             Auctions id:
@@ -92,7 +107,6 @@ class ProductForm extends Component {
 
 export default reduxForm({
   form: 'addProduct',
-  // validate,
   asyncValidate,
 })(ProductForm);
 
