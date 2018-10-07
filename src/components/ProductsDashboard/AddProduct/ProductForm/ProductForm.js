@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
 import { FieldArray, Field, reduxForm } from 'redux-form';
 import { PropTypes } from 'prop-types';
+import * as yup from 'yup';
 
-const validate = (values) => {
-  const errors = {};
-  if (!values.name) {
-    errors.name = 'Required';
-  } else if (values.name.length < 3) {
-    errors.name = 'Name should have at least 3 letters';
-  }
+const schema = yup.object().shape({
+  name: yup.string().required('Required'),
+  price: yup
+    .number()
+    .required()
+    .positive(),
+});
 
-  if (!values.price) {
-    errors.price = 'Required';
-  } else if (values.price <= 0) {
-    errors.price = 'Price should be bigger than 0';
-  }
-
-  return errors;
-};
+const asyncValidate = values => schema.validate(values, { abortEarly: false })
+  .catch((errors) => {
+    const errorsRedux = {};
+    errors.inner.forEach((err) => {
+      errorsRedux[err.path] = err.message;
+    });
+    throw errorsRedux;
+  });
 
 const renderField = ({
   input,
@@ -26,8 +27,10 @@ const renderField = ({
 }) => (
   <React.Fragment>
     <input {...input} type={type} />
-    {touched
+    <p>
+      {touched
         && (error && <span>{error}</span>)}
+    </p>
   </React.Fragment>
 );
 
@@ -89,7 +92,8 @@ class ProductForm extends Component {
 
 export default reduxForm({
   form: 'addProduct',
-  validate,
+  // validate,
+  asyncValidate,
 })(ProductForm);
 
 ProductForm.propTypes = {
