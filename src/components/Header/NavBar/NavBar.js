@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 
 import { logOut } from '../../../actions';
 import './NavBar.css';
@@ -42,8 +42,8 @@ const mapStateToProps = state => ({
   auth: state.auth,
 });
 
-export const ConnectedNavBar = connect(mapStateToProps,
-  { handleLogOut: logOut })(NavBar);
+export const ConnectedNavBar = withRouter(connect(mapStateToProps,
+  { handleLogOut: logOut })(NavBar));
 
 NavBar.propTypes = {
   auth: PropTypes.bool.isRequired,

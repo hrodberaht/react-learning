@@ -14,24 +14,39 @@ export default class LogIn extends Component {
       this.setState({ [e.target.id]: e.target.value });
     }
 
-    handleSubmit = (e) => {
-      const { login, email } = this.state;
-      const { handleLogIn, history } = this.props;
-      e.preventDefault();
-      handleLogIn(login, email);
+    resetState = () => {
       this.setState({
         login: '',
         email: '',
       });
+    }
+
+    redirect = () => {
+      const { history } = this.props;
       history.push('/cards');
+    }
+
+    handleSubmit = (e) => {
+      const { login, email } = this.state;
+      const { handleLogIn } = this.props;
+      e.preventDefault();
+      handleLogIn(login, email);
+      this.resetState();
+      this.redirect();
     }
 
     render() {
       const { login, email } = this.state;
       return (
         <form onSubmit={this.handleSubmit}>
-          <input id="login" value={login} onChange={this.handleChange} />
-          <input id="email" value={email} onChange={this.handleChange} />
+          <label htmlFor="login">
+          Login:
+            <input id="login" type="text" value={login} onChange={this.handleChange} />
+          </label>
+          <label htmlFor="email">
+          Email:
+            <input id="email" type="email" value={email} onChange={this.handleChange} />
+          </label>
           <button type="submit">Log In</button>
         </form>
       );

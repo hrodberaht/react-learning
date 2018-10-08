@@ -13,15 +13,19 @@ export class AddCardForm extends Component {
     this.setState({ [e.target.id]: e.target.value });
   };
 
+  resetState = () => {
+    this.setState({
+      name: '',
+      email: '',
+    });
+  }
+
   handleAdd = (e) => {
     e.preventDefault();
     const { name, email } = this.state;
     const { handleAddCard } = this.props;
     handleAddCard(name, email);
-    this.setState({
-      name: '',
-      email: '',
-    });
+    this.resetState();
   };
 
   render() {
