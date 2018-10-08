@@ -7,8 +7,12 @@ import { logOut } from '../../../../actions';
 
 export class Authorization extends Component {
   render() {
-    const { children, auth, handleLogOut } = this.props;
-    return children(auth, handleLogOut);
+    const {
+      auth, withAuth, withoutAuth, handleLogOut,
+    } = this.props;
+    if (auth) return withAuth(handleLogOut);
+
+    return withoutAuth;
   }
 }
 
@@ -20,7 +24,8 @@ export default withRouter(connect(mapStateToProps,
   { handleLogOut: logOut })(Authorization));
 
 Authorization.propTypes = {
-  children: PropTypes.func.isRequired,
+  withAuth: PropTypes.func.isRequired,
+  withoutAuth: PropTypes.element.isRequired,
   auth: PropTypes.bool.isRequired,
   handleLogOut: PropTypes.func.isRequired,
 };
