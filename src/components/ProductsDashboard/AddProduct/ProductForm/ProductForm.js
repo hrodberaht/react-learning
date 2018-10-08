@@ -28,8 +28,11 @@ const renderField = ({
   <React.Fragment>
     <input {...input} type={type} />
     <p>
-      {touched
-        && (error && <span>{error}</span>)}
+      {
+        touched
+        && error
+        && <span>{error}</span>
+      }
     </p>
   </React.Fragment>
 );
