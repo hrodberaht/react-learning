@@ -9,15 +9,21 @@ const schema = yup.object().shape({
     .number()
     .required()
     .positive(),
+  auctions: yup.array(yup.number().required('Required')),
 });
 
 const asyncValidate = values => schema.validate(values, { abortEarly: false })
   .catch((errors) => {
-    const errorsRedux = {};
+    const errorsReduxForm = {
+      name: '',
+      price: '',
+      auctions: [],
+    };
     errors.inner.forEach((err) => {
-      errorsRedux[err.path] = err.message;
+      errorsReduxForm[err.path] = err.message;
+      if (err.path.includes('auctions')) errorsReduxForm.auctions.push(err.message);
     });
-    throw errorsRedux;
+    throw errorsReduxForm;
   });
 
 const renderField = ({
@@ -27,27 +33,27 @@ const renderField = ({
 }) => (
   <React.Fragment>
     <input {...input} type={type} />
-    <p>
+    <div>
       {
         touched
         && error
         && <span>{error}</span>
       }
-    </p>
+    </div>
   </React.Fragment>
 );
 
-const renderAuctionsId = ({ fields }) => (
+const renderAuctionsId = ({ fields, meta: { error } }) => (
   <React.Fragment>
-    {fields.map((member, index) => (
-      <p key={member}>
+    {fields.map((auction, index) => (
+      <div key={auction}>
 
         <span>
            ID
           {index + 1}
         </span>
         <Field
-          name={`${member}.auctionId`}
+          name={auction}
           type="number"
           component={renderField}
         />
@@ -57,11 +63,12 @@ const renderAuctionsId = ({ fields }) => (
         >
           Remove
         </button>
-      </p>
+        {error && <span>{error}</span>}
+      </div>
     ))
     }
     <p>
-      <button type="button" onClick={() => fields.push({})}>
+      <button type="button" onClick={() => fields.push()}>
         Ad Id
       </button>
     </p>
@@ -70,7 +77,7 @@ const renderAuctionsId = ({ fields }) => (
 );
 class ProductForm extends Component {
   render() {
-    const { handleSubmit } = this.props;
+    const { handleSubmit, pristine } = this.props;
     return (
       <div>
         <form onSubmit={handleSubmit}>
@@ -82,11 +89,11 @@ class ProductForm extends Component {
             Price:
             <Field id="price" name="price" component={renderField} type="number" />
           </label>
-          <label htmlFor="auctionsId">
+          <label htmlFor="auctions">
             Auctions id:
-            <FieldArray id="auctionsId" name="auctionsId" component={renderAuctionsId} type="number" />
+            <FieldArray id="auctions" name="auctions" component={renderAuctionsId} type="number" />
           </label>
-          <button type="submit">Submit</button>
+          <button type="submit" disabled={pristine}>Submit</button>
         </form>
       </div>
     );
@@ -100,5 +107,6 @@ export default reduxForm({
 })(ProductForm);
 
 ProductForm.propTypes = {
+  pristine: PropTypes.bool.isRequired,
   handleSubmit: PropTypes.func.isRequired,
 };
