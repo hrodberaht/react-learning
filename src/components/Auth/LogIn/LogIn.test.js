@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import LogIn from './LogIn';
+import { LogIn } from './LogIn';
 
 describe('<LogIn />', () => {
   let wrapper;
@@ -26,12 +26,6 @@ describe('<LogIn />', () => {
     wrapper.update();
     setValuesToInputs();
     expect(wrapper.instance().handleChange).toHaveBeenCalled();
-  });
-
-  it('should login and email in state be empty strings', () => {
-    const { login, email } = wrapper.state();
-    expect(login).toBe('');
-    expect(email).toBe('');
   });
 
   it('should change state after change input', () => {

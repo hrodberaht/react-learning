@@ -21,4 +21,4 @@ Search.propTypes = {
   handleChange: PropTypes.func.isRequired,
 };
 
-export const ConnectedSearch = connect(null, { handleChange: filter })(Search);
+export default connect(null, { handleChange: filter })(Search);

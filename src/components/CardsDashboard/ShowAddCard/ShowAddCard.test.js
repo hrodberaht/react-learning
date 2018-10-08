@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 import { ShowAddCard } from './ShowAddCard';
-import { ConnectedAddCardForm } from './AddCardForm/AddCardForm';
+import ConnectedAddCardForm from './AddCardForm/AddCardForm';
 
 describe('<ShowAddCard />', () => {
   let wrapper;

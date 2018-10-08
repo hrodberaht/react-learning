@@ -60,11 +60,11 @@ export class AddCardForm extends Component {
   }
 }
 
-AddCardForm.propTypes = {
-  handleAddCard: PropTypes.func.isRequired,
-};
-
-export const ConnectedAddCardForm = connect(
+export default connect(
   null,
   { handleAddCard: addCard },
 )(AddCardForm);
+
+AddCardForm.propTypes = {
+  handleAddCard: PropTypes.func.isRequired,
+};
