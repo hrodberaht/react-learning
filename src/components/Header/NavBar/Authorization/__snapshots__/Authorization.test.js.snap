@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Authorization /> render 1`] = `
+<NavLink
+  activeClassName="active"
+  aria-current="page"
+  to="/login"
+>
+  Login
+</NavLink>
+`;
+
+exports[`<Authorization /> should render Log out in nav, if auth is true 1`] = `
+Object {
+  "logOut": <NavLink
+    activeClassName="active"
+    aria-current="page"
+    onClick={[Function]}
+    to="/login"
+>
+    Log out
+</NavLink>,
+  "props": Object {
+    "auth": true,
+    "handleLogOut": [Function],
+  },
+  "wrapper": <NavLink
+    activeClassName="active"
+    aria-current="page"
+    onClick={[Function]}
+    to="/login"
+>
+    Log out
+</NavLink>,
+}
+`;
