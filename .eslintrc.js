@@ -8,7 +8,7 @@ module.exports = {
     "no-underscore-dangle": ["error", { "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }],
     "react/destructuring-assignment": [0],
     "import/no-extraneous-dependencies": ["error", 
-      {"devDependencies": ["./src/specs/*.js", "**/*.test.js"]}],
+      {"devDependencies": ["./src/specs/*.js", "**/*.test.js","./src/database/*.js"]}],
     "jsx-a11y/label-has-for": [
       2, {
         "components": [ "label" ],
