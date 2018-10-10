@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { FieldArray, Field, reduxForm } from 'redux-form';
+import {
+  FieldArray,
+  Field,
+  reduxForm,
+  reset,
+} from 'redux-form';
 import { PropTypes } from 'prop-types';
 import * as yup from 'yup';
 
@@ -72,6 +77,10 @@ const renderAuctionsId = ({ fields, meta: { error } }) => (
 
   </React.Fragment>
 );
+
+const afterSubmit = (data, dispatch) => {
+  dispatch(reset('addProduct'));
+};
 class ProductForm extends Component {
   render() {
     const { handleSubmit, pristine } = this.props;
@@ -99,8 +108,8 @@ class ProductForm extends Component {
 
 export default reduxForm({
   form: 'addProduct',
-  // validate,
   asyncValidate,
+  onSubmitSuccess: afterSubmit,
 })(ProductForm);
 
 ProductForm.propTypes = {
