@@ -2,13 +2,14 @@ const jsonServer = require('json-server');
 
 const server = jsonServer.create();
 const router = jsonServer.router('./src/database/db.json');
-
+const middlewares = jsonServer.defaults();
 
 function isAuthorized(req) {
-  const { name, password } = req.body;
-  if (name === 'rob' && password === 'rob') return true;
+  const { login, password } = req.body;
+  if (login === 'rob' && password === 'rob@rob.pl') return true;
   return false;
 }
+server.use(middlewares);
 server.use(jsonServer.bodyParser);
 server.use((req, res) => {
   if (isAuthorized(req)) {
