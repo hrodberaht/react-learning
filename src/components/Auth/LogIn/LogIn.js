@@ -7,7 +7,7 @@ import { logIn } from '../../../actions';
 export class LogIn extends Component {
     state = {
       login: '',
-      email: '',
+      password: '',
     }
 
     handleChange = (e) => {
@@ -17,30 +17,30 @@ export class LogIn extends Component {
     resetState = () => {
       this.setState({
         login: '',
-        email: '',
+        password: '',
       });
     }
 
     handleSubmit = (e) => {
-      const { login, email } = this.state;
+      const { login, password } = this.state;
       const { handleLogIn } = this.props;
       e.preventDefault();
-      handleLogIn(login, email);
+      handleLogIn(login, password);
       this.resetState();
     }
 
     render() {
       if (this.props.auth) return (<Redirect to={{ pathname: '/cards' }} />);
-      const { login, email } = this.state;
+      const { login, password } = this.state;
       return (
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="login">
           Login:
             <input id="login" type="text" value={login} onChange={this.handleChange} />
           </label>
-          <label htmlFor="email">
-          Email:
-            <input id="email" type="email" value={email} onChange={this.handleChange} />
+          <label htmlFor="password">
+          Password:
+            <input id="password" type="password" value={password} onChange={this.handleChange} />
           </label>
           <button type="submit">Log In</button>
         </form>

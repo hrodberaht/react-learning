@@ -16,13 +16,13 @@ exports[`<LogIn /> should component render 1`] = `
     />
   </label>
   <label
-    htmlFor="email"
+    htmlFor="password"
   >
-    Email:
+    Password:
     <input
-      id="email"
+      id="password"
       onChange={[Function]}
-      type="email"
+      type="password"
       value=""
     />
   </label>

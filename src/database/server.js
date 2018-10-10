@@ -6,7 +6,7 @@ const middlewares = jsonServer.defaults();
 
 function isAuthorized(req) {
   const { login, password } = req.body;
-  if (login === 'rob' && password === 'rob@rob.pl') return true;
+  if (login === 'rob' && password === 'rob') return true;
   return false;
 }
 server.use(middlewares);

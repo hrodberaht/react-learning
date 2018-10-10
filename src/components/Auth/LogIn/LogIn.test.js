@@ -11,7 +11,7 @@ describe('<LogIn />', () => {
 
   const setValuesToInputs = () => {
     wrapper.find('#login').simulate('change', { target: { value: 'John', id: 'login' } });
-    wrapper.find('#email').simulate('change', { target: { value: 'test@test.pl', id: 'email' } });
+    wrapper.find('#password').simulate('change', { target: { value: 'test@test.pl', id: 'password' } });
   };
   beforeEach(() => {
     wrapper = shallow(<LogIn {...props} />);
@@ -30,14 +30,14 @@ describe('<LogIn />', () => {
 
   it('should change state after change input', () => {
     setValuesToInputs();
-    expect(wrapper.state()).toEqual({ login: 'John', email: 'test@test.pl' });
+    expect(wrapper.state()).toEqual({ login: 'John', password: 'test@test.pl' });
   });
 
-  it('should call handleLogIn function with login and email', () => {
+  it('should call handleLogIn function with login and password', () => {
     setValuesToInputs();
     wrapper.find('form').simulate('submit', { preventDefault() {} });
     expect(props.handleLogIn).toHaveBeenCalled();
 
-    expect(wrapper.state()).toEqual({ login: '', email: '' });
+    expect(wrapper.state()).toEqual({ login: '', password: '' });
   });
 });
