@@ -1,23 +1,70 @@
 import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { FieldArray, Field, reduxForm } from 'redux-form';
 import { PropTypes } from 'prop-types';
+import * as yup from 'yup';
 
-const validate = (values) => {
-  const errors = {};
-  if (!values.name) {
-    errors.name = 'Required';
-  } else if (values.name.length < 3) {
-    errors.name = 'Name should have at least 3 letters';
-  }
+const schema = yup.object().shape({
+  name: yup.string().required('Required'),
+  price: yup
+    .number()
+    .required()
+    .positive(),
+});
 
-  if (!values.price) {
-    errors.price = 'Required';
-  } else if (values.price <= 0) {
-    errors.price = 'Price should be bigger than 0';
-  }
+const asyncValidate = values => schema.validate(values, { abortEarly: false })
+  .catch((errors) => {
+    const errorsRedux = {};
+    errors.inner.forEach((err) => {
+      errorsRedux[err.path] = err.message;
+    });
+    throw errorsRedux;
+  });
 
-  return errors;
-};
+const renderField = ({
+  input,
+  type,
+  meta: { touched, error },
+}) => (
+  <React.Fragment>
+    <input {...input} type={type} />
+    <p>
+      {touched
+        && (error && <span>{error}</span>)}
+    </p>
+  </React.Fragment>
+);
+
+const renderAuctionsId = ({ fields }) => (
+  <React.Fragment>
+    {fields.map((member, index) => (
+      <p key={member}>
+
+        <span>
+           ID
+          {index + 1}
+        </span>
+        <Field
+          name={`${member}.auctionId`}
+          type="number"
+          component={renderField}
+        />
+        <button
+          type="button"
+          onClick={() => fields.remove(index)}
+        >
+          Remove
+        </button>
+      </p>
+    ))
+    }
+    <p>
+      <button type="button" onClick={() => fields.push({})}>
+        Ad Id
+      </button>
+    </p>
+
+  </React.Fragment>
+);
 
 const renderField = ({
   input,
@@ -45,8 +92,13 @@ class ProductForm extends Component {
           <label htmlFor="price">
             Price:
             <Field id="price" name="price" component={renderField} type="number" />
+
           </label>
-          <button type="submit">Add</button>
+          <label htmlFor="auctionsId">
+            Auctions id:
+            <FieldArray id="auctionsId" name="auctionsId" component={renderAuctionsId} type="number" />
+          </label>
+          <button type="submit">Submit</button>
         </form>
       </div>
     );
@@ -55,7 +107,7 @@ class ProductForm extends Component {
 
 export default reduxForm({
   form: 'addProduct',
-  validate,
+  asyncValidate,
 })(ProductForm);
 
 ProductForm.propTypes = {
