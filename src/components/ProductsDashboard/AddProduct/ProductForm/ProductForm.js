@@ -34,39 +34,36 @@ const renderField = ({
   <React.Fragment>
     <input {...input} type={type} />
     <div>
-      {
-        touched
-        && error
-        && <span>{error}</span>
-      }
+      {touched && error && <span>{error}</span>}
     </div>
   </React.Fragment>
 );
 
+const renderAuction = (fields, error) => (auction, index) => (
+  <div key={auction}>
+
+    <span>
+       ID
+      {index + 1}
+    </span>
+    <Field
+      name={auction}
+      type="number"
+      component={renderField}
+    />
+    <button
+      type="button"
+      onClick={() => fields.remove(index)}
+    >
+      Remove
+    </button>
+    {error && <span>{error}</span>}
+  </div>
+);
+
 const renderAuctionsId = ({ fields, meta: { error } }) => (
   <React.Fragment>
-    {fields.map((auction, index) => (
-      <div key={auction}>
-
-        <span>
-           ID
-          {index + 1}
-        </span>
-        <Field
-          name={auction}
-          type="number"
-          component={renderField}
-        />
-        <button
-          type="button"
-          onClick={() => fields.remove(index)}
-        >
-          Remove
-        </button>
-        {error && <span>{error}</span>}
-      </div>
-    ))
-    }
+    {fields.map(renderAuction(fields, error))}
     <p>
       <button type="button" onClick={() => fields.push()}>
         Ad Id
