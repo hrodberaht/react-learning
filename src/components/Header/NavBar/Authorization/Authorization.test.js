@@ -7,6 +7,7 @@ describe('<Authorization />', () => {
     const props = Object.assign({
       auth: false,
       handleLogOut: jest.fn(),
+      children: jest.fn(),
     }, propOverrides);
 
     const wrapper = shallow(<Authorization {...props} />);
@@ -21,16 +22,5 @@ describe('<Authorization />', () => {
   it('render', () => {
     const { wrapper } = setup();
     expect(wrapper).toMatchSnapshot();
-  });
-
-  it('should render Log out in nav, if auth is true', () => {
-    const wrapper = setup({ auth: true });
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('call handleLogOut after click Log out in nav', () => {
-    const { logOut, props: { handleLogOut } } = setup({ auth: true });
-    logOut.simulate('click');
-    expect(handleLogOut).toHaveBeenCalled();
   });
 });

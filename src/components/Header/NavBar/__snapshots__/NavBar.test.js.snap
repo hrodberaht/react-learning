@@ -34,8 +34,31 @@ exports[`<NavBar /> should render component 1`] = `
       </NavLink>
     </li>
     <li>
-      <withRouter(Connect(Authorization)) />
+      <withRouter(Connect(Authorization))>
+        <Component />
+      </withRouter(Connect(Authorization))>
     </li>
   </ul>
 </nav>
+`;
+
+exports[`<NavBar /> should render logOut if auth is true 1`] = `
+<NavLink
+  activeClassName="active"
+  aria-current="page"
+  onClick={[Function]}
+  to="/login"
+>
+  Log out
+</NavLink>
+`;
+
+exports[`<NavBar /> should render login if auth is false 1`] = `
+<NavLink
+  activeClassName="active"
+  aria-current="page"
+  to="/login"
+>
+  Login
+</NavLink>
 `;

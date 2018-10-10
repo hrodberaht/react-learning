@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import './NavBar.css';
 import ConnectedAuthorization from './Authorization/Authorization';
 
 export default class NavBar extends Component {
@@ -19,7 +18,15 @@ export default class NavBar extends Component {
             <NavLink to="/products">Products</NavLink>
           </li>
           <li>
-            <ConnectedAuthorization />
+            <ConnectedAuthorization>
+              {
+                (auth, logOut) => {
+                  if (auth) return <NavLink to="/login" onClick={logOut}>Log out</NavLink>;
+
+                  return <NavLink to="/login">Login</NavLink>;
+                }
+              }
+            </ConnectedAuthorization>
           </li>
         </ul>
       </nav>

@@ -1,3 +1,9 @@
+@import './styles/app.css';
+@import './styles/nav-bar.css';
+@import './styles/add-card.css';
+@import './styles/product.css';
+
+
 body {
   margin: 0;
   padding: 0;
