@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 import { logIn } from '../../../actions';
 
 export class LogIn extends Component {
@@ -21,21 +21,16 @@ export class LogIn extends Component {
       });
     }
 
-    redirect = () => {
-      const { history } = this.props;
-      history.push('/cards');
-    }
-
     handleSubmit = (e) => {
       const { login, email } = this.state;
       const { handleLogIn } = this.props;
       e.preventDefault();
       handleLogIn(login, email);
       this.resetState();
-      this.redirect();
     }
 
     render() {
+      if (this.props.auth) return (<Redirect to={{ pathname: '/cards' }} />);
       const { login, email } = this.state;
       return (
         <form onSubmit={this.handleSubmit}>
@@ -52,9 +47,13 @@ export class LogIn extends Component {
       );
     }
 }
+const mapStateToProps = state => ({
+  auth: state.auth,
+});
 
-export default withRouter(connect(null, { handleLogIn: logIn })(LogIn));
+export default withRouter(connect(mapStateToProps, { handleLogIn: logIn })(LogIn));
 
 LogIn.propTypes = {
   handleLogIn: PropTypes.func.isRequired,
+  auth: PropTypes.bool.isRequired,
 };
