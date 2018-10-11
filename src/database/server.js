@@ -4,6 +4,11 @@ const server = jsonServer.create();
 const router = jsonServer.router('./src/database/db.json');
 const middlewares = jsonServer.defaults();
 
+function checkKey(key) {
+  if (key.includes('1234')) return true;
+  return false;
+}
+
 function isAuthorized(req) {
   const { login, password } = req.body;
   if (login === 'rob' && password === 'rob') return true;
@@ -11,12 +16,21 @@ function isAuthorized(req) {
 }
 server.use(middlewares);
 server.use(jsonServer.bodyParser);
-server.use((req, res) => {
-  if (isAuthorized(req)) {
-    res.sendStatus(200);
+server.use((req, res, next) => {
+  const key = (req.headers.authorization.split(' ')[6]);
+  if (checkKey(key)) {
+    next();
+  } else if (isAuthorized(req)) {
+    res.send({ key: 1234 });
   } else {
     res.sendStatus(401);
   }
+});
+
+server.get('/', (req, res) => {
+  res.json({
+    body: res.locals.data,
+  });
 });
 server.use(router);
 
