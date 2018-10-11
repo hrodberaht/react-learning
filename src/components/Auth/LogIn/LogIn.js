@@ -35,14 +35,14 @@ export class LogIn extends Component {
       return (
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="login">
-          Login:
+            <p>Login:</p>
             <input id="login" type="text" value={login} onChange={this.handleChange} />
           </label>
           <label htmlFor="password">
-          Password:
+            <p>Password:</p>
             <input id="password" type="password" value={password} onChange={this.handleChange} />
           </label>
-          <button type="submit">Log In</button>
+          <button id="submit-button" type="submit">Log In</button>
         </form>
       );
     }

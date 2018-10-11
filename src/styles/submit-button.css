@@ -1,0 +1,8 @@
+#submit-button {
+   color: white;
+   background-color: blue;
+   border: 0;
+   padding: 10px 20px;
+   font-size: 1em;
+   text-transform: uppercase; 
+}

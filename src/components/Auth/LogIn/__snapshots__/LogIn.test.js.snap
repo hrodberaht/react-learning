@@ -7,7 +7,9 @@ exports[`<LogIn /> should component render 1`] = `
   <label
     htmlFor="login"
   >
-    Login:
+    <p>
+      Login:
+    </p>
     <input
       id="login"
       onChange={[Function]}
@@ -18,7 +20,9 @@ exports[`<LogIn /> should component render 1`] = `
   <label
     htmlFor="password"
   >
-    Password:
+    <p>
+      Password:
+    </p>
     <input
       id="password"
       onChange={[Function]}
@@ -27,6 +31,7 @@ exports[`<LogIn /> should component render 1`] = `
     />
   </label>
   <button
+    id="submit-button"
     type="submit"
   >
     Log In
