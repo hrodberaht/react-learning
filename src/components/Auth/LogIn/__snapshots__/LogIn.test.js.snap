@@ -33,7 +33,7 @@ exports[`<LogIn /> should component render 1`] = `
     />
   </label>
   <button
-    id="submit-button"
+    className="btn submit-btn"
     type="submit"
   >
     Log In

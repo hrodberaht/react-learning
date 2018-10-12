@@ -57,7 +57,7 @@ const renderAuction = (fields, error) => (auction, index) => (
       component={renderField}
     />
     <button
-      className="danger-btn"
+      className="btn danger-btn"
       type="button"
       onClick={() => fields.remove(index)}
     >
@@ -71,7 +71,7 @@ const renderAuctionsId = ({ fields, meta: { error } }) => (
   <React.Fragment>
     {fields.map(renderAuction(fields, error))}
     <p>
-      <button className="primary-btn" type="button" onClick={() => fields.push()}>
+      <button className="btn primary-btn" type="button" onClick={() => fields.push()}>
         Ad Id
       </button>
     </p>
@@ -100,7 +100,7 @@ class ProductForm extends Component {
             Auctions id:
             <FieldArray id="auctions" name="auctions" component={renderAuctionsId} type="number" />
           </label>
-          <button id="submit-button" type="submit" disabled={pristine}>Submit</button>
+          <button className="btn submit-btn" type="submit" disabled={pristine}>Submit</button>
         </form>
       </div>
     );

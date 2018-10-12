@@ -1,5 +1,8 @@
-.primary-btn {
-    background-color: lightgreen;
+@import './danger-btn.css';
+@import './primary-btn.css';
+@import './submit-btn.css';
+
+.btn {
     padding: 10px 25px;
     border: 0px;
     color: white;
@@ -8,8 +11,4 @@
     font-size: 1em;
     text-transform: uppercase; 
     border-radius: 5px;
-}
-
-.primary-btn:hover {
-    background-color:darkgreen;
 }

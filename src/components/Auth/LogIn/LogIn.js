@@ -42,7 +42,7 @@ export class LogIn extends Component {
             <p>Password:</p>
             <input className="form-input" id="password" type="password" value={password} onChange={this.handleChange} />
           </label>
-          <button id="submit-button" type="submit">Log In</button>
+          <button className="btn submit-btn" type="submit">Log In</button>
         </form>
       );
     }
