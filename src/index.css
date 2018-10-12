@@ -4,6 +4,11 @@
 @import './styles/product.css';
 @import './styles/login.css';
 @import './styles/submit-button.css';
+@import './styles/form-input.css';
+@import './styles/primary-button.css';
+@import './styles/danger-button.css';
+
+
 
 
 
@@ -14,7 +19,7 @@ body {
 }
 
 .container {
-  width: 1024px;
+  max-width: 1024px;
   margin: auto;
 }
 

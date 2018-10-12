@@ -1,8 +1,13 @@
 #submit-button {
    color: white;
-   background-color: blue;
+   background-color: lightblue;
    border: 0;
+   outline: 0;
    padding: 10px 20px;
    font-size: 1em;
    text-transform: uppercase; 
+}
+
+#submit-button:hover {
+    background-color: blue;
 }

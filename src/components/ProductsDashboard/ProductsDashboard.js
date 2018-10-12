@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import AllProducts from './AllProducts/AllProducts';
 import AddProduct from './AddProduct/AddProduct';
 
 export default class ProductsDashboard extends Component {
@@ -7,7 +6,6 @@ export default class ProductsDashboard extends Component {
     return (
       <div>
         <AddProduct />
-        <AllProducts />
       </div>
     );
   }

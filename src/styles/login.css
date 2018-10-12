@@ -6,12 +6,9 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-}
-
-.Login form label input {
-    width: 30vw;
-    margin: auto;
-    font-size: 1.2em;
+    color: darkblue;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
 .Login form label p {

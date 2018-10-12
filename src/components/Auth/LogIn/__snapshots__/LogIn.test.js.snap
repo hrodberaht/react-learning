@@ -11,6 +11,7 @@ exports[`<LogIn /> should component render 1`] = `
       Login:
     </p>
     <input
+      className="form-input"
       id="login"
       onChange={[Function]}
       type="text"
@@ -24,6 +25,7 @@ exports[`<LogIn /> should component render 1`] = `
       Password:
     </p>
     <input
+      className="form-input"
       id="password"
       onChange={[Function]}
       type="password"

@@ -1,0 +1,15 @@
+.primary-btn {
+    background-color: lightgreen;
+    padding: 10px 25px;
+    border: 0px;
+    color: white;
+    outline: 0;
+    padding: 10px 20px;
+    font-size: 1em;
+    text-transform: uppercase; 
+    border-radius: 5px;
+}
+
+.primary-btn:hover {
+    background-color:darkgreen;
+}
