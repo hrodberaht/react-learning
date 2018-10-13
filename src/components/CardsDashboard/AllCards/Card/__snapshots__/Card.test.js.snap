@@ -2,33 +2,23 @@
 
 exports[`<Card /> should render component witout crash 1`] = `
 <div
-  style={
-    Object {
-      "border": "1px solid black",
-      "margin": "5px auto",
-      "width": "300px",
-    }
-  }
+  className="cards-list__card"
 >
-  <h2>
+  <p>
     Name:
+  </p>
+  <h2>
     John
   </h2>
-  <h4>
+  <p>
     Email:
+  </p>
+  <h4>
     john@gmail.com
   </h4>
   <button
+    className="btn danger-btn"
     onClick={[Function]}
-    style={
-      Object {
-        "backgroundColor": "red",
-        "border": "1px solid red",
-        "color": "white",
-        "fontSize": "16px",
-        "padding": "5px",
-      }
-    }
     type="button"
   >
     Delete

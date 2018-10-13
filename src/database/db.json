@@ -1,14 +1,19 @@
 {
-"cards": [
-  {
-    "id": 1,
-    "name": "John",
-    "email": "john@gmail.com"
-  },
-  {
-    "id": 2,
-    "name": "Rob",
-    "email": "rob@gmail.com"
-  }
-]
+  "cards": [
+    {
+      "id": 1,
+      "name": "John",
+      "email": "john@gmail.com"
+    },
+    {
+      "name": "Rob",
+      "email": "rob@rob.pl",
+      "id": 2
+    },
+    {
+      "name": "Playstation",
+      "email": "BIURO@ZEFI.PL",
+      "id": 3
+    }
+  ]
 }
