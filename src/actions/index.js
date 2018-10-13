@@ -25,6 +25,11 @@ const logInSucces = () => ({
   isAuthenticated: true,
 });
 
+const logOutSucces = () => ({
+  type: 'LOGOUT',
+  isAuthenticated: false,
+});
+
 
 const url = 'http://localhost:3004/cards/';
 
@@ -74,10 +79,10 @@ export const logIn = (login, password) => dispatch => fetch('http://localhost:30
   })
   .catch(err => dispatch(errorAfterFetch(err)));
 
-export const logOut = () => ({
-  type: 'LOGOUT',
-  isAuthenticated: false,
-});
+export const logOut = () => (dispatch) => {
+  localStorage.removeItem('token');
+  dispatch(logOutSucces());
+};
 
 export const toggleCardVisable = () => ({
   type: 'TOGGLE_CARD_VISABLE',
