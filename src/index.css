@@ -5,6 +5,8 @@
 @import './styles/buttons/btn.css';
 @import './styles/cards-list.css';
 @import './styles/card-form.css';
+@import './styles/search-card.css';
+
 
 body {
   margin: 0;

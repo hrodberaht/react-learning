@@ -1,12 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Search /> should render without crash 1`] = `
-<div>
+<div
+  className="search-card"
+>
   <label
     htmlFor="search"
   >
-    Search by name:
+    <p>
+      Search by name:
+    </p>
+    <i
+      className="fa fa-search"
+    />
     <input
+      className="form-input"
       id="search"
       onChange={[Function]}
       type="text"
