@@ -1,16 +1,10 @@
-@import './styles/app.css';
 @import './styles/nav-bar.css';
-@import './styles/add-card.css';
 @import './styles/product.css';
 @import './styles/login.css';
 @import './styles/form-input.css';
 @import './styles/buttons/btn.css';
 @import './styles/cards-list.css';
-
-
-
-
-
+@import './styles/card-form.css';
 
 body {
   margin: 0;

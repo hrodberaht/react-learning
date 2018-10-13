@@ -1,7 +1,9 @@
 .cards-list {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+    padding: 0px 40px; 
 }
 
 .cards-list__card {

@@ -32,22 +32,30 @@ export class AddCardForm extends Component {
     const { name, email } = this.state;
     return (
 
-      <div className="AddCard">
+      <div className="card-form__form">
         <form onSubmit={this.handleAdd}>
-          <input
-            id="name"
-            type="text"
-            value={name}
-            onChange={this.handleChange}
-          />
-          Email:
-          <input
-            id="email"
-            type="email"
-            value={email}
-            onChange={this.handleChange}
-          />
+          <label htmlFor="name">
+            Name:
+            <input
+              className="form-input"
+              id="name"
+              type="text"
+              value={name}
+              onChange={this.handleChange}
+            />
+          </label>
+          <label htmlFor="email">
+            Email:
+            <input
+              className="form-input"
+              id="email"
+              type="email"
+              value={email}
+              onChange={this.handleChange}
+            />
+          </label>
           <button
+            className="btn submit-btn"
             id="submit"
             type="submit"
             disabled={name.length < 3}

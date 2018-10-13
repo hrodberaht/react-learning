@@ -1,8 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ShowAddCard /> should render without crash 1`] = `
-<div>
+<div
+  className="card-form"
+>
   <button
+    className="btn primary-btn"
     onClick={[Function]}
     type="button"
   >
