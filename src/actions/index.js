@@ -33,7 +33,14 @@ const logOutSucces = () => ({
 
 const url = 'http://localhost:3004/cards/';
 
-export const fetchCards = () => dispatch => fetch(url)
+export const fetchCards = () => dispatch => fetch(url,
+  {
+    method: 'get',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Token ${localStorage.getItem('token')}`,
+    },
+  })
   .then(res => res.json())
   .then(cards => dispatch(fetchCardsSucces(cards)))
   .catch(err => dispatch(errorAfterFetch(err)));
@@ -44,6 +51,7 @@ export const addCard = (name, email) => dispatch => fetch(url,
     method: 'post',
     headers: {
       'Content-Type': 'application/json',
+      Authorization: `Token ${localStorage.getItem('token')}`,
     },
     body: JSON.stringify({ name, email }),
   })
@@ -56,6 +64,7 @@ export const deleteCard = id => dispatch => fetch(url + id,
     method: 'delete',
     headers: {
       'Content-Type': 'application/json',
+      Authorization: `Token ${localStorage.getItem('token')}`,
     },
   })
   .then(res => res.json())
