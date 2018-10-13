@@ -66,7 +66,12 @@ export const logIn = (login, password) => dispatch => fetch('http://localhost:30
     body: JSON.stringify({ login, password }),
   })
   .then(res => res.json())
-  .then((res) => { if (res.key) dispatch(logInSucces()); })
+  .then((res) => {
+    if (res.token) {
+      localStorage.setItem('token', res.token);
+      dispatch(logInSucces());
+    }
+  })
   .catch(err => dispatch(errorAfterFetch(err)));
 
 export const logOut = () => ({
