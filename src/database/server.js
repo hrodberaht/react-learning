@@ -1,12 +1,20 @@
 const jsonServer = require('json-server');
+const bcrypt = require('bcrypt');
 
 const server = jsonServer.create();
 const router = jsonServer.router('./src/database/db.json');
 const middlewares = jsonServer.defaults();
 
-function isAuthorized(req) {
+async function isAuthorized(req) {
   const { login, password } = req.body;
-  if (login === 'rob' && password === 'rob') return true;
+  const user = {
+    login: 'rob',
+    passwordHash: '$2b$10$Jv/rTQIkytuflrOnSBj01ush5ofMTmScpMCGT.ZGeBcGLTTls2Qp2',
+  };
+  if (login === user.login) {
+    const match = await bcrypt.compare(password, user.passwordHash);
+    return match;
+  }
   return false;
 }
 
@@ -17,14 +25,15 @@ function checkToken(token) {
 
 server.use(middlewares);
 server.use(jsonServer.bodyParser);
-server.use((req, res, next) => {
+server.use(async (req, res, next) => {
   if (req.headers.authorization) {
     const token = (req.headers.authorization.split(' ')[1]);
     if (checkToken(token)) {
       return next();
     }
   }
-  if (isAuthorized(req)) return res.send({ token: 1234 });
+  const auth = await isAuthorized(req);
+  if (auth) return res.send({ token: 1234 });
   return res.sendStatus(401);
 });
 
