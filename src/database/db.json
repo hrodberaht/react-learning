@@ -19,6 +19,18 @@
       "name": "Opisy",
       "email": "robpszczolka@gmail.com",
       "id": 4
+    },
+    {
+      "name": "id,ean,sku",
+      "email": "rob@rob.pl",
+      "id": 5
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "login": "rob",
+      "passwordHash": "$2b$10$c58Q1EQ0YZxhdSyF/RSabujMgcbZgms6zlgB6JwX/iNCOFAl1AFB6"
     }
   ]
 }

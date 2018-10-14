@@ -7,14 +7,15 @@ const middlewares = jsonServer.defaults();
 
 async function isAuthorized(req) {
   const { login, password } = req.body;
-  const user = {
-    login: 'rob',
-    passwordHash: '$2b$10$Jv/rTQIkytuflrOnSBj01ush5ofMTmScpMCGT.ZGeBcGLTTls2Qp2',
-  };
+  const user = await router.db.get('users').find({ login }).value();
+  if (!user) {
+    return false;
+  }
   if (login === user.login) {
     const match = await bcrypt.compare(password, user.passwordHash);
     return match;
   }
+
   return false;
 }
 
