@@ -11,9 +11,10 @@ describe('<Search />', () => {
   });
 
   it('should call onChange when typing in input', () => {
-    setup().wrapper.find('input').simulate('change', { target: { value: '1' } });
-    setup().wrapper.find('input').simulate('change', { target: { value: '2' } });
+    const { wrapper, props } = setup();
+    wrapper.find('input').simulate('change', { target: { value: '1' } });
+    wrapper.find('input').simulate('change', { target: { value: '2' } });
 
-    expect(setup().props.handleChange.mock.calls.length).toBe(2);
+    expect(props.handleChange.mock.calls.length).toBe(2);
   });
 });

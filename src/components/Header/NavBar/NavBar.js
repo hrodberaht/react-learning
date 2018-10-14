@@ -18,15 +18,10 @@ export default class NavBar extends Component {
             <NavLink to="/products">Products</NavLink>
           </li>
           <li>
-            <ConnectedAuthorization>
-              {
-                (auth, logOut) => {
-                  if (auth) return <NavLink to="/login" onClick={logOut}>Log out</NavLink>;
-
-                  return <NavLink to="/login">Login</NavLink>;
-                }
-              }
-            </ConnectedAuthorization>
+            <ConnectedAuthorization
+              withAuth={logOut => <NavLink to="/login" onClick={logOut}>Log out</NavLink>}
+              withoutAuth={<NavLink to="/login">Login</NavLink>}
+            />
           </li>
         </ul>
       </nav>
