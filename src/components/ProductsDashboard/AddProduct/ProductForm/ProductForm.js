@@ -50,7 +50,7 @@ const renderField = ({
   </React.Fragment>
 );
 
-const renderAuction = (fields, error) => (auction, index) => (
+const renderAuction = error => (auction, index, fields) => (
   <div key={auction}>
 
     <p>
@@ -75,7 +75,7 @@ const renderAuction = (fields, error) => (auction, index) => (
 
 const renderAuctionsId = ({ fields, meta: { error } }) => (
   <React.Fragment>
-    {fields.map(renderAuction(fields, error))}
+    {fields.map(renderAuction(error))}
     <p>
       <button className={classNames('btn', 'primary-btn')} type="button" onClick={() => fields.push()}>
         Ad Id
