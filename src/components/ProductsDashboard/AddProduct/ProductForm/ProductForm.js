@@ -7,6 +7,7 @@ import {
 } from 'redux-form';
 import { PropTypes } from 'prop-types';
 import * as yup from 'yup';
+import classNames from 'classnames';
 
 const schema = yup.object().shape({
   name: yup.string().required('Required'),
@@ -31,13 +32,18 @@ const asyncValidate = values => schema.validate(values, { abortEarly: false })
     throw errorsReduxForm;
   });
 
+const inputsClassNames = error => classNames({
+  'form-input': true,
+  'form-error': error,
+});
+
 const renderField = ({
   input,
   type,
   meta: { touched, error },
 }) => (
   <React.Fragment>
-    <input className={`form-input${error ? ' form-error' : ''}`} {...input} type={type} />
+    <input className={inputsClassNames(error)} {...input} type={type} />
     <div>
       {touched && error && <span>{error}</span>}
     </div>
@@ -57,7 +63,7 @@ const renderAuction = (fields, error) => (auction, index) => (
       component={renderField}
     />
     <button
-      className="btn danger-btn"
+      className={classNames('btn', 'danger-btn')}
       type="button"
       onClick={() => fields.remove(index)}
     >
@@ -71,7 +77,7 @@ const renderAuctionsId = ({ fields, meta: { error } }) => (
   <React.Fragment>
     {fields.map(renderAuction(fields, error))}
     <p>
-      <button className="btn primary-btn" type="button" onClick={() => fields.push()}>
+      <button className={classNames('btn', 'primary-btn')} type="button" onClick={() => fields.push()}>
         Ad Id
       </button>
     </p>
@@ -100,7 +106,7 @@ class ProductForm extends Component {
             Auctions id:
             <FieldArray id="auctions" name="auctions" component={renderAuctionsId} type="number" />
           </label>
-          <button className="btn submit-btn" type="submit" disabled={pristine}>Submit</button>
+          <button className={classNames('btn', 'submit-btn')} type="submit" disabled={pristine}>Submit</button>
         </form>
       </div>
     );
