@@ -39,7 +39,16 @@ const renderInput = ({
 );
 export class Registration extends Component {
 submit = (values) => {
-  console.log(values);
+  const { login, email, password } = values;
+  fetch('http://localhost:3004/registration', {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ login, email, password }),
+  })
+    .then(data => console.log(data))
+    .catch(error => console.log(error));
 }
 
 

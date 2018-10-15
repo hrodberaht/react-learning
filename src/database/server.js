@@ -1,5 +1,6 @@
 const jsonServer = require('json-server');
 const bcrypt = require('bcrypt');
+const shortid = require('shortid');
 
 const server = jsonServer.create();
 const router = jsonServer.router('./src/database/db.json');
@@ -24,9 +25,28 @@ function checkToken(token) {
   return false;
 }
 
+async function registerUser(req) {
+  const { login, email, password } = req.body;
+  const passwordHash = await bcrypt.hash(password, 10);
+  const user = await router.db.get('users')
+    .push({
+      id: shortid.generate(),
+      login,
+      email,
+      passwordHash,
+    })
+    .write();
+  console.log(user);
+  return true;
+}
+
 server.use(middlewares);
 server.use(jsonServer.bodyParser);
 server.use(async (req, res, next) => {
+  if (req.originalUrl === '/registration') {
+    if (registerUser(req)) return res.send({ message: 'user added' });
+    return res.send({ message: 'error' });
+  }
   if (req.headers.authorization) {
     const token = (req.headers.authorization.split(' ')[1]);
     if (checkToken(token)) {
