@@ -40,12 +40,25 @@ async function registerUser(req) {
   return true;
 }
 
+async function checkUser(req) {
+  const { login } = req.body;
+  const taken = await router.db.get('users').find({ login }).value();
+  if (taken) return true;
+  return false;
+}
+
+
 server.use(middlewares);
 server.use(jsonServer.bodyParser);
 server.use(async (req, res, next) => {
   if (req.originalUrl === '/registration') {
     if (registerUser(req)) return res.send({ message: 'user added' });
     return res.send({ message: 'error' });
+  }
+  if (req.originalUrl === '/check') {
+    const checked = await checkUser(req);
+    if (checked) return res.send({ message: 'That login is taken' });
+    return res.send({ message: 'ok' });
   }
   if (req.headers.authorization) {
     const token = (req.headers.authorization.split(' ')[1]);

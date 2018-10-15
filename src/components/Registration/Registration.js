@@ -15,12 +15,22 @@ const validate = (values) => {
   return errors;
 };
 
-const asyncValidate = values => Promise.resolve().then(() => {
-  // simulate server latency
-  if (['rob'].includes(values.login)) {
-    throw { login: 'That username is taken' };
-  }
-});
+const asyncValidate = (values) => {
+  const { login } = values;
+  return fetch('http://localhost:3004/check', {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ login }),
+  })
+    .then(data => data.json())
+    .then((data) => {
+      if (data.message === 'That login is taken') {
+        throw { login: data.message };
+      }
+    });
+};
 
 
 const renderInput = ({
