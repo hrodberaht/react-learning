@@ -37,7 +37,8 @@ async function registerUser(req) {
     })
     .write();
   console.log(user);
-  return true;
+  if (user) return true;
+  return false;
 }
 
 async function checkUser(req) {
@@ -52,8 +53,9 @@ server.use(middlewares);
 server.use(jsonServer.bodyParser);
 server.use(async (req, res, next) => {
   if (req.originalUrl === '/registration') {
-    if (registerUser(req)) return res.send({ message: 'user added' });
-    return res.send({ message: 'error' });
+    const registered = await registerUser(req);
+    if (registered) return res.send({ message: 'user added' });
+    return res.send({ message: 'not register' });
   }
   if (req.originalUrl === '/check') {
     const checked = await checkUser(req);
