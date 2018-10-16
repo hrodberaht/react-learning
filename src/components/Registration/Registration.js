@@ -45,10 +45,10 @@ const renderInput = ({
     error,
   },
 }) => (
-  <p>
-    <input {...input} type={type} placeholder={placeholder} />
-    {touched && error && <span>{ error }</span>}
-  </p>
+  <React.Fragment>
+    <input className="form-input" {...input} type={type} placeholder={placeholder} />
+    <p>{touched && error && <span>{ error }</span>}</p>
+  </React.Fragment>
 );
 
 
@@ -77,7 +77,7 @@ submit = (values) => {
 render() {
   const { handleSubmit } = this.props;
   return (
-    <div>
+    <div className="registration">
       <form onSubmit={handleSubmit(this.submit)}>
         <Field
           id="login"

@@ -1,0 +1,10 @@
+.registration form   {
+    padding-top: 30px;
+    text-align: center;
+    display: block;
+    color: red;
+}
+
+.registration form button {
+    margin-top: 20px;
+}

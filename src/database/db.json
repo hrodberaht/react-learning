@@ -22,6 +22,12 @@
       "login": "john",
       "email": "rob@rob.pl",
       "passwordHash": "$2b$10$Yo52Bx.322lq.A53J3e70eXBSvVFi/BDOQbbRqQvbPstQaA2kII5e"
+    },
+    {
+      "id": "npUlPHE-4",
+      "login": "stefan",
+      "email": "test@test.pl",
+      "passwordHash": "$2b$10$rJmnEhtaDoYkm31WrDSkVecueN1yKVRCpZPOK6pmJJWiLRescaB4y"
     }
   ]
 }
