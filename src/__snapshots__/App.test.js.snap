@@ -3,9 +3,11 @@
 exports[`<App /> should render component 1`] = `
 <BrowserRouter>
   <div
-    className="App"
+    className="App container"
   >
-    <Header />
+    <Header
+      className="Header"
+    />
     <Switch>
       <Route
         component={[Function]}

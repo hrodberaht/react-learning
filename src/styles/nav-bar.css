@@ -1,33 +1,37 @@
-ul {
-    list-style-type: none;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    max-width: 80vw;
-    margin: 10px auto 20px auto;
+.NavBar {
+    background-color: lightblue;
+    
+}
+.NavBar ul {
+    list-style: none;
+    display: flex;
+    margin: 5px 0px;
+    justify-content: flex-start;
+    padding: 0px;
 }
 
-ul li {
-    float: left;
+.NavBar ul li {
+    margin-left: 0px;
+    margin-right: 10px;
+    padding: 5px 15px;
+    
 }
 
-ul li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
+.NavBar ul li a {
     text-decoration: none;
+    color: white;
+    padding: 5px 15px;
 }
 
+.NavBar ul li a:hover {
+    color: blue;
+}
 ul li:last-child {
-    float: right;
-    color: red;
+    margin-left: auto;
+    margin-right: 0px;
 }
 
-ul li a:hover {
-    background-color: #111;
-}
-
-a.active {
-    color: red;
+.NavBar ul li:hover {
+    background-color: yellow;
+    
 }

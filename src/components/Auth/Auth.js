@@ -4,9 +4,9 @@ import ConnectedLogIn from './LogIn/LogIn';
 export default class Auth extends Component {
   render() {
     return (
-      <div>
+      <section className="Login">
         <ConnectedLogIn />
-      </div>
+      </section>
     );
   }
 }

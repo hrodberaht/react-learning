@@ -26,8 +26,8 @@ export class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
-          <Header />
+        <div className="App container">
+          <Header className="Header" />
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/cards" component={ConnectedCardsDashboard} />
