@@ -2,24 +2,25 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { withRouter } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
+import * as yup from 'yup';
 
-const validate = (values) => {
-  const errors = {};
-  if (!values.login) {
-    errors.login = 'Required';
-  }
-  if (!values.email) {
-    errors.email = 'Required';
-  }
-  if (!values.password) {
-    errors.password = 'Required';
-  }
-  return errors;
-};
+const schema = yup.object().shape({
+  login: yup.string().min(3).max(8).required(),
+  email: yup.string().email().required(),
+  password: yup.string().required(),
+});
 
-const asyncValidate = (values) => {
+const asyncValidate = async (values) => {
+  const errorsForm = {};
+  await schema.validate(values, { abortEarly: false })
+    .catch((errors) => {
+      errors.inner.forEach((error) => {
+        errorsForm[error.path] = error.type;
+      });
+    });
   const { login } = values;
-  return fetch('http://localhost:3004/check', {
+
+  await fetch('http://localhost:3004/check', {
     method: 'post',
     headers: {
       'Content-Type': 'application/json',
@@ -29,10 +30,11 @@ const asyncValidate = (values) => {
     .then(data => data.json())
     .then((data) => {
       if (data.message === 'That login is taken') {
-        const error = { login: data.message };
-        throw error;
+        errorsForm.login = data.message;
       }
     });
+  if (Object.keys(errorsForm).length === 0) return Promise.resolve().then();
+  return Promise.reject().catch(() => { throw errorsForm; });
 };
 
 
@@ -50,7 +52,6 @@ const renderInput = ({
     <p>{touched && error && <span>{ error }</span>}</p>
   </React.Fragment>
 );
-
 
 export class Registration extends Component {
 redirect = () => {
@@ -70,12 +71,12 @@ submit = (values) => {
     .then((data) => {
       if (data.message === 'user added') this.redirect();
     })
-    .catch(error => console.log(error));
+    .catch((error) => { throw new Error(error); });
 }
 
 
 render() {
-  const { handleSubmit } = this.props;
+  const { handleSubmit, pristine } = this.props;
   return (
     <div className="registration">
       <form onSubmit={handleSubmit(this.submit)}>
@@ -101,7 +102,7 @@ render() {
           type="password"
           component={renderInput}
         />
-        <button type="submit" className="btn submit-btn">Submit</button>
+        <button type="submit" className="btn submit-btn" disabled={pristine}>Submit</button>
       </form>
     </div>
   );
@@ -112,11 +113,10 @@ withRouter(Registration);
 
 export default reduxForm({
   form: 'registration',
-  validate,
   asyncValidate,
-  asyncChangeFields: ['login'],
 })(Registration);
 
 Registration.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
+  pristine: PropTypes.bool.isRequired,
 };
