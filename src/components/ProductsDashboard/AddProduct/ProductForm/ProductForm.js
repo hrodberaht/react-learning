@@ -32,18 +32,20 @@ const asyncValidate = values => schema.validate(values, { abortEarly: false })
     throw errorsReduxForm;
   });
 
-const inputsClassNames = error => classNames({
-  'form-input': true,
-  'form-error': error,
-});
-
 const renderField = ({
   input,
   type,
   meta: { touched, error },
 }) => (
   <React.Fragment>
-    <input className={inputsClassNames(error)} {...input} type={type} />
+    <input
+      className={classNames({
+        'form-input': true,
+        'form-error': error,
+      })}
+      {...input}
+      type={type}
+    />
     <div>
       {touched && error && <span>{error}</span>}
     </div>
@@ -63,7 +65,7 @@ const renderAuction = error => (auction, index, fields) => (
       component={renderField}
     />
     <button
-      className={classNames('btn', 'danger-btn')}
+      className="btn danger-btn"
       type="button"
       onClick={() => fields.remove(index)}
     >
@@ -77,7 +79,7 @@ const renderAuctionsId = ({ fields, meta: { error } }) => (
   <React.Fragment>
     {fields.map(renderAuction(error))}
     <p>
-      <button className={classNames('btn', 'primary-btn')} type="button" onClick={() => fields.push()}>
+      <button className="btn primary-btn" type="button" onClick={() => fields.push()}>
         Ad Id
       </button>
     </p>
@@ -106,7 +108,7 @@ class ProductForm extends Component {
             Auctions id:
             <FieldArray id="auctions" name="auctions" component={renderAuctionsId} type="number" />
           </label>
-          <button className={classNames('btn', 'submit-btn')} type="submit" disabled={pristine}>Submit</button>
+          <button className="btn submit-btn" type="submit" disabled={pristine}>Submit</button>
         </form>
       </div>
     );
