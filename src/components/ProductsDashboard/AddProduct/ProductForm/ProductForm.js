@@ -81,6 +81,20 @@ const renderAuctionsId = ({ fields, meta: { error } }) => (
 const afterSubmit = (data, dispatch) => {
   dispatch(reset('addProduct'));
 };
+
+const renderField = ({
+  input,
+  label,
+  type,
+  meta: { touched, error },
+}) => (
+  <p>
+    <input {...input} placeholder={label} type={type} />
+    {touched
+        && (error && <span>{error}</span>)}
+  </p>
+);
+
 class ProductForm extends Component {
   render() {
     const { handleSubmit, pristine } = this.props;
@@ -94,6 +108,7 @@ class ProductForm extends Component {
           <label htmlFor="price">
             Price:
             <Field id="price" name="price" component={renderField} type="number" />
+
           </label>
           <label htmlFor="auctions">
             Auctions id:
