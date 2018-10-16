@@ -73,6 +73,18 @@
       "login": "23123",
       "email": "test@test.pl",
       "passwordHash": "$2b$10$ir185yT9YhVpHIft9bQUBusMSbuQfP9wopwnA4coGZOEMleRRi7Va"
+    },
+    {
+      "id": "0eWriEsd_",
+      "login": "4345345",
+      "email": "test@test.pl",
+      "passwordHash": "$2b$10$rs8qzXJtvRIIHKwI9t1qpuyovHktOamytPZ2hEYffQ4bg3/saPAFG"
+    },
+    {
+      "id": "Y4kwcGBOf",
+      "login": "13123213",
+      "email": "biuro@zefi.pl",
+      "passwordHash": "$2b$10$8vv58EqkN5LcaNS.iAdtQ.br35F3kmG/tH9YFIO4CxepAS1w1D3XW"
     }
   ]
 }

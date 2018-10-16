@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
+import { withRouter } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 
 const validate = (values) => {
@@ -48,7 +49,13 @@ const renderInput = ({
     {touched && error && <span>{ error }</span>}
   </p>
 );
+
+
 export class Registration extends Component {
+redirect = () => {
+  this.props.history.push('/login');
+}
+
 submit = (values) => {
   const { login, email, password } = values;
   fetch('http://localhost:3004/registration', {
@@ -60,7 +67,7 @@ submit = (values) => {
   })
     .then(data => data.json())
     .then((data) => {
-      if (data.message === 'user added') { console.log(data); }
+      if (data.message === 'user added') this.redirect();
     })
     .catch(error => console.log(error));
 }
@@ -99,6 +106,8 @@ render() {
   );
 }
 }
+
+withRouter(Registration);
 
 export default reduxForm({
   form: 'registration',
