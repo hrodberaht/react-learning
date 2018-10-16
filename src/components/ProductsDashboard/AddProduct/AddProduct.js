@@ -8,7 +8,7 @@ export default class AddProduct extends Component {
 
   render() {
     return (
-      <div>
+      <div className="AddProduct">
         <Form onSubmit={this.submit} />
       </div>
     );

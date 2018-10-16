@@ -11,9 +11,9 @@ import * as yup from 'yup';
 const schema = yup.object().shape({
   name: yup.string().required('Required'),
   price: yup
-    .number()
-    .required()
-    .positive(),
+    .number('Price must be a number')
+    .required('Required')
+    .positive('Price must be bigger than 0'),
   auctions: yup.array(yup.number().required('Required')),
 });
 
@@ -37,7 +37,7 @@ const renderField = ({
   meta: { touched, error },
 }) => (
   <React.Fragment>
-    <input {...input} type={type} />
+    <input className={`form-input${error ? ' form-error' : ''}`} {...input} type={type} />
     <div>
       {touched && error && <span>{error}</span>}
     </div>
@@ -47,16 +47,17 @@ const renderField = ({
 const renderAuction = (fields, error) => (auction, index) => (
   <div key={auction}>
 
-    <span>
-       ID
+    <p>
       {index + 1}
-    </span>
+      .
+    </p>
     <Field
       name={auction}
       type="number"
       component={renderField}
     />
     <button
+      className="btn danger-btn"
       type="button"
       onClick={() => fields.remove(index)}
     >
@@ -70,7 +71,7 @@ const renderAuctionsId = ({ fields, meta: { error } }) => (
   <React.Fragment>
     {fields.map(renderAuction(fields, error))}
     <p>
-      <button type="button" onClick={() => fields.push()}>
+      <button className="btn primary-btn" type="button" onClick={() => fields.push()}>
         Ad Id
       </button>
     </p>
@@ -114,7 +115,7 @@ class ProductForm extends Component {
             Auctions id:
             <FieldArray id="auctions" name="auctions" component={renderAuctionsId} type="number" />
           </label>
-          <button type="submit" disabled={pristine}>Submit</button>
+          <button className="btn submit-btn" type="submit" disabled={pristine}>Submit</button>
         </form>
       </div>
     );

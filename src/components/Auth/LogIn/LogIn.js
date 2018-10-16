@@ -36,13 +36,13 @@ export class LogIn extends Component {
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="login">
             <p>Login:</p>
-            <input id="login" type="text" value={login} onChange={this.handleChange} />
+            <input className="form-input" id="login" type="text" value={login} onChange={this.handleChange} />
           </label>
           <label htmlFor="password">
             <p>Password:</p>
-            <input id="password" type="password" value={password} onChange={this.handleChange} />
+            <input className="form-input" id="password" type="password" value={password} onChange={this.handleChange} />
           </label>
-          <button id="submit-button" type="submit">Log In</button>
+          <button className="btn submit-btn" type="submit">Log In</button>
         </form>
       );
     }
