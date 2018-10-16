@@ -25,9 +25,13 @@ function checkToken(token) {
   return false;
 }
 
+function hashPassword(password) {
+  return bcrypt.hash(password, 10);
+}
+
 async function registerUser(req) {
   const { login, email, password } = req.body;
-  const passwordHash = await bcrypt.hash(password, 10);
+  const passwordHash = await hashPassword(password);
   const user = await router.db.get('users')
     .push({
       id: shortid.generate(),
@@ -36,7 +40,6 @@ async function registerUser(req) {
       passwordHash,
     })
     .write();
-  console.log(user);
   if (user) return true;
   return false;
 }

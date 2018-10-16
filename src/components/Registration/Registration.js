@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
+import { PropTypes } from 'prop-types';
 
 const validate = (values) => {
   const errors = {};
@@ -57,7 +58,10 @@ submit = (values) => {
     },
     body: JSON.stringify({ login, email, password }),
   })
-    .then(data => console.log(data))
+    .then(data => data.json())
+    .then((data) => {
+      if (data.message === 'user added') { console.log(data); }
+    })
     .catch(error => console.log(error));
 }
 
@@ -102,3 +106,7 @@ export default reduxForm({
   asyncValidate,
   asyncChangeFields: ['login'],
 })(Registration);
+
+Registration.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+};

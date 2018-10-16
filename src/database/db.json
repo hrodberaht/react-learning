@@ -31,6 +31,48 @@
       "id": 1,
       "login": "rob",
       "passwordHash": "$2b$10$c58Q1EQ0YZxhdSyF/RSabujMgcbZgms6zlgB6JwX/iNCOFAl1AFB6"
+    },
+    {
+      "id": "dbLCZPsQk",
+      "login": "john",
+      "email": "rob@rob.pl",
+      "passwordHash": "$2b$10$Yo52Bx.322lq.A53J3e70eXBSvVFi/BDOQbbRqQvbPstQaA2kII5e"
+    },
+    {
+      "id": "xA7RJXw4-",
+      "login": "glen",
+      "email": "rob@rob.pl",
+      "passwordHash": "$2b$10$6Qm8VGihVVBxnHC1w0T0rOtBniXFixqf1imV09nsrwNtlaao/OgiW"
+    },
+    {
+      "id": "aW05cDTiq",
+      "login": "admin",
+      "email": "BIURO@ZEFI.PL",
+      "passwordHash": "$2b$10$XB1z/LrwR0kn2CkZ/W/kk.s27eQnuUjQV3ixtGI/HKUDQvpf1MjwO"
+    },
+    {
+      "id": "hMQdq6mko",
+      "login": "tak",
+      "email": "test@test.pl",
+      "passwordHash": "$2b$10$yn9oEjt7/Gz5/5Mdrj6tauYRsdNcq4yg.oAclr191UXsrq5uptDnO"
+    },
+    {
+      "id": "jsd9DOV8g",
+      "login": "1111",
+      "email": "test@test.pl",
+      "passwordHash": "$2b$10$DYiKy6h3J4rpfl6.vLa7ruzNGM0QA7ig5ff5TeS1Q4IXRvsM/2s56"
+    },
+    {
+      "id": "WA6SgeaYz",
+      "login": "1211",
+      "email": "test@test.pl",
+      "passwordHash": "$2b$10$YZmHlQuaEmhxKdR0CdgPTuf7k0De.Sr89Q7vIcsDi9tj/xAiIcNx6"
+    },
+    {
+      "id": "lZ7jqXW00",
+      "login": "23123",
+      "email": "test@test.pl",
+      "passwordHash": "$2b$10$ir185yT9YhVpHIft9bQUBusMSbuQfP9wopwnA4coGZOEMleRRi7Va"
     }
   ]
 }
