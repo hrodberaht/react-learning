@@ -11,8 +11,8 @@ export class ShowAddCard extends Component {
     const { handleClick, isAddCardVisible } = this.props;
 
     return (
-      <div>
-        <button type="button" onClick={handleClick}>
+      <div className="card-form">
+        <button className="btn primary-btn" type="button" onClick={handleClick}>
           {isAddCardVisible ? 'Hide' : 'Add Card'}
         </button>
         {isAddCardVisible && <ConnectedAddCardForm />}

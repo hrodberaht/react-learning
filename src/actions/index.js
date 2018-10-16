@@ -25,10 +25,22 @@ const logInSucces = () => ({
   isAuthenticated: true,
 });
 
+const logOutSucces = () => ({
+  type: 'LOGOUT',
+  isAuthenticated: false,
+});
+
 
 const url = 'http://localhost:3004/cards/';
 
-export const fetchCards = () => dispatch => fetch(url)
+export const fetchCards = () => dispatch => fetch(url,
+  {
+    method: 'get',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Token ${localStorage.getItem('token')}`,
+    },
+  })
   .then(res => res.json())
   .then(cards => dispatch(fetchCardsSucces(cards)))
   .catch(err => dispatch(errorAfterFetch(err)));
@@ -39,6 +51,7 @@ export const addCard = (name, email) => dispatch => fetch(url,
     method: 'post',
     headers: {
       'Content-Type': 'application/json',
+      Authorization: `Token ${localStorage.getItem('token')}`,
     },
     body: JSON.stringify({ name, email }),
   })
@@ -51,6 +64,7 @@ export const deleteCard = id => dispatch => fetch(url + id,
     method: 'delete',
     headers: {
       'Content-Type': 'application/json',
+      Authorization: `Token ${localStorage.getItem('token')}`,
     },
   })
   .then(res => res.json())
@@ -66,13 +80,18 @@ export const logIn = (login, password) => dispatch => fetch('http://localhost:30
     body: JSON.stringify({ login, password }),
   })
   .then(res => res.json())
-  .then((res) => { if (res.key) dispatch(logInSucces()); })
+  .then((res) => {
+    if (res.token) {
+      localStorage.setItem('token', res.token);
+      dispatch(logInSucces());
+    }
+  })
   .catch(err => dispatch(errorAfterFetch(err)));
 
-export const logOut = () => ({
-  type: 'LOGOUT',
-  isAuthenticated: false,
-});
+export const logOut = () => (dispatch) => {
+  localStorage.removeItem('token');
+  dispatch(logOutSucces());
+};
 
 export const toggleCardVisable = () => ({
   type: 'TOGGLE_CARD_VISABLE',

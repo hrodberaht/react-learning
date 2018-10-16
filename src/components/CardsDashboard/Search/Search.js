@@ -7,10 +7,11 @@ export class Search extends Component {
   render() {
     const { handleChange } = this.props;
     return (
-      <div>
+      <div className="search-card">
         <label htmlFor="search">
-          Search by name:
-          <input id="search" type="text" onChange={handleChange} />
+          <p>Search by name:</p>
+          <i className="fa fa-search" />
+          <input className="form-input" id="search" type="text" onChange={handleChange} />
         </label>
       </div>
     );

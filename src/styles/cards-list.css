@@ -1,0 +1,33 @@
+.cards-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+    padding: 0px 40px; 
+}
+
+.cards-list__card {
+    text-align: center;
+    border: 1px solid lightblue;
+    width: 270px;
+    margin: 30px 20px;
+    padding-bottom: 20px;
+    background-color: rgb(225, 247, 255);
+    border-radius: 10px;
+}
+
+.cards-list__card p {
+    text-transform: uppercase;
+    color: darkorange;
+    letter-spacing: 1px;
+}
+
+.cards-list__card h4 {
+    color: darkblue;
+    letter-spacing: 2px;
+}
+
+.cards-list__card h2 {
+    color: darkblue;
+    letter-spacing: 2px;
+}

@@ -17,7 +17,7 @@ export class AllCards extends Component {
   render() {
     const { handleClick } = this.props;
     return (
-      <React.Fragment>
+      <div className="cards-list">
         {this.list().map(card => (
           <Card
             key={card.id}
@@ -25,7 +25,7 @@ export class AllCards extends Component {
             handleClick={handleClick}
           />
         ))}
-      </React.Fragment>
+      </div>
     );
   }
 }

@@ -1,5 +1,5 @@
 .NavBar {
-    background-color: lightblue;
+    background-color: lightskyblue;
     
     
 }
@@ -34,6 +34,6 @@ ul li:last-child {
 }
 
 .NavBar ul li:hover {
-    background-color: yellow;
+    background-color: orange;
     
 }

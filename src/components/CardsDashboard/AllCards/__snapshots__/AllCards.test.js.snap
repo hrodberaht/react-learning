@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<AllCards /> should render component witout crash 1`] = `
-<Fragment>
+<div
+  className="cards-list"
+>
   <Card
     card={
       Object {
@@ -24,5 +26,5 @@ exports[`<AllCards /> should render component witout crash 1`] = `
     handleClick={[Function]}
     key="2"
   />
-</Fragment>
+</div>
 `;

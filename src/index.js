@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
+import 'font-awesome/css/font-awesome.min.css';
 import ConnectedApp from './App';
 import rootReducer from './reducers';
 
