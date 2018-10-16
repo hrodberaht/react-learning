@@ -4,11 +4,8 @@ import { createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import registerServiceWorker from './registerServiceWorker';
-
-
 import './index.css';
 import ConnectedApp from './App';
-
 import rootReducer from './reducers';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -16,7 +13,6 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const middleware = [thunk];
 
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(...middleware)));
-
 
 const AppWithProvider = () => (
   <Provider store={store}>

@@ -57,13 +57,16 @@ export const deleteCard = id => dispatch => fetch(url + id,
   .then(() => dispatch(deleteCardSucces(id)))
   .catch(err => dispatch(errorAfterFetch(err)));
 
-export const logIn = (login, email) => (dispatch) => {
-  if (login === 'rob' && email === 'rob@rob.pl') {
-    dispatch(logInSucces());
-  }
-
-  return errorAfterFetch;
-};
+export const logIn = (login, password) => dispatch => fetch('http://localhost:3004/',
+  {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ login, password }),
+  })
+  .then(() => dispatch(logInSucces()))
+  .catch(err => dispatch(errorAfterFetch(err)));
 
 export const logOut = () => ({
   type: 'LOGOUT',
