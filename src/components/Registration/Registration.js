@@ -29,7 +29,8 @@ const asyncValidate = (values) => {
     .then(data => data.json())
     .then((data) => {
       if (data.message === 'That login is taken') {
-        throw { login: data.message };
+        const error = { login: data.message };
+        throw error;
       }
     });
 };
