@@ -40,15 +40,13 @@ async function registerUser(req) {
       passwordHash,
     })
     .write();
-  if (user) return true;
-  return false;
+  return user;
 }
 
 async function checkUser(req) {
   const { login } = req.body;
   const taken = await router.db.get('users').find({ login }).value();
-  if (taken) return true;
-  return false;
+  return taken;
 }
 
 
@@ -76,11 +74,6 @@ server.use(async (req, res, next) => {
   return res.sendStatus(401);
 });
 
-server.get('/', (req, res) => {
-  res.json({
-    body: res.locals.data,
-  });
-});
 server.use(router);
 
 server.listen(3004);
