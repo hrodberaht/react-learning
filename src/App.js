@@ -15,7 +15,7 @@ import { fetchCards } from './actions';
 import NotFound from './components/NotFound/NotFound';
 import ProductsDashboard from './components/ProductsDashboard/ProductsDashboard';
 import Auth from './components/Auth/Auth';
-import Registration from './components/Registration/Registration';
+import Register from './components/Registration/Registration';
 
 
 export class App extends Component {
@@ -34,7 +34,7 @@ export class App extends Component {
             <Route path="/cards" component={ConnectedCardsDashboard} />
             <Route path="/products" component={ProductsDashboard} />
             <Route path="/login" component={Auth} />
-            <Route path="/registration" component={Registration} />
+            <Route path="/registration" component={Register} />
 
             <Route component={NotFound} />
           </Switch>
