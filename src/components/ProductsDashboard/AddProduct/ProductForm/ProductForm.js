@@ -39,10 +39,7 @@ const renderField = ({
 }) => (
   <React.Fragment>
     <input
-      className={classNames({
-        'form-input': true,
-        'form-error': error,
-      })}
+      className={classNames('form-input', { 'form-error': error })}
       {...input}
       type={type}
     />
