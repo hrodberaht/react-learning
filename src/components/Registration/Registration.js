@@ -38,7 +38,7 @@ const asyncValidate = async (values) => {
 };
 
 
-const renderInput = ({
+export const renderInput = ({
   input,
   type,
   placeholder,

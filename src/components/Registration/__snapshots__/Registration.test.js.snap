@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Registration /> should <Registration/> render without crash 1`] = `
+<div
+  className="registration"
+>
+  <form>
+    <Field
+      component={[Function]}
+      id="login"
+      label="login"
+      name="login"
+      placeholder="Login"
+      type="text"
+    />
+    <Field
+      component={[Function]}
+      id="email"
+      name="email"
+      placeholder="Email"
+      type="email"
+    />
+    <Field
+      component={[Function]}
+      id="password"
+      name="password"
+      placeholder="Password"
+      type="password"
+    />
+    <button
+      className="btn submit-btn"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`<Registration /> should <renderInput/> render without crash 1`] = `
+<Fragment>
+  <input
+    className="form-input"
+    placeholder="Login"
+    type="text"
+  />
+  <p>
+    <span>
+      Required
+    </span>
+  </p>
+</Fragment>
+`;
