@@ -1,0 +1,58 @@
+.NavBar {
+    background-color: lightskyblue;
+    color:white;
+    
+    ul {
+        @media (max-width: 600px) {
+            list-style: none;
+            display: flex;
+            margin: 5px 0px;
+            padding: 0px;
+            flex-direction: column;
+        }
+
+        @media (min-width: 601px) {
+            list-style: none;
+            display: flex;
+            margin: 5px 0px;
+            padding: 0px;
+            flex-wrap: wrap;
+    
+            li:last-child {
+                margin-left: auto;
+                margin-right: 0px;
+            }
+        }
+
+        li {
+        margin-left: 0px;
+        margin-right: 10px;
+        padding: 5px 15px;
+
+        &:hover {
+            background-color: orange;
+        }
+
+        a {
+            text-decoration: none;
+            padding: 5px 15px;
+            font-size: 24px;
+
+            &:hover {
+                color: blue;
+            }
+        }
+
+        }
+    }
+    
+}
+
+
+
+
+
+.active {
+    color: white;
+    font-weight: bold;
+}
