@@ -9,6 +9,11 @@
       "name": "Rob",
       "email": "rob@rob.pl",
       "id": 2
+    },
+    {
+      "name": "seb",
+      "email": "test@test.pl",
+      "id": 3
     }
   ],
   "users": [

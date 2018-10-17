@@ -1,14 +1,33 @@
 .NavBar {
     background-color: lightskyblue;
+    color:white;
     
     
 }
-.NavBar ul {
-    list-style: none;
-    display: flex;
-    margin: 5px 0px;
-    justify-content: flex-start;
-    padding: 0px;
+
+@media (max-width: 600px) {
+    .NavBar ul {
+        list-style: none;
+        display: flex;
+        margin: 5px 0px;
+        padding: 0px;
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 601px) {
+    .NavBar ul {
+        list-style: none;
+        display: flex;
+        margin: 5px 0px;
+        padding: 0px;
+        flex-wrap: wrap;
+    }
+
+    .NavBar ul li:last-child {
+        margin-left: auto;
+        margin-right: 0px;
+    }
 }
 
 .NavBar ul li {
@@ -20,7 +39,6 @@
 
 .NavBar ul li a {
     text-decoration: none;
-    color: white;
     padding: 5px 15px;
     font-size: 24px;
 }
@@ -28,12 +46,13 @@
 .NavBar ul li a:hover {
     color: blue;
 }
-ul li:last-child {
-    margin-left: auto;
-    margin-right: 0px;
-}
 
 .NavBar ul li:hover {
     background-color: orange;
     
+}
+
+.active {
+    color: white;
+    font-weight: bold;
 }

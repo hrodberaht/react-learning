@@ -11,4 +11,10 @@
     font-size: 1em;
     text-transform: uppercase; 
     border-radius: 5px;
+    cursor: pointer;
 }
+
+.btn:disabled {
+    background-color: antiquewhite;
+}
+

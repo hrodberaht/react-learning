@@ -1,7 +1,7 @@
 .cards-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin: auto;
     padding: 0px 40px; 
 }
@@ -30,4 +30,14 @@
 .cards-list__card h2 {
     color: darkblue;
     letter-spacing: 2px;
+}
+
+@media (max-width: 703px) {
+    .cards-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: auto;
+        padding: 0px 40px; 
+    }
 }
