@@ -5,42 +5,56 @@ exports[`<NavBar /> should render component 1`] = `
   <div
     className="NavBar"
   >
-    <ul>
-      <li>
+    <ul
+      className="NavBar__ul"
+    >
+      <li
+        className="NavBar__ul__li"
+      >
         <NavLink
           activeClassName="active"
           aria-current="page"
+          className="NavBar__ul__li__a"
           exact={true}
           to="/"
         >
           Home
         </NavLink>
       </li>
-      <li>
+      <li
+        className="NavBar__ul__li"
+      >
         <NavLink
           activeClassName="active"
           aria-current="page"
+          className="NavBar__ul__li__a"
           to="/cards"
         >
           Cards
         </NavLink>
       </li>
-      <li>
+      <li
+        className="NavBar__ul__li"
+      >
         <NavLink
           activeClassName="active"
           aria-current="page"
+          className="NavBar__ul__li__a"
           to="/products"
         >
           Products
         </NavLink>
       </li>
-      <li>
+      <li
+        className="NavBar__ul__li"
+      >
         <withRouter(Connect(Authorization))
           withAuth={[Function]}
           withoutAuth={
             <NavLink
               activeClassName="active"
               aria-current="page"
+              className="NavBar__ul__li__a"
               to="/login"
             >
               Login
@@ -54,47 +68,61 @@ exports[`<NavBar /> should render component 1`] = `
     className="NavBarNarrow"
   >
     <i
-      className="fa fa-bars fa-2x"
+      className="NavBarNarrow__ico fa fa-bars fa-2x"
     />
     <div
       className="menu"
     >
-      <ul>
-        <li>
+      <ul
+        className="menu__ul"
+      >
+        <li
+          className="menu__ul__li"
+        >
           <NavLink
             activeClassName="active"
             aria-current="page"
+            className="menu__ul__li__a"
             exact={true}
             to="/"
           >
             Home
           </NavLink>
         </li>
-        <li>
+        <li
+          className="menu__ul__li"
+        >
           <NavLink
             activeClassName="active"
             aria-current="page"
+            className="menu__ul__li__a"
             to="/cards"
           >
             Cards
           </NavLink>
         </li>
-        <li>
+        <li
+          className="menu__ul__li"
+        >
           <NavLink
             activeClassName="active"
             aria-current="page"
+            className="menu__ul__li__a"
             to="/products"
           >
             Products
           </NavLink>
         </li>
-        <li>
+        <li
+          className="menu__ul__li"
+        >
           <withRouter(Connect(Authorization))
             withAuth={[Function]}
             withoutAuth={
               <NavLink
                 activeClassName="active"
                 aria-current="page"
+                className="menu__ul__li__a"
                 to="/login"
               >
                 Login

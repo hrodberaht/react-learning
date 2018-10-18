@@ -8,41 +8,41 @@ export default class NavBar extends Component {
     return (
       <nav>
         <div className="NavBar">
-          <ul>
-            <li>
-              <NavLink to="/" exact>Home</NavLink>
+          <ul className="NavBar__ul">
+            <li className="NavBar__ul__li">
+              <NavLink className="NavBar__ul__li__a" to="/" exact>Home</NavLink>
             </li>
-            <li>
-              <NavLink to="/cards">Cards</NavLink>
+            <li className="NavBar__ul__li">
+              <NavLink className="NavBar__ul__li__a" to="/cards">Cards</NavLink>
             </li>
-            <li>
-              <NavLink to="/products">Products</NavLink>
+            <li className="NavBar__ul__li">
+              <NavLink className="NavBar__ul__li__a" to="/products">Products</NavLink>
             </li>
-            <li>
+            <li className="NavBar__ul__li">
               <ConnectedAuthorization
-                withAuth={logOut => <NavLink to="/login" onClick={logOut}>Log out</NavLink>}
-                withoutAuth={<NavLink to="/login">Login</NavLink>}
+                withAuth={logOut => <NavLink className="NavBar__ul__li__a" to="/login" onClick={logOut}>Log out</NavLink>}
+                withoutAuth={<NavLink className="NavBar__ul__li__a" to="/login">Login</NavLink>}
               />
             </li>
           </ul>
         </div>
         <div className="NavBarNarrow">
-          <i className="fa fa-bars fa-2x" />
+          <i className="NavBarNarrow__ico fa fa-bars fa-2x" />
           <div className="menu">
-            <ul>
-              <li>
-                <NavLink to="/" exact>Home</NavLink>
+            <ul className="menu__ul">
+              <li className="menu__ul__li">
+                <NavLink className="menu__ul__li__a" to="/" exact>Home</NavLink>
               </li>
-              <li>
-                <NavLink to="/cards">Cards</NavLink>
+              <li className="menu__ul__li">
+                <NavLink className="menu__ul__li__a" to="/cards">Cards</NavLink>
               </li>
-              <li>
-                <NavLink to="/products">Products</NavLink>
+              <li className="menu__ul__li">
+                <NavLink className="menu__ul__li__a" to="/products">Products</NavLink>
               </li>
-              <li>
+              <li className="menu__ul__li">
                 <ConnectedAuthorization
-                  withAuth={logOut => <NavLink to="/login" onClick={logOut}>Log out</NavLink>}
-                  withoutAuth={<NavLink to="/login">Login</NavLink>}
+                  withAuth={logOut => <NavLink className="menu__ul__li__a" to="/login" onClick={logOut}>Log out</NavLink>}
+                  withoutAuth={<NavLink className="menu__ul__li__a" to="/login">Login</NavLink>}
                 />
               </li>
             </ul>
