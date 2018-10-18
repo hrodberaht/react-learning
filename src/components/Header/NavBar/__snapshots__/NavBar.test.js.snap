@@ -1,52 +1,109 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<NavBar /> should render component 1`] = `
-<nav
-  className="NavBar"
->
-  <ul>
-    <li>
-      <NavLink
-        activeClassName="active"
-        aria-current="page"
-        exact={true}
-        to="/"
-      >
-        Home
-      </NavLink>
-    </li>
-    <li>
-      <NavLink
-        activeClassName="active"
-        aria-current="page"
-        to="/cards"
-      >
-        Cards
-      </NavLink>
-    </li>
-    <li>
-      <NavLink
-        activeClassName="active"
-        aria-current="page"
-        to="/products"
-      >
-        Products
-      </NavLink>
-    </li>
-    <li>
-      <withRouter(Connect(Authorization))
-        withAuth={[Function]}
-        withoutAuth={
+<nav>
+  <div
+    className="NavBar"
+  >
+    <ul>
+      <li>
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          exact={true}
+          to="/"
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          to="/cards"
+        >
+          Cards
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          to="/products"
+        >
+          Products
+        </NavLink>
+      </li>
+      <li>
+        <withRouter(Connect(Authorization))
+          withAuth={[Function]}
+          withoutAuth={
+            <NavLink
+              activeClassName="active"
+              aria-current="page"
+              to="/login"
+            >
+              Login
+            </NavLink>
+          }
+        />
+      </li>
+    </ul>
+  </div>
+  <div
+    className="NavBarNarrow"
+  >
+    <i
+      className="fa fa-bars fa-2x"
+    />
+    <div
+      className="menu"
+    >
+      <ul>
+        <li>
           <NavLink
             activeClassName="active"
             aria-current="page"
-            to="/login"
+            exact={true}
+            to="/"
           >
-            Login
+            Home
           </NavLink>
-        }
-      />
-    </li>
-  </ul>
+        </li>
+        <li>
+          <NavLink
+            activeClassName="active"
+            aria-current="page"
+            to="/cards"
+          >
+            Cards
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            activeClassName="active"
+            aria-current="page"
+            to="/products"
+          >
+            Products
+          </NavLink>
+        </li>
+        <li>
+          <withRouter(Connect(Authorization))
+            withAuth={[Function]}
+            withoutAuth={
+              <NavLink
+                activeClassName="active"
+                aria-current="page"
+                to="/login"
+              >
+                Login
+              </NavLink>
+            }
+          />
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
 `;
