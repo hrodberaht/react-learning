@@ -1,0 +1,25 @@
+@import './styles/nav-bar.scss';
+@import './styles/product.scss';
+@import './styles/login.scss';
+@import './styles/form-input.scss';
+@import './styles/buttons/btn.scss';
+@import './styles/cards-list.scss';
+@import './styles/card-form.scss';
+@import './styles/search-card.scss';
+@import './styles/registration.scss';
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 1024px;
+  margin: auto;
+}
+
+section {
+  margin-top: 50px;
+}

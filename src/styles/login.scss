@@ -1,0 +1,22 @@
+.Login {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    p {
+        margin-top: 20px;
+    }
+
+    form label {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        color: darkblue;
+        font-weight: bold;
+        letter-spacing: 2px;
+
+        label p {
+            text-transform: uppercase;
+        }
+    }
+}

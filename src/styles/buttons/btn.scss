@@ -1,6 +1,6 @@
-@import './danger-btn.css';
-@import './primary-btn.css';
-@import './submit-btn.css';
+@import './danger-btn.scss';
+@import './primary-btn.scss';
+@import './submit-btn.scss';
 
 .btn {
     padding: 10px 25px;
@@ -11,4 +11,11 @@
     font-size: 1em;
     text-transform: uppercase; 
     border-radius: 5px;
+    cursor: pointer;
+
+    &:disabled {
+        background-color: antiquewhite;
+    }
 }
+
+

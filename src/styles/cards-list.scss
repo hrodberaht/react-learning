@@ -1,0 +1,43 @@
+.cards-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: auto;
+    padding: 0px 40px; 
+
+    &__card {
+        text-align: center;
+        border: 1px solid lightblue;
+        width: 270px;
+        margin: 30px 20px;
+        padding-bottom: 20px;
+        background-color: rgb(225, 247, 255);
+        border-radius: 10px;
+
+        p {
+            text-transform: uppercase;
+            color: darkorange;
+            letter-spacing: 1px;
+        }
+
+        h4 {
+            color: darkblue;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            color: darkblue;
+            letter-spacing: 2px;
+        }
+    }
+}
+
+@media (max-width: 703px) {
+    .cards-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: auto;
+        padding: 0px 40px; 
+    }
+}

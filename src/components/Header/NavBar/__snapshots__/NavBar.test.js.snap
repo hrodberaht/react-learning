@@ -1,52 +1,137 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<NavBar /> should render component 1`] = `
-<nav
-  className="NavBar"
->
-  <ul>
-    <li>
-      <NavLink
-        activeClassName="active"
-        aria-current="page"
-        exact={true}
-        to="/"
+<nav>
+  <div
+    className="NavBar"
+  >
+    <ul
+      className="NavBar__ul"
+    >
+      <li
+        className="NavBar__ul__li"
       >
-        Home
-      </NavLink>
-    </li>
-    <li>
-      <NavLink
-        activeClassName="active"
-        aria-current="page"
-        to="/cards"
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          className="NavBar__ul__li__a"
+          exact={true}
+          to="/"
+        >
+          Home
+        </NavLink>
+      </li>
+      <li
+        className="NavBar__ul__li"
       >
-        Cards
-      </NavLink>
-    </li>
-    <li>
-      <NavLink
-        activeClassName="active"
-        aria-current="page"
-        to="/products"
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          className="NavBar__ul__li__a"
+          to="/cards"
+        >
+          Cards
+        </NavLink>
+      </li>
+      <li
+        className="NavBar__ul__li"
       >
-        Products
-      </NavLink>
-    </li>
-    <li>
-      <withRouter(Connect(Authorization))
-        withAuth={[Function]}
-        withoutAuth={
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          className="NavBar__ul__li__a"
+          to="/products"
+        >
+          Products
+        </NavLink>
+      </li>
+      <li
+        className="NavBar__ul__li"
+      >
+        <withRouter(Connect(Authorization))
+          withAuth={[Function]}
+          withoutAuth={
+            <NavLink
+              activeClassName="active"
+              aria-current="page"
+              className="NavBar__ul__li__a"
+              to="/login"
+            >
+              Login
+            </NavLink>
+          }
+        />
+      </li>
+    </ul>
+  </div>
+  <div
+    className="NavBarNarrow"
+  >
+    <i
+      className="NavBarNarrow__ico fa fa-bars fa-2x"
+    />
+    <div
+      className="menu"
+    >
+      <ul
+        className="menu__ul"
+      >
+        <li
+          className="menu__ul__li"
+        >
           <NavLink
             activeClassName="active"
             aria-current="page"
-            to="/login"
+            className="menu__ul__li__a"
+            exact={true}
+            to="/"
           >
-            Login
+            Home
           </NavLink>
-        }
-      />
-    </li>
-  </ul>
+        </li>
+        <li
+          className="menu__ul__li"
+        >
+          <NavLink
+            activeClassName="active"
+            aria-current="page"
+            className="menu__ul__li__a"
+            to="/cards"
+          >
+            Cards
+          </NavLink>
+        </li>
+        <li
+          className="menu__ul__li"
+        >
+          <NavLink
+            activeClassName="active"
+            aria-current="page"
+            className="menu__ul__li__a"
+            to="/products"
+          >
+            Products
+          </NavLink>
+        </li>
+        <li
+          className="menu__ul__li"
+        >
+          <withRouter(Connect(Authorization))
+            withAuth={[Function]}
+            withoutAuth={
+              <NavLink
+                activeClassName="active"
+                aria-current="page"
+                className="menu__ul__li__a"
+                to="/login"
+              >
+                Login
+              </NavLink>
+            }
+          />
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
 `;
