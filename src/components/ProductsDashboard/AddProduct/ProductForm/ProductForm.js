@@ -7,6 +7,7 @@ import {
 } from 'redux-form';
 import { PropTypes } from 'prop-types';
 import * as yup from 'yup';
+import classNames from 'classnames';
 
 const schema = yup.object().shape({
   name: yup.string().required('Required'),
@@ -37,14 +38,18 @@ const renderField = ({
   meta: { touched, error },
 }) => (
   <React.Fragment>
-    <input className={`form-input${error ? ' form-error' : ''}`} {...input} type={type} />
+    <input
+      className={classNames('form-input', { 'form-error': error })}
+      {...input}
+      type={type}
+    />
     <div>
       {touched && error && <span>{error}</span>}
     </div>
   </React.Fragment>
 );
 
-const renderAuction = (fields, error) => (auction, index) => (
+const renderAuction = error => (auction, index, fields) => (
   <div key={auction}>
 
     <p>
@@ -69,7 +74,7 @@ const renderAuction = (fields, error) => (auction, index) => (
 
 const renderAuctionsId = ({ fields, meta: { error } }) => (
   <React.Fragment>
-    {fields.map(renderAuction(fields, error))}
+    {fields.map(renderAuction(error))}
     <p>
       <button className="btn primary-btn" type="button" onClick={() => fields.push()}>
         Ad Id
