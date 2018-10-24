@@ -15,7 +15,6 @@ describe('<Registration />', () => {
   const setupRegistration = buildSetup(Registration, registrationProps, null);
   const setupRenderInput = buildSetup(renderInput, renderInputProps, null);
 
-
   it('should <Registration/> render without crash', () => {
     expect(setupRegistration().wrapper).toMatchSnapshot();
   });

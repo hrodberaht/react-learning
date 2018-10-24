@@ -8,7 +8,10 @@ const middlewares = jsonServer.defaults();
 
 async function isAuthorized(req) {
   const { login, password } = req.body;
-  const user = await router.db.get('users').find({ login }).value();
+  const user = await router.db
+    .get('users')
+    .find({ login })
+    .value();
   if (!user) {
     return false;
   }
@@ -32,7 +35,8 @@ function hashPassword(password) {
 async function registerUser(req) {
   const { login, email, password } = req.body;
   const passwordHash = await hashPassword(password);
-  const user = await router.db.get('users')
+  const user = await router.db
+    .get('users')
     .push({
       id: shortid.generate(),
       login,
@@ -45,10 +49,12 @@ async function registerUser(req) {
 
 async function checkUser(req) {
   const { login } = req.body;
-  const taken = await router.db.get('users').find({ login }).value();
+  const taken = await router.db
+    .get('users')
+    .find({ login })
+    .value();
   return taken;
 }
-
 
 server.use(middlewares);
 server.use(jsonServer.bodyParser);
@@ -60,11 +66,11 @@ server.use(async (req, res, next) => {
   }
   if (req.originalUrl === '/check') {
     const checked = await checkUser(req);
-    if (checked) return res.send({ message: 'That login is taken' });
+    if (checked) return res.status(422).send({ status: 422, error: 'This username is taken' });
     return res.send({ message: 'ok' });
   }
   if (req.headers.authorization) {
-    const token = (req.headers.authorization.split(' ')[1]);
+    const token = req.headers.authorization.split(' ')[1];
     if (checkToken(token)) {
       return next();
     }
