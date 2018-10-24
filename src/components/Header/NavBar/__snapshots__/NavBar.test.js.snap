@@ -14,7 +14,6 @@ exports[`<NavBar /> should render component 1`] = `
         <NavLink
           activeClassName="active"
           aria-current="page"
-          className="navbar__item__link"
           exact={true}
           to="/"
         >
@@ -27,7 +26,6 @@ exports[`<NavBar /> should render component 1`] = `
         <NavLink
           activeClassName="active"
           aria-current="page"
-          className="navbar__item__link"
           to="/cards"
         >
           Cards
@@ -39,7 +37,6 @@ exports[`<NavBar /> should render component 1`] = `
         <NavLink
           activeClassName="active"
           aria-current="page"
-          className="navbar__item__link"
           to="/products"
         >
           Products
@@ -54,7 +51,6 @@ exports[`<NavBar /> should render component 1`] = `
             <NavLink
               activeClassName="active"
               aria-current="page"
-              className="navbar__item__link"
               to="/login"
             >
               Login
@@ -82,7 +78,6 @@ exports[`<NavBar /> should render component 1`] = `
           <NavLink
             activeClassName="active"
             aria-current="page"
-            className="menu__item__link"
             exact={true}
             to="/"
           >
@@ -95,7 +90,6 @@ exports[`<NavBar /> should render component 1`] = `
           <NavLink
             activeClassName="active"
             aria-current="page"
-            className="menu__item__link"
             to="/cards"
           >
             Cards
@@ -107,7 +101,6 @@ exports[`<NavBar /> should render component 1`] = `
           <NavLink
             activeClassName="active"
             aria-current="page"
-            className="menu__item__link"
             to="/products"
           >
             Products
@@ -122,7 +115,6 @@ exports[`<NavBar /> should render component 1`] = `
               <NavLink
                 activeClassName="active"
                 aria-current="page"
-                className="menu__item__link"
                 to="/login"
               >
                 Login

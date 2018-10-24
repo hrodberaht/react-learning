@@ -37,7 +37,7 @@
             background-color: orange;
         }
 
-        &__link {
+        & a {
             text-decoration: none;
             padding: 5px 15px;
             font-size: 24px;
@@ -87,7 +87,7 @@
             display: block;
         }
 
-        &__item__link {
+        &__item a {
             text-decoration: none;
             font-size: 1.2rem;
         }
