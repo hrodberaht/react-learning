@@ -28,6 +28,10 @@ exports[`<App /> should render component 1`] = `
       />
       <Route
         component={[Function]}
+        path="/registration"
+      />
+      <Route
+        component={[Function]}
       />
     </Switch>
   </div>

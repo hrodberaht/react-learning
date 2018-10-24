@@ -1,5 +1,10 @@
-.Login form {
+.Login {
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.Login p {
+    margin-top: 20px;
 }
 
 .Login form label {

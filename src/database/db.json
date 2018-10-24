@@ -9,21 +9,6 @@
       "name": "Rob",
       "email": "rob@rob.pl",
       "id": 2
-    },
-    {
-      "name": "Playstation",
-      "email": "BIURO@ZEFI.PL",
-      "id": 3
-    },
-    {
-      "name": "Opisy",
-      "email": "robpszczolka@gmail.com",
-      "id": 4
-    },
-    {
-      "name": "id,ean,sku",
-      "email": "rob@rob.pl",
-      "id": 5
     }
   ],
   "users": [
@@ -31,6 +16,24 @@
       "id": 1,
       "login": "rob",
       "passwordHash": "$2b$10$c58Q1EQ0YZxhdSyF/RSabujMgcbZgms6zlgB6JwX/iNCOFAl1AFB6"
+    },
+    {
+      "id": "dbLCZPsQk",
+      "login": "john",
+      "email": "rob@rob.pl",
+      "passwordHash": "$2b$10$Yo52Bx.322lq.A53J3e70eXBSvVFi/BDOQbbRqQvbPstQaA2kII5e"
+    },
+    {
+      "id": "npUlPHE-4",
+      "login": "stefan",
+      "email": "test@test.pl",
+      "passwordHash": "$2b$10$rJmnEhtaDoYkm31WrDSkVecueN1yKVRCpZPOK6pmJJWiLRescaB4y"
+    },
+    {
+      "id": "fVo6_TUZH",
+      "login": "robe",
+      "email": "test@test.pl",
+      "passwordHash": "$2b$10$ck5h3IBqY07iKgxoltU2x.UROqQ1MnNCv73F726SqhbrhEIc6H25W"
     }
   ]
 }

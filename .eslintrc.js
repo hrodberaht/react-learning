@@ -22,7 +22,7 @@ module.exports = {
       "controlComponents": ["Field"],
       "depth": 3,
     }],
-    "react/prop-types": ["error", { "ignore": ["fields", "meta"] }],
+    "react/prop-types": ["error", { "ignore": ["fields", "meta", "history"] }],
   },
   "env": {
     "jest": true,
