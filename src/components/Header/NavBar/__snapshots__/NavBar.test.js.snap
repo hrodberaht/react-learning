@@ -3,18 +3,18 @@
 exports[`<NavBar /> should render component 1`] = `
 <nav>
   <div
-    className="NavBar"
+    className="navbar"
   >
     <ul
-      className="NavBar__ul"
+      className="navbar__list"
     >
       <li
-        className="NavBar__ul__li"
+        className="navbar__item"
       >
         <NavLink
           activeClassName="active"
           aria-current="page"
-          className="NavBar__ul__li__a"
+          className="navbar__item__link"
           exact={true}
           to="/"
         >
@@ -22,31 +22,31 @@ exports[`<NavBar /> should render component 1`] = `
         </NavLink>
       </li>
       <li
-        className="NavBar__ul__li"
+        className="navbar__item"
       >
         <NavLink
           activeClassName="active"
           aria-current="page"
-          className="NavBar__ul__li__a"
+          className="navbar__item__link"
           to="/cards"
         >
           Cards
         </NavLink>
       </li>
       <li
-        className="NavBar__ul__li"
+        className="navbar__item"
       >
         <NavLink
           activeClassName="active"
           aria-current="page"
-          className="NavBar__ul__li__a"
+          className="navbar__item__link"
           to="/products"
         >
           Products
         </NavLink>
       </li>
       <li
-        className="NavBar__ul__li"
+        className="navbar__item"
       >
         <withRouter(Connect(Authorization))
           withAuth={[Function]}
@@ -54,7 +54,7 @@ exports[`<NavBar /> should render component 1`] = `
             <NavLink
               activeClassName="active"
               aria-current="page"
-              className="NavBar__ul__li__a"
+              className="navbar__item__link"
               to="/login"
             >
               Login
@@ -65,24 +65,24 @@ exports[`<NavBar /> should render component 1`] = `
     </ul>
   </div>
   <div
-    className="NavBarNarrow"
+    className="navbar--narrow"
   >
     <i
-      className="NavBarNarrow__ico fa fa-bars fa-2x"
+      className="navbar--narrow__ico fa fa-bars fa-2x"
     />
     <div
       className="menu"
     >
       <ul
-        className="menu__ul"
+        className="menu__list"
       >
         <li
-          className="menu__ul__li"
+          className="menu__item"
         >
           <NavLink
             activeClassName="active"
             aria-current="page"
-            className="menu__ul__li__a"
+            className="menu__item__link"
             exact={true}
             to="/"
           >
@@ -90,31 +90,31 @@ exports[`<NavBar /> should render component 1`] = `
           </NavLink>
         </li>
         <li
-          className="menu__ul__li"
+          className="menu__item"
         >
           <NavLink
             activeClassName="active"
             aria-current="page"
-            className="menu__ul__li__a"
+            className="menu__item__link"
             to="/cards"
           >
             Cards
           </NavLink>
         </li>
         <li
-          className="menu__ul__li"
+          className="menu__item"
         >
           <NavLink
             activeClassName="active"
             aria-current="page"
-            className="menu__ul__li__a"
+            className="menu__item__link"
             to="/products"
           >
             Products
           </NavLink>
         </li>
         <li
-          className="menu__ul__li"
+          className="menu__item"
         >
           <withRouter(Connect(Authorization))
             withAuth={[Function]}
@@ -122,7 +122,7 @@ exports[`<NavBar /> should render component 1`] = `
               <NavLink
                 activeClassName="active"
                 aria-current="page"
-                className="menu__ul__li__a"
+                className="menu__item__link"
                 to="/login"
               >
                 Login

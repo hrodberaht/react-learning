@@ -7,42 +7,70 @@ export default class NavBar extends Component {
   render() {
     return (
       <nav>
-        <div className="NavBar">
-          <ul className="NavBar__ul">
-            <li className="NavBar__ul__li">
-              <NavLink className="NavBar__ul__li__a" to="/" exact>Home</NavLink>
+        <div className="navbar">
+          <ul className="navbar__list">
+            <li className="navbar__item">
+              <NavLink className="navbar__item__link" to="/" exact>
+                Home
+              </NavLink>
             </li>
-            <li className="NavBar__ul__li">
-              <NavLink className="NavBar__ul__li__a" to="/cards">Cards</NavLink>
+            <li className="navbar__item">
+              <NavLink className="navbar__item__link" to="/cards">
+                Cards
+              </NavLink>
             </li>
-            <li className="NavBar__ul__li">
-              <NavLink className="NavBar__ul__li__a" to="/products">Products</NavLink>
+            <li className="navbar__item">
+              <NavLink className="navbar__item__link" to="/products">
+                Products
+              </NavLink>
             </li>
-            <li className="NavBar__ul__li">
+            <li className="navbar__item">
               <ConnectedAuthorization
-                withAuth={logOut => <NavLink className="NavBar__ul__li__a" to="/login" onClick={logOut}>Log out</NavLink>}
-                withoutAuth={<NavLink className="NavBar__ul__li__a" to="/login">Login</NavLink>}
+                withAuth={logOut => (
+                  <NavLink className="navbar__item__link" to="/login" onClick={logOut}>
+                    Log out
+                  </NavLink>
+                )}
+                withoutAuth={(
+                  <NavLink className="navbar__item__link" to="/login">
+                    Login
+                  </NavLink>
+)}
               />
             </li>
           </ul>
         </div>
-        <div className="NavBarNarrow">
-          <i className="NavBarNarrow__ico fa fa-bars fa-2x" />
+        <div className="navbar--narrow">
+          <i className="navbar--narrow__ico fa fa-bars fa-2x" />
           <div className="menu">
-            <ul className="menu__ul">
-              <li className="menu__ul__li">
-                <NavLink className="menu__ul__li__a" to="/" exact>Home</NavLink>
+            <ul className="menu__list">
+              <li className="menu__item">
+                <NavLink className="menu__item__link" to="/" exact>
+                  Home
+                </NavLink>
               </li>
-              <li className="menu__ul__li">
-                <NavLink className="menu__ul__li__a" to="/cards">Cards</NavLink>
+              <li className="menu__item">
+                <NavLink className="menu__item__link" to="/cards">
+                  Cards
+                </NavLink>
               </li>
-              <li className="menu__ul__li">
-                <NavLink className="menu__ul__li__a" to="/products">Products</NavLink>
+              <li className="menu__item">
+                <NavLink className="menu__item__link" to="/products">
+                  Products
+                </NavLink>
               </li>
-              <li className="menu__ul__li">
+              <li className="menu__item">
                 <ConnectedAuthorization
-                  withAuth={logOut => <NavLink className="menu__ul__li__a" to="/login" onClick={logOut}>Log out</NavLink>}
-                  withoutAuth={<NavLink className="menu__ul__li__a" to="/login">Login</NavLink>}
+                  withAuth={logOut => (
+                    <NavLink className="menu__item__link" to="/login" onClick={logOut}>
+                      Log out
+                    </NavLink>
+                  )}
+                  withoutAuth={(
+                    <NavLink className="menu__item__link" to="/login">
+                      Login
+                    </NavLink>
+)}
                 />
               </li>
             </ul>

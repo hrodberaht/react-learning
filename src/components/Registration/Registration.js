@@ -10,16 +10,8 @@ const schema = yup.object().shape({
   password: yup.string().required(),
 });
 
-const asyncValidate = async (values) => {
+const checkingIfLoginIsTaken = async (login) => {
   const errorsForm = {};
-  await schema.validate(values, { abortEarly: false })
-    .catch((errors) => {
-      errors.inner.forEach((error) => {
-        errorsForm[error.path] = error.type;
-      });
-    });
-  const { login } = values;
-
   await fetch('http://localhost:3004/check', {
     method: 'post',
     headers: {
@@ -33,8 +25,34 @@ const asyncValidate = async (values) => {
         errorsForm.login = data.message;
       }
     });
-  if (Object.keys(errorsForm).length === 0) return Promise.resolve().then();
-  return Promise.reject().catch(() => { throw errorsForm; });
+
+  return errorsForm;
+};
+
+const validateByYup = async (values) => {
+  const errorsForm = {};
+  await schema.validate(values, { abortEarly: false })
+    .catch((errors) => {
+      errors.inner.forEach((error) => {
+        errorsForm[error.path] = error.type;
+      });
+    });
+
+  return errorsForm;
+};
+
+const asyncValidate = async (values, dispatch, props, blurredField) => {
+  const { login } = values;
+
+  const errorsForm = await validateByYup(values);
+
+  if (blurredField === 'login') {
+    const data = await checkingIfLoginIsTaken(login);
+    if (data.login) Object.assign(errorsForm, { login: data.login });
+  }
+  return Object.keys(errorsForm).length === 0
+    ? Promise.resolve().then()
+    : Promise.reject().catch(() => { throw errorsForm; });
 };
 
 
